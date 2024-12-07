@@ -87,7 +87,6 @@ const Options = () => {
                 Google Arts & Culture
               </a>
             </div>
-            <div className="privacy-notice">Your privacy matters, no data collection.</div>
           </div>
         </div>
       </div>
