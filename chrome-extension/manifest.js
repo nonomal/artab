@@ -19,9 +19,12 @@ const manifest = {
   name: '__MSG_extensionName__',
   version: packageJson.version,
   description: '__MSG_extensionDescription__',
-  host_permissions: ['https://*.google-analytics.com/*', 'https://*.ggpht.com/*', 'https://www.gstatic.com/*'],
+  host_permissions: ['https://*.ggpht.com/*', 'https://www.gstatic.com/*'],
   permissions: ['storage', 'tabs'],
-  options_page: 'options/index.html',
+  options_ui: {
+    page: 'options/index.html',
+    open_in_tab: false, // 改为false，使其在弹出窗口中打开
+  },
   background: {
     service_worker: 'background.iife.js',
     type: 'module',

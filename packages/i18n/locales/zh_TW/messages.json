@@ -1,0 +1,38 @@
+{
+  "extensionDescription": {
+    "description": "擴展描述",
+    "message": "畫廊擴展"
+  },
+  "extensionName": {
+    "description": "擴展名稱",
+    "message": "標籤頁畫廊"
+  },
+  "changeArtWork": {
+    "message": "更換藝術作品",
+    "description": "更新設置標題"
+  },
+  "everyNewTab": {
+    "message": "每個新標籤頁",
+    "description": "更新頻率選項 - 每個新標籤頁"
+  },
+  "daily": {
+    "message": "每天更新",
+    "description": "更新頻率選項 - 每天"
+  },
+  "everyHour": {
+    "message": "每小時更新",
+    "description": "更新頻率選項 - 每小時"
+  },
+  "every10Min": {
+    "message": "每10分鐘更新",
+    "description": "更新頻率選項 - 每10分鐘"
+  },
+  "loading": {
+    "message": "載入中...",
+    "description": "載入狀態文字"
+  },
+  "error": {
+    "message": "發生錯誤",
+    "description": "錯誤狀態文字"
+  }
+}

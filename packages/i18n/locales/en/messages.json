@@ -1,30 +1,38 @@
 {
   "extensionDescription": {
-    "description": "Extension description",
-    "message": "Chrome extension boilerplate developed with Vite, React and Typescript"
+    "description": "Art gallery extension",
+    "message": "Extension Desc"
   },
   "extensionName": {
-    "description": "Extension name",
-    "message": "Tab Gallery2"
-  },
-  "toggleTheme": {
-    "message": "Toggle theme"
+    "message": "Tab Gallery2",
+    "description": "Extension name"
   },
   "loading": {
-    "message": "Loading..."
+    "message": "Loading...",
+    "description": "Loading state text"
   },
-  "greeting": {
-    "description": "Greeting message",
-    "message": "Hello, My name is $NAME$",
-    "placeholders": {
-      "name": {
-        "content": "$1",
-        "example": "John Doe"
-      }
-    }
+  "changeArtWork": {
+    "message": "Change Artwork",
+    "description": "Title of artwork update settings"
   },
-  "hello": {
-    "description": "Placeholder example",
-    "message": "Hello $1"
+  "everyNewTab": {
+    "message": "Update on every new tab",
+    "description": "Update frequency option - every new tab"
+  },
+  "daily": {
+    "message": "Update every day",
+    "description": "Update frequency option - daily"
+  },
+  "everyHour": {
+    "message": "Update every hour",
+    "description": "Update frequency option - hourly"
+  },
+  "every10Min": {
+    "message": "Update every 10 minutes",
+    "description": "Update frequency option - every 10 minutes"
+  },
+  "error": {
+    "message": "Error occurred",
+    "description": "Error state text"
   }
 }

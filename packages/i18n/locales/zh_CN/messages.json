@@ -1,0 +1,38 @@
+{
+  "extensionDescription": {
+    "description": "扩展描述",
+    "message": "画廊扩展"
+  },
+  "extensionName": {
+    "description": "扩展名称",
+    "message": "标签页画廊"
+  },
+  "changeArtWork": {
+    "message": "更换艺术作品",
+    "description": "更新设置标题"
+  },
+  "everyNewTab": {
+    "message": "每个新标签页",
+    "description": "更新频率选项 - 每个新标签页"
+  },
+  "daily": {
+    "message": "每天更新",
+    "description": "更新频率选项 - 每天"
+  },
+  "everyHour": {
+    "message": "每小时更新",
+    "description": "更新频率选项 - 每小时"
+  },
+  "every10Min": {
+    "message": "每10分钟更新",
+    "description": "更新频率选项 - 每10分钟"
+  },
+  "loading": {
+    "message": "加载中...",
+    "description": "加载状态文本"
+  },
+  "error": {
+    "message": "发生错误",
+    "description": "错误状态文本"
+  }
+}
