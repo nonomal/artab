@@ -63,12 +63,8 @@ const Options = () => {
             </a>
           </div>
           <div className="links">
-            <a href="https://github.com/username/repo/issues" target="_blank" rel="noopener noreferrer">
+            <a href="https://t.me/+KisLFTUscGVkNjNh" target="_blank" rel="noopener noreferrer">
               {t('feedback')}
-            </a>
-            <span className="divider">·</span>
-            <a href="https://github.com/username/repo" target="_blank" rel="noopener noreferrer">
-              {t('sourceCode')}
             </a>
           </div>
           <div className="version">{t('version', packageJson.version)}</div>

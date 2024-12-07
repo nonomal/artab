@@ -16,7 +16,7 @@ const manifest = {
    * if you want to support multiple languages, you can use the following reference
    * https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Internationalization
    */
-  name: '__MSG_extensionName__',
+  name: 'Artab',
   version: packageJson.version,
   description: '__MSG_extensionDescription__',
   host_permissions: ['https://*.ggpht.com/*', 'https://www.gstatic.com/*'],
@@ -30,17 +30,20 @@ const manifest = {
     type: 'module',
   },
   action: {
-    default_icon: 'icon-34.png',
+    default_icon: 'icon32.png',
   },
   chrome_url_overrides: {
     newtab: 'new-tab/index.html',
   },
   icons: {
-    128: 'icon-128.png',
+    128: 'icon128.png',
+    48: 'icon48.png',
+    32: 'icon32.png',
+    16: 'icon16.png',
   },
   web_accessible_resources: [
     {
-      resources: ['*.js', '*.css', '*.svg', 'icon-128.png', 'icon-34.png'],
+      resources: ['*.js', '*.css', '*.svg', '*.png'],
       matches: ['*://*/*'],
     },
   ],

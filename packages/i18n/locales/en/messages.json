@@ -1,11 +1,7 @@
 {
   "extensionDescription": {
     "description": "Art gallery extension",
-    "message": "Extension Desc"
-  },
-  "extensionName": {
-    "message": "Tab Gallery2",
-    "description": "Extension name"
+    "message": "Art Inspiration for Every New Tab"
   },
   "loading": {
     "message": "Loading...",

@@ -1,11 +1,7 @@
 {
   "extensionDescription": {
     "description": "扩展描述",
-    "message": "画廊扩展"
-  },
-  "extensionName": {
-    "description": "扩展名称",
-    "message": "标签页画廊"
+    "message": "打开新标签页，从有史以来最好的艺术作品中获取灵感"
   },
   "changeArtWork": {
     "message": "更换艺术作品",
