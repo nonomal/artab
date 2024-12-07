@@ -34,6 +34,30 @@ const PageContainer = styled.div`
   overflow: hidden;
 `;
 
+const ArtInfo = styled.div`
+  max-width: 600px;
+  width: 100%;
+  background: #483c32;
+  color: #fff;
+  padding: 20px 24px;
+  margin: 0 40px 40px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+`;
+
+const ArtworkContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:hover > div:last-child {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
 const ArtFrame = styled.div`
   max-width: 600px;
   width: 100%;
@@ -41,7 +65,7 @@ const ArtFrame = styled.div`
   padding: 24px;
   border: 12px solid #483c32;
   position: relative;
-  margin: 40px;
+  margin: 40px 40px 0;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 `;
 
@@ -91,30 +115,15 @@ const NavigationButton = styled.button`
   }
 `;
 
-const ArtInfo = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 20px;
-  transform: translateY(100%);
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: translateY(0);
-  }
+const InfoTitle = styled.h2`
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 500;
 `;
 
-const LoadingSpinner = styled.div`
-  width: 50px;
-  height: 50px;
-  border: 3px solid #f3f3f3;
-  border-top: 3px solid #8b4513;
-  border-radius: 50%;
-  animation: ${spin} 1s linear infinite;
-  margin: 50px auto;
+const InfoText = styled.p`
+  margin: 8px 0;
+  line-height: 1.5;
 `;
 
 const Link = styled.a`
@@ -127,16 +136,14 @@ const Link = styled.a`
   }
 `;
 
-const InfoHandle = styled.div`
-  position: absolute;
-  top: -30px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 5px 15px;
-  border-radius: 5px 5px 0 0;
-  font-size: 12px;
+const LoadingSpinner = styled.div`
+  width: 50px;
+  height: 50px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #8b4513;
+  border-radius: 50%;
+  animation: ${spin} 1s linear infinite;
+  margin: 50px auto;
 `;
 
 const NewTab: React.FC = () => {
@@ -204,37 +211,38 @@ const NewTab: React.FC = () => {
         <NavigationButton>←</NavigationButton>
       </NavigationArea>
 
-      <ArtFrame>
-        {loading ? <LoadingSpinner /> : artwork?.data_url && <ArtImage src={artwork.data_url} alt={artwork.title} />}
-      </ArtFrame>
+      <ArtworkContainer>
+        <ArtFrame>
+          {loading ? <LoadingSpinner /> : artwork?.data_url && <ArtImage src={artwork.data_url} alt={artwork.title} />}
+        </ArtFrame>
+
+        {artwork && (
+          <ArtInfo>
+            <InfoTitle>{artwork.title}</InfoTitle>
+            <InfoText>
+              Artist:{' '}
+              <Link href={artwork.artist_link} target="_blank">
+                {artwork.creator}
+              </Link>
+            </InfoText>
+            <InfoText>
+              Source:{' '}
+              <Link href={artwork.attribution_link} target="_blank">
+                {artwork.attribution}
+              </Link>
+            </InfoText>
+            <InfoText>
+              <Link href={artwork.link} target="_blank">
+                View on Google Arts & Culture
+              </Link>
+            </InfoText>
+          </ArtInfo>
+        )}
+      </ArtworkContainer>
 
       <NavigationArea direction="right" onClick={handleNext}>
         <NavigationButton>→</NavigationButton>
       </NavigationArea>
-
-      {artwork && (
-        <ArtInfo>
-          <h2>{artwork.title}</h2>
-          <p>
-            Artist:{' '}
-            <Link href={artwork.artist_link} target="_blank">
-              {artwork.creator}
-            </Link>
-          </p>
-          <p>
-            Source:{' '}
-            <Link href={artwork.attribution_link} target="_blank">
-              {artwork.attribution}
-            </Link>
-          </p>
-          <p>
-            View on Google Arts & Culture:{' '}
-            <Link href={artwork.link} target="_blank">
-              Learn More
-            </Link>
-          </p>
-        </ArtInfo>
-      )}
     </PageContainer>
   );
 };
