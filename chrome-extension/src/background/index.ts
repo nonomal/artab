@@ -48,5 +48,23 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   return true; // 保持消息通道打开以进行异步响应
 });
 
+// 添加安装监听器
+chrome.runtime.onInstalled.addListener(details => {
+  if (details.reason === 'install') {
+    // 新安装时打开新标签页
+    chrome.tabs.create({
+      url: chrome.runtime.getURL('new-tab/index.html'),
+    });
+  }
+});
+
+// 添加扩展图标点击事件监听器
+chrome.action.onClicked.addListener(() => {
+  // 点击扩展图标时打开新标签页
+  chrome.tabs.create({
+    url: chrome.runtime.getURL('new-tab/index.html'),
+  });
+});
+
 console.log('background loaded');
 console.log("Edit 'chrome-extension/src/background/index.ts' and save to reload.");

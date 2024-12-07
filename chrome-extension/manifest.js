@@ -9,7 +9,7 @@ const isFirefox = process.env.__FIREFOX__ === 'true';
  * After changing, please reload the extension at `chrome://extensions`
  * @type {chrome.runtime.ManifestV3}
  */
-const manifest = deepmerge({
+const manifest = {
   manifest_version: 3,
   default_locale: 'en',
   /**
@@ -27,7 +27,6 @@ const manifest = deepmerge({
     type: 'module',
   },
   action: {
-    default_popup: 'popup/index.html',
     default_icon: 'icon-34.png',
   },
   chrome_url_overrides: {
@@ -42,6 +41,6 @@ const manifest = deepmerge({
       matches: ['*://*/*'],
     },
   ],
-});
+};
 
 export default manifest;
