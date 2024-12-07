@@ -1,11 +1,10 @@
 {
-  "name": "chrome-extension-boilerplate-react-vite",
-  "version": "0.3.4",
-  "description": "chrome extension boilerplate",
-  "license": "MIT",
+  "name": "artab",
+  "version": "2024.12.8",
+  "description": "Get Inspiration from the World's Greatest Artworks Every Time You Open a New Tab",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite.git"
+    "url": "https://github.com/theowenyoung/artab.git"
   },
   "type": "module",
   "scripts": {
