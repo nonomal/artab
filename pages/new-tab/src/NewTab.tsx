@@ -109,9 +109,14 @@ const NavigationButton = styled.button`
   justify-content: center;
   cursor: pointer;
   font-size: 20px;
+  user-select: none;
 
   &:hover {
     background: white;
+  }
+
+  span {
+    pointer-events: none;
   }
 `;
 
@@ -218,7 +223,9 @@ const NewTab: React.FC = () => {
   return (
     <PageContainer>
       <NavigationArea direction="left" onClick={handlePrevious}>
-        <NavigationButton>←</NavigationButton>
+        <NavigationButton>
+          <span>←</span>
+        </NavigationButton>
       </NavigationArea>
 
       <ArtworkContainer>
@@ -250,7 +257,9 @@ const NewTab: React.FC = () => {
       </ArtworkContainer>
 
       <NavigationArea direction="right" onClick={handleNext}>
-        <NavigationButton>→</NavigationButton>
+        <NavigationButton>
+          <span>→</span>
+        </NavigationButton>
       </NavigationArea>
     </PageContainer>
   );
