@@ -38,3 +38,51 @@
 .radio-item input[type="radio"] {
   margin: 0;
 }
+
+.footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+  font-size: 12px;
+  color: #666;
+}
+
+.author {
+  margin-bottom: 8px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.links a {
+  color: #666;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: #333;
+  text-decoration: underline;
+}
+
+.divider {
+  color: #ccc;
+}
+
+.version {
+  margin: 8px 0;
+  color: #999;
+  font-size: 11px;
+}
+
+.author a {
+  color: #666;
+  text-decoration: none;
+}
+
+.author a:hover {
+  color: #333;
+  text-decoration: underline;
+}

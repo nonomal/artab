@@ -34,5 +34,17 @@
   "error": {
     "message": "Error occurred",
     "description": "Error state text"
+  },
+  "feedback": {
+    "message": "Feedback",
+    "description": "Feedback link text"
+  },
+  "sourceCode": {
+    "message": "Source Code",
+    "description": "Source code link text"
+  },
+  "version": {
+    "message": "Version: $1",
+    "description": "Version number display"
   }
 }

@@ -34,5 +34,18 @@
   "error": {
     "message": "發生錯誤",
     "description": "錯誤狀態文字"
+  },
+
+  "feedback": {
+    "message": "題反饋",
+    "description": "反饋鏈接文本"
+  },
+  "sourceCode": {
+    "message": "原始碼",
+    "description": "源代碼鏈接文本"
+  },
+  "version": {
+    "message": "版本：$1",
+    "description": "版本�顯示"
   }
 }

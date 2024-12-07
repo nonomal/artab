@@ -16,15 +16,15 @@
     "description": "更新频率选项 - 每个新标签页"
   },
   "daily": {
-    "message": "每天更新",
+    "message": "每天",
     "description": "更新频率选项 - 每天"
   },
   "everyHour": {
-    "message": "每小时更新",
+    "message": "每小时",
     "description": "更新频率选项 - 每小时"
   },
   "every10Min": {
-    "message": "每10分钟更新",
+    "message": "每 10 分钟",
     "description": "更新频率选项 - 每10分钟"
   },
   "loading": {
@@ -34,5 +34,18 @@
   "error": {
     "message": "发生错误",
     "description": "错误状态文本"
+  },
+
+  "feedback": {
+    "message": "问题反馈",
+    "description": "反馈链接文本"
+  },
+  "sourceCode": {
+    "message": "源代码",
+    "description": "源代码链接文本"
+  },
+  "version": {
+    "message": "版本：$1",
+    "description": "版本号显示"
   }
 }

@@ -2,6 +2,7 @@ import '@src/Options.css';
 import { useStorage, withErrorBoundary, withSuspense } from '@extension/shared';
 import { updateFrequencyStorage } from '@extension/storage';
 import { t } from '@extension/i18n';
+import packageJson from '../../../package.json';
 
 const Options = () => {
   const updateFrequency = useStorage(updateFrequencyStorage);
@@ -53,6 +54,24 @@ const Options = () => {
             />
             <span>{t('daily')}</span>
           </label>
+        </div>
+
+        <div className="footer">
+          <div className="author">
+            <a href="https://www.owenyoung.com" target="_blank" rel="noopener noreferrer">
+              Made by Owen
+            </a>
+          </div>
+          <div className="links">
+            <a href="https://github.com/username/repo/issues" target="_blank" rel="noopener noreferrer">
+              {t('feedback')}
+            </a>
+            <span className="divider">·</span>
+            <a href="https://github.com/username/repo" target="_blank" rel="noopener noreferrer">
+              {t('sourceCode')}
+            </a>
+          </div>
+          <div className="version">{t('version', packageJson.version)}</div>
         </div>
       </div>
     </div>
