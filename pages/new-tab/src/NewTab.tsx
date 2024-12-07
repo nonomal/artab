@@ -192,6 +192,30 @@ const NewTab: React.FC = () => {
     }
   };
 
+  // 添加键盘事件处理函数
+  const handleKeyDown = (event: KeyboardEvent) => {
+    if (loading) return; // 如果正在加载，不响应键盘事件
+
+    switch (event.key) {
+      case 'ArrowLeft':
+        handlePrevious();
+        break;
+      case 'ArrowRight':
+        handleNext();
+        break;
+    }
+  };
+
+  // 添加键盘事件监听
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+
+    // 清理函数
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [loading]); // 依赖 loading 状态
+
   useEffect(() => {
     loadInitialArtwork();
   }, []);
