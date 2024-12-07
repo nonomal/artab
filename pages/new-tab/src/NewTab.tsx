@@ -37,30 +37,12 @@ const PageContainer = styled.div`
 const ArtFrame = styled.div`
   max-width: 600px;
   width: 100%;
-  background: #f8f8f8;
-  box-shadow:
-    0 2px 4px rgba(0, 0, 0, 0.1),
-    0 8px 16px rgba(0, 0, 0, 0.1),
-    0 16px 32px rgba(0, 0, 0, 0.1),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-  padding: 20px;
-  border: 15px solid #8b4513;
-  border-radius: 2px;
+  background: #fff;
+  padding: 24px;
+  border: 12px solid #483c32;
   position: relative;
-  transition: transform 0.3s ease;
-  margin: 20px;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 20px;
-    background: #4a2508;
-    border-radius: 5px 5px 0 0;
-  }
+  margin: 40px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
 `;
 
 const ArtImage = styled.img`
@@ -181,7 +163,7 @@ const NewTab: React.FC = () => {
       setArtwork(image);
     } catch (error) {
       console.error('Failed to load artwork:', error);
-      // tips 提示获取失败，并且给出错误信息
+      // tips 提示取失败，并且给出错误信息
       // alert(`获取艺术品失败: ${error}`);
     } finally {
       setLoading(false);
