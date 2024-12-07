@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import { updateFrequencyStorage, lastUpdateTimeStorage } from '@extension/storage';
+import { t } from '@extension/i18n';
 
 /**
  * 艺术品数据接口定义
@@ -170,6 +171,14 @@ const LoadingContainer = styled.div`
   justify-content: center;
 `;
 
+const ErrorMessage = styled.div`
+  color: #483c32;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  line-height: 1.5;
+`;
+
 // 检查是否需要更新图片
 async function shouldUpdate() {
   const frequency = await updateFrequencyStorage.get();
@@ -193,6 +202,7 @@ async function shouldUpdate() {
 const NewTab: React.FC = () => {
   const [artwork, setArtwork] = useState<AssetData | null>(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   // 发送消息到 background service worker
   const sendMessage = async (type: string) => {
@@ -208,21 +218,32 @@ const NewTab: React.FC = () => {
     }
   };
 
+  // 创建一个通用的超时Promise
+  const createTimeoutPromise = () =>
+    new Promise((_, reject) => {
+      setTimeout(() => {
+        reject(new Error(t('request_timeout')));
+      }, 20000);
+    });
+
   const loadInitialArtwork = async () => {
     try {
-      // 检查是否需要更新
-      if (await shouldUpdate()) {
-        const image = await sendMessage('GET_NEXT_IMAGE');
-        setArtwork(image);
-        // 更新最后更新时间
-        await lastUpdateTimeStorage.set(Date.now());
-      } else {
-        // 如果不需要更新，使用当前图片
-        const image = await sendMessage('GET_INITIAL_IMAGE');
-        setArtwork(image);
-      }
+      setError(null);
+      const loadPromise = (async () => {
+        if (await shouldUpdate()) {
+          const image = await sendMessage('GET_NEXT_IMAGE');
+          setArtwork(image);
+          await lastUpdateTimeStorage.set(Date.now());
+        } else {
+          const image = await sendMessage('GET_INITIAL_IMAGE');
+          setArtwork(image);
+        }
+      })();
+
+      await Promise.race([loadPromise, createTimeoutPromise()]);
     } catch (error) {
       console.error('Failed to load artwork:', error);
+      setError(error instanceof Error ? error.message : '加载失败');
     } finally {
       setLoading(false);
     }
@@ -258,11 +279,14 @@ const NewTab: React.FC = () => {
 
   const handlePrevious = async () => {
     setLoading(true);
+    setError(null);
     try {
-      const prevImage = await sendMessage('GET_PREVIOUS_IMAGE');
+      const loadPromise = sendMessage('GET_PREVIOUS_IMAGE');
+      const prevImage = await Promise.race([loadPromise, createTimeoutPromise()]);
       setArtwork(prevImage);
     } catch (error) {
       console.error('Failed to load previous artwork:', error);
+      setError(error instanceof Error ? error.message : '加载失败');
     } finally {
       setLoading(false);
     }
@@ -270,13 +294,15 @@ const NewTab: React.FC = () => {
 
   const handleNext = async () => {
     setLoading(true);
+    setError(null);
     try {
-      const nextImage = await sendMessage('GET_NEXT_IMAGE');
+      const loadPromise = sendMessage('GET_NEXT_IMAGE');
+      const nextImage = await Promise.race([loadPromise, createTimeoutPromise()]);
       setArtwork(nextImage);
-      // 更新最后更新时间
       await lastUpdateTimeStorage.set(Date.now());
     } catch (error) {
       console.error('Failed to load next artwork:', error);
+      setError(error instanceof Error ? error.message : '加载失败');
     } finally {
       setLoading(false);
     }
@@ -309,12 +335,16 @@ const NewTab: React.FC = () => {
             <LoadingContainer>
               <LoadingSpinner />
             </LoadingContainer>
+          ) : error ? (
+            <LoadingContainer>
+              <ErrorMessage>{error}</ErrorMessage>
+            </LoadingContainer>
           ) : (
             artwork?.data_url && <ArtImage src={artwork.data_url} alt={artwork.title} />
           )}
         </ArtFrame>
 
-        {artwork && (
+        {artwork && !error && (
           <ArtInfo>
             <InfoTitle>
               <Link href={artwork.link} target="_blank">

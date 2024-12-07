@@ -1,4 +1,8 @@
 {
+  "request_timeout": {
+    "message": "请求超时，本服务需要访问谷歌艺术馆的图片资源，请确保你的网络可以访问谷歌。",
+    "description": "请求超时错误信息"
+  },
   "extensionDescription": {
     "description": "扩展描述",
     "message": "让有史以来最好的艺术作品出现在你的新标签页"

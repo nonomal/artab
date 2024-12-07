@@ -3,6 +3,10 @@
     "description": "Art gallery extension",
     "message": "Get Inspiration from the World's Greatest Artworks Every Time You Open a New Tab"
   },
+  "request_timeout": {
+    "message": "Request timed out. This service needs to access image resources from Google Arts & Culture. Please make sure your network can access Google.",
+    "description": "Request timeout error message"
+  },
   "loading": {
     "message": "Loading...",
     "description": "Loading state text"

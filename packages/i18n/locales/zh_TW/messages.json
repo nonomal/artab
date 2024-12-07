@@ -1,4 +1,8 @@
 {
+  "request_timeout": {
+    "message": "請求超時，本服務需要訪問谷歌藝術館的圖片資源，請確保你的網絡可以訪問谷歌。",
+    "description": "請求超時錯誤信息"
+  },
   "extensionDescription": {
     "description": "擴展描述",
     "message": "讓有史以來最好的藝術作品出現在你的新分頁"
