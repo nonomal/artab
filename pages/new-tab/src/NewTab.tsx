@@ -79,7 +79,7 @@ const NavigationArea = styled.div<{ direction: 'left' | 'right' }>`
   position: fixed;
   top: 0;
   ${props => props.direction}: 0;
-  width: 15%;
+  width: 10%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -119,6 +119,16 @@ const InfoTitle = styled.h2`
   margin: 0 0 12px;
   font-size: 18px;
   font-weight: 500;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+    border-bottom: none;
+
+    &:hover {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    }
+  }
 `;
 
 const InfoText = styled.p`
@@ -218,7 +228,11 @@ const NewTab: React.FC = () => {
 
         {artwork && (
           <ArtInfo>
-            <InfoTitle>{artwork.title}</InfoTitle>
+            <InfoTitle>
+              <Link href={artwork.link} target="_blank">
+                {artwork.title}
+              </Link>
+            </InfoTitle>
             <InfoText>
               Artist:{' '}
               <Link href={artwork.artist_link} target="_blank">
@@ -229,11 +243,6 @@ const NewTab: React.FC = () => {
               Source:{' '}
               <Link href={artwork.attribution_link} target="_blank">
                 {artwork.attribution}
-              </Link>
-            </InfoText>
-            <InfoText>
-              <Link href={artwork.link} target="_blank">
-                View on Google Arts & Culture
               </Link>
             </InfoText>
           </ArtInfo>
