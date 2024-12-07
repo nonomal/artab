@@ -80,7 +80,7 @@ const NavigationArea = styled.div<{ direction: 'left' | 'right' }>`
   position: fixed;
   top: 0;
   ${props => props.direction}: 0;
-  width: 10%;
+  width: 8%;
   height: 100%;
   display: flex;
   align-items: center;
@@ -93,7 +93,7 @@ const NavigationArea = styled.div<{ direction: 'left' | 'right' }>`
     opacity: 1;
     background: linear-gradient(
       ${props => (props.direction === 'left' ? 'to right' : 'to left')},
-      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.1),
       transparent
     );
   }
@@ -160,6 +160,14 @@ const LoadingSpinner = styled.div`
   border-radius: 50%;
   animation: ${spin} 1s linear infinite;
   margin: 50px auto;
+`;
+
+const LoadingContainer = styled.div`
+  min-width: 400px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 // 检查是否需要更新图片
@@ -297,7 +305,13 @@ const NewTab: React.FC = () => {
 
       <ArtworkContainer>
         <ArtFrame>
-          {loading ? <LoadingSpinner /> : artwork?.data_url && <ArtImage src={artwork.data_url} alt={artwork.title} />}
+          {loading ? (
+            <LoadingContainer>
+              <LoadingSpinner />
+            </LoadingContainer>
+          ) : (
+            artwork?.data_url && <ArtImage src={artwork.data_url} alt={artwork.title} />
+          )}
         </ArtFrame>
 
         {artwork && (

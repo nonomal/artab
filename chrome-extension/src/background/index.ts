@@ -24,7 +24,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         case 'GET_INITIAL_IMAGE':
           return await getCurrentImage();
         case 'GET_NEXT_IMAGE':
-          console.log('GET_NEXT_IMAGE');
           return await getNextImage();
         case 'GET_PREVIOUS_IMAGE':
           return await getPreviousImage();
