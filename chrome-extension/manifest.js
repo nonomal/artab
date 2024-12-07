@@ -20,7 +20,7 @@ const manifest = {
   version: packageJson.version,
   description: '__MSG_extensionDescription__',
   host_permissions: ['https://*.google-analytics.com/*', 'https://*.ggpht.com/*', 'https://www.gstatic.com/*'],
-  permissions: ['storage', 'tabs', 'alarms'],
+  permissions: ['storage', 'tabs'],
   options_page: 'options/index.html',
   background: {
     service_worker: 'background.iife.js',

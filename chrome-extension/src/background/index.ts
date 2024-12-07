@@ -1,19 +1,17 @@
 import 'webextension-polyfill';
-import { syncData, getImage, getNextImage, getPreviousImage } from '../services/asset';
+import { syncData, getImage, getNextImage, getPreviousImage, getCurrentImage } from '../services/asset';
 
-// 在扩展启动时同步数据
+// 每次启动时同步数据
 syncData().catch(error => {
   console.error('Failed to sync art data:', error);
 });
 
-// 每24小时同步一次数据
-// 这里肯定不会执行，因为后台进程会被杀死
-
-chrome.alarms.create('syncData', { periodInMinutes: 12 * 60 });
-chrome.alarms.onAlarm.addListener(alarm => {
-  if (alarm.name === 'syncData') {
-    syncData().catch(error => {
-      console.error('Failed to sync art data:', error);
+// 监听安装事件
+chrome.runtime.onInstalled.addListener(details => {
+  if (details.reason === 'install') {
+    // 新安装时打开新标签页
+    chrome.tabs.create({
+      url: chrome.runtime.getURL('new-tab/index.html'),
     });
   }
 });
@@ -24,8 +22,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     try {
       switch (request.type) {
         case 'GET_INITIAL_IMAGE':
-          const image = await getImage(0);
-          return image;
+          return await getCurrentImage();
         case 'GET_NEXT_IMAGE':
           console.log('GET_NEXT_IMAGE');
           return await getNextImage();
@@ -48,16 +45,6 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   return true; // 保持消息通道打开以进行异步响应
 });
 
-// 添加安装监听器
-chrome.runtime.onInstalled.addListener(details => {
-  if (details.reason === 'install') {
-    // 新安装时打开新标签页
-    chrome.tabs.create({
-      url: chrome.runtime.getURL('new-tab/index.html'),
-    });
-  }
-});
-
 // 添加扩展图标点击事件监听器
 chrome.action.onClicked.addListener(() => {
   // 点击扩展图标时打开新标签页
@@ -67,4 +54,3 @@ chrome.action.onClicked.addListener(() => {
 });
 
 console.log('background loaded');
-console.log("Edit 'chrome-extension/src/background/index.ts' and save to reload.");

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
+import { updateFrequencyStorage, lastUpdateTimeStorage } from '@extension/storage';
 
 /**
  * 艺术品数据接口定义
@@ -161,6 +162,26 @@ const LoadingSpinner = styled.div`
   margin: 50px auto;
 `;
 
+// 检查是否需要更新图片
+async function shouldUpdate() {
+  const frequency = await updateFrequencyStorage.get();
+  const lastUpdate = await lastUpdateTimeStorage.get();
+  const now = Date.now();
+
+  switch (frequency) {
+    case 'every_tab':
+      return true;
+    case 'every_10min':
+      return now - lastUpdate >= 10 * 60 * 1000;
+    case 'every_hour':
+      return now - lastUpdate >= 60 * 60 * 1000;
+    case 'every_day':
+      return now - lastUpdate >= 24 * 60 * 60 * 1000;
+    default:
+      return false;
+  }
+}
+
 const NewTab: React.FC = () => {
   const [artwork, setArtwork] = useState<AssetData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -181,12 +202,19 @@ const NewTab: React.FC = () => {
 
   const loadInitialArtwork = async () => {
     try {
-      const image = await sendMessage('GET_NEXT_IMAGE');
-      setArtwork(image);
+      // 检查是否需要更新
+      if (await shouldUpdate()) {
+        const image = await sendMessage('GET_NEXT_IMAGE');
+        setArtwork(image);
+        // 更新最后更新时间
+        await lastUpdateTimeStorage.set(Date.now());
+      } else {
+        // 如果不需要更新，使用当前图片
+        const image = await sendMessage('GET_INITIAL_IMAGE');
+        setArtwork(image);
+      }
     } catch (error) {
       console.error('Failed to load artwork:', error);
-      // tips 提示取失败，并且给出错误信息
-      // alert(`获取艺术品失败: ${error}`);
     } finally {
       setLoading(false);
     }
@@ -237,12 +265,27 @@ const NewTab: React.FC = () => {
     try {
       const nextImage = await sendMessage('GET_NEXT_IMAGE');
       setArtwork(nextImage);
+      // 更新最后更新时间
+      await lastUpdateTimeStorage.set(Date.now());
     } catch (error) {
       console.error('Failed to load next artwork:', error);
     } finally {
       setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const checkAndUpdate = async () => {
+      if (await shouldUpdate()) {
+        // 更新图片
+        chrome.runtime.sendMessage({ type: 'GET_NEXT_IMAGE' });
+        // 更新最后更新时间
+        lastUpdateTimeStorage.set(Date.now());
+      }
+    };
+
+    checkAndUpdate();
+  }, []);
 
   return (
     <PageContainer>

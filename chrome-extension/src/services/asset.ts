@@ -31,7 +31,7 @@ const API_CONFIG = {
   jsonUrl: 'https://www.gstatic.com/culturalinstitute/tabext/imax_2_2.json',
   baseUrl: 'https://artsandculture.google.com/',
   imageSize: '=s1920-rw',
-  metadataExpiry: 24 * 60 * 60 * 1000,
+  metadataExpiry: 5 * 60 * 1000,
   preloadCount: 5,
 } as const;
 
@@ -155,7 +155,32 @@ async function loadImageDataUrl(imageUrl: string): Promise<string> {
 let syncDataPromise: Promise<void> | null = null;
 
 /**
+ * 实际执行数据更新的函数
+ */
+async function fetchAndUpdateAssets(): Promise<void> {
+  const response = await fetch(API_CONFIG.jsonUrl);
+  if (!response.ok) {
+    throw new Error(`Failed to fetch data: ${response.statusText}`);
+  }
+
+  const assets = await response.json();
+  await dbWrite(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList, assets);
+  await dbWrite(DB_CONFIG.stores.metadata, STORAGE_KEYS.cacheTimestamp, Date.now().toString());
+}
+
+/**
+ * 异步更新数据，不阻塞主流程
+ */
+function updateAssetsInBackground(): void {
+  fetchAndUpdateAssets().catch(error => {
+    console.error('Background sync failed:', error);
+  });
+}
+
+/**
  * 同步资源数据
+ * 如果有缓存，立即返回并在需要时后台更新
+ * 如果没有缓存，同步获取新数据
  */
 export async function syncData(): Promise<void> {
   // 如果已经在同步中，直接返回已存在的 Promise
@@ -163,21 +188,23 @@ export async function syncData(): Promise<void> {
     return syncDataPromise;
   }
 
+  // 检查缓存
+  const timestamp = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.cacheTimestamp);
+  const currentAssets = await dbRead<AssetData[]>(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList);
+
+  // 如果有缓存
+  if (currentAssets && currentAssets.length > 0) {
+    // 如果缓存过期，在后台更新
+    if (isMetadataExpired(timestamp)) {
+      updateAssetsInBackground();
+    }
+    return;
+  }
+
+  // 没有缓存时，同步获取数据
   syncDataPromise = (async () => {
     try {
-      const timestamp = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.cacheTimestamp);
-      const currentAssets = await dbRead<AssetData[]>(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList);
-
-      if (isMetadataExpired(timestamp) || !currentAssets) {
-        const response = await fetch(API_CONFIG.jsonUrl);
-        if (!response.ok) {
-          throw new Error(`Failed to fetch data: ${response.statusText}`);
-        }
-
-        const assets = await response.json();
-        await dbWrite(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList, assets);
-        await dbWrite(DB_CONFIG.stores.metadata, STORAGE_KEYS.cacheTimestamp, Date.now().toString());
-      }
+      await fetchAndUpdateAssets();
     } finally {
       syncDataPromise = null;
     }
@@ -275,6 +302,15 @@ async function preloadImages(currentIndex: number): Promise<void> {
   }
 
   await Promise.allSettled(promises);
+}
+
+/**
+ * 获取当前图片
+ */
+export async function getCurrentImage(): Promise<AssetData> {
+  const currentIndex = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex);
+  const index = currentIndex ? parseInt(currentIndex) : 0;
+  return getImage(index);
 }
 
 // 导出测试用配置
