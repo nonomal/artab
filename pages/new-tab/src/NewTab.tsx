@@ -26,7 +26,6 @@ const spin = keyframes`
 const PageContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  background: url('${chrome.runtime.getURL('assets/wall-texture.png')}') repeat;
   display: flex;
   flex-direction: column;
   align-items: center;
