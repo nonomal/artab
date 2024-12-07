@@ -16,7 +16,7 @@ const manifest = {
    * if you want to support multiple languages, you can use the following reference
    * https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Internationalization
    */
-  name: 'Artab',
+  name: 'Artab: New Tab with Art',
   version: packageJson.version,
   description: '__MSG_extensionDescription__',
   host_permissions: ['https://*.ggpht.com/*', 'https://www.gstatic.com/*'],
