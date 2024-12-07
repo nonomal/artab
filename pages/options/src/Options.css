@@ -1,8 +1,11 @@
 .options-container {
   width: 100%;
   min-height: 100vh;
-  padding: 12px;
-  font-family: system-ui, -apple-system, sans-serif;
+  padding: 24px;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
   background: #ffffff;
   display: flex;
   justify-content: center;
@@ -10,7 +13,6 @@
 
 .options-content {
   width: 100%;
-  max-width: 300px;
   padding-bottom: 40px;
 }
 
@@ -35,16 +37,47 @@
   font-size: 13px;
 }
 
-.radio-item input[type="radio"] {
+.radio-item input[type='radio'] {
   margin: 0;
 }
 
 .footer {
-  margin-top: 24px;
-  padding-top: 16px;
+  margin-top: 2rem;
+  padding-top: 1rem;
   border-top: 1px solid #eee;
-  font-size: 12px;
+}
+
+.feedback-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.version {
   color: #666;
+  font-size: 0.9rem;
+}
+
+.credits {
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.made-by {
+  margin-bottom: 0.5rem;
+}
+
+.footer a {
+  color: #666;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer a:hover {
+  color: #333;
 }
 
 .author {
@@ -71,12 +104,6 @@
   color: #ccc;
 }
 
-.version {
-  margin: 8px 0;
-  color: #999;
-  font-size: 11px;
-}
-
 .author a {
   color: #666;
   text-decoration: none;
@@ -85,4 +112,10 @@
 .author a:hover {
   color: #333;
   text-decoration: underline;
+}
+
+.privacy-notice {
+  margin-top: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
 }

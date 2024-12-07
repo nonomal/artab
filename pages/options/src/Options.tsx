@@ -57,17 +57,38 @@ const Options = () => {
         </div>
 
         <div className="footer">
-          <div className="author">
-            <a href="https://www.owenyoung.com" target="_blank" rel="noopener noreferrer">
-              Made by Owen
-            </a>
-          </div>
-          <div className="links">
+          <div className="feedback-section">
             <a href="https://t.me/+KisLFTUscGVkNjNh" target="_blank" rel="noopener noreferrer">
               {t('feedback')}
             </a>
+            <span className="version">{t('version', packageJson.version)}</span>
           </div>
-          <div className="version">{t('version', packageJson.version)}</div>
+
+          <div className="credits">
+            <div className="made-by">
+              Made by{' '}
+              <a href="https://www.owenyoung.com" target="_blank" rel="noopener noreferrer">
+                Owen
+              </a>
+            </div>
+            <div className="inspired-by">
+              Inspired by{' '}
+              <a
+                href="https://apps.apple.com/us/app/arts-word-famous-paintings/id6739025807"
+                target="_blank"
+                rel="noopener noreferrer">
+                Arts
+              </a>
+              {' & '}
+              <a
+                href="https://chromewebstore.google.com/detail/google-arts-culture/akimgimeeoiognljlfchpbkpfbmeapkh"
+                target="_blank"
+                rel="noopener noreferrer">
+                Google Arts & Culture
+              </a>
+            </div>
+            <div className="privacy-notice">Your privacy matters, no data collection.</div>
+          </div>
         </div>
       </div>
     </div>
