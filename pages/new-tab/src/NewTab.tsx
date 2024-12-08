@@ -125,18 +125,20 @@ const ArtFrame = styled.div`
   width: 100%;
   background: #fff;
   padding: 24px;
-  border: 12px solid #000; // 纯黑色边框
+  border: 12px solid #000;
   position: relative;
   margin: 40px 0 0;
-  z-index: 1; // 确保画框在光影层上方
+  z-index: 1;
 
   /* 加强画框阴影效果 */
   box-shadow: 
     /* 内部阴影 */
     inset 0 0 30px rgba(0, 0, 0, 0.2),
-    /* 主阴影，更深更大 */ 0 20px 50px rgba(0, 0, 0, 0.5),
+    /* 主阴影 - 更大更柔和 */ 0 20px 50px rgba(0, 0, 0, 0.5),
+    /* 底部投影 - 模拟光线从上方打下的阴影 */ 0 35px 90px -20px rgba(0, 0, 0, 0.7),
+    /* 近距离锐利阴影 */ 0 30px 45px -15px rgba(0, 0, 0, 0.4),
     /* 环境光阴影 */ 0 0 0 1px rgba(0, 0, 0, 0.1),
-    /* 顶部打光，更强烈 */ 0 -5px 20px rgba(255, 255, 255, 0.15);
+    /* 顶部打光 */ 0 -5px 20px rgba(255, 255, 255, 0.15);
 
   /* 画框纹理 */
   &::before {
