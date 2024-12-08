@@ -53,27 +53,36 @@ const PageContainer = styled.div`
 `;
 
 const ArtInfo = styled.div`
-  max-width: 600px;
-  width: 100%;
-  background: #483c32;
-  color: #fff;
-  padding: 20px 24px;
-  margin: 0 40px 40px;
+  position: absolute;
+  right: -320px;
+  bottom: 24px;
+  max-width: 300px;
+  background: #fff;
+  color: #333;
+  padding: 16px 20px;
   font-size: 14px;
-  opacity: 0;
-  transform: translateY(-10px);
+  transform: translateY(0);
   transition: all 0.3s ease;
+  text-align: left;
+
+  /* 卡片阴影效果 */
+  box-shadow: 
+    /* 主阴影 */
+    0 4px 12px rgba(0, 0, 0, 0.1),
+    /* 环境光阴影 */ 0 1px 3px rgba(0, 0, 0, 0.08);
+
+  /* 卡片纸张纹理 */
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
+  background-size: 8px 8px;
 `;
 
 const ArtworkContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  &:hover > div:last-child {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  position: relative;
+  margin-right: 320px;
 `;
 
 const ArtFrame = styled.div`
@@ -191,33 +200,37 @@ const NavigationButton = styled.button`
 `;
 
 const InfoTitle = styled.h2`
-  margin: 0 0 12px;
-  font-size: 18px;
+  margin: 0 0 8px;
+  font-size: 15px;
   font-weight: 500;
+  color: #333;
 
   a {
-    color: #fff;
+    color: #333;
     text-decoration: none;
     border-bottom: none;
 
     &:hover {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+      color: #000;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     }
   }
 `;
 
 const InfoText = styled.p`
-  margin: 8px 0;
-  line-height: 1.5;
+  margin: 4px 0;
+  line-height: 1.4;
+  color: #666;
 `;
 
 const Link = styled.a`
-  color: #fff;
+  color: #666;
   text-decoration: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
   &:hover {
-    border-bottom-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border-bottom-color: rgba(0, 0, 0, 0.3);
   }
 `;
 
@@ -490,7 +503,7 @@ const NewTab: React.FC = () => {
         </NavigationButton>
       </NavigationArea>
 
-      <Attribution>
+      {/* <Attribution>
         Photo by{' '}
         <a
           href="https://unsplash.com/@timmossholder?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
@@ -505,7 +518,7 @@ const NewTab: React.FC = () => {
           rel="noopener noreferrer">
           Unsplash
         </a>
-      </Attribution>
+      </Attribution> */}
     </PageContainer>
   );
 };
