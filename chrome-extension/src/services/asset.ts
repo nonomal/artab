@@ -193,23 +193,60 @@ async function getAssetList(): Promise<AssetData[]> {
   return updatedAssets;
 }
 
+// 添加内存缓存相关的类型和变量
+interface CachedImage {
+  index: number;
+  asset: AssetData;
+}
+
+// 内存缓存队列，保持5张图片
+const memoryCache: Map<number, CachedImage> = new Map();
+const MEMORY_CACHE_SIZE = 5;
+let preloadPromise: Promise<void> | null = null;
+
+// 修改 getImage 函数，优先从内存缓存获取
 export async function getImage(index: number): Promise<AssetData> {
   const assets = await getAssetList();
   if (index < 0 || index >= assets.length) {
     throw new Error(`Invalid index: ${index}`);
   }
 
+  // 先检查内存缓存
+  const cachedImage = memoryCache.get(index);
+  if (cachedImage) {
+    return cachedImage.asset;
+  }
+
   const asset = assets[index];
   const imageUrl = `${asset.image}`;
   const dataUrl = await loadImageDataUrl(imageUrl);
 
-  return {
+  const processedAsset = {
     ...asset,
     data_url: dataUrl,
     artist_link: composeLink(asset.artist_link),
     attribution_link: composeLink(asset.attribution_link),
     link: composeLink(asset.link),
   };
+
+  // 添加到内存缓存
+  updateMemoryCache(index, processedAsset);
+
+  return processedAsset;
+}
+
+// 添加更新内存缓存的函数
+function updateMemoryCache(currentIndex: number, asset: AssetData) {
+  // 添加当前图片到缓存
+  memoryCache.set(currentIndex, { index: currentIndex, asset });
+
+  // 如果缓存超出大小限制，删除最旧的条目
+  if (memoryCache.size > MEMORY_CACHE_SIZE) {
+    // 找到最远的索引
+    const indices = Array.from(memoryCache.keys());
+    const furthestIndex = indices.reduce((a, b) => (Math.abs(b - currentIndex) > Math.abs(a - currentIndex) ? b : a));
+    memoryCache.delete(furthestIndex);
+  }
 }
 
 export async function getNextImage(): Promise<AssetData> {
@@ -234,17 +271,7 @@ export async function getPreviousImage(): Promise<AssetData> {
   return getImage(prevIndex);
 }
 
-export async function clearCache(type: CacheType = 'all'): Promise<void> {
-  if (type === 'all' || type === 'images') {
-    await dbClear(DB_CONFIG.stores.images);
-  }
-  if (type === 'all' || type === 'metadata') {
-    await dbClear(DB_CONFIG.stores.metadata);
-  }
-}
-
-let preloadPromise: Promise<void> | null = null;
-
+// 修改预加载函数，同时更新内存缓存
 async function preloadImages(currentIndex: number): Promise<void> {
   if (preloadPromise) {
     return preloadPromise;
@@ -252,17 +279,34 @@ async function preloadImages(currentIndex: number): Promise<void> {
 
   preloadPromise = (async () => {
     const assets = await getAssetList();
-    const promises: Promise<string | void>[] = [];
+    const promises: Promise<void>[] = [];
 
     for (let i = 1; i <= API_CONFIG.preloadCount; i++) {
       const index = (currentIndex + i) % assets.length;
+
+      // 如果已经在内存缓存中，跳过
+      if (memoryCache.has(index)) {
+        continue;
+      }
+
       const asset = assets[index];
       const imageUrl = `${asset.image}`;
 
       promises.push(
-        loadImageDataUrl(imageUrl).catch(error => {
-          console.error(`Failed to preload image at index ${index}:`, error);
-        }),
+        loadImageDataUrl(imageUrl)
+          .then(dataUrl => {
+            const processedAsset = {
+              ...asset,
+              data_url: dataUrl,
+              artist_link: composeLink(asset.artist_link),
+              attribution_link: composeLink(asset.attribution_link),
+              link: composeLink(asset.link),
+            };
+            updateMemoryCache(index, processedAsset);
+          })
+          .catch(error => {
+            console.error(`Failed to preload image at index ${index}:`, error);
+          }),
       );
     }
 
@@ -280,6 +324,17 @@ export async function getCurrentImage(): Promise<AssetData> {
   const currentIndex = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex);
   const index = currentIndex ? parseInt(currentIndex) : 0;
   return getImage(index);
+}
+
+// 修改 clearCache 函数，同时清除内存缓存
+export async function clearCache(type: CacheType = 'all'): Promise<void> {
+  if (type === 'all' || type === 'images') {
+    await dbClear(DB_CONFIG.stores.images);
+    memoryCache.clear(); // 清除内存缓存
+  }
+  if (type === 'all' || type === 'metadata') {
+    await dbClear(DB_CONFIG.stores.metadata);
+  }
 }
 
 // 导出测试用配置
