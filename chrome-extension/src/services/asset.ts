@@ -1,4 +1,4 @@
-import { meta } from './meta';
+import { meta } from '@extension/shared';
 /**
  * 类型定义
  */
@@ -235,7 +235,7 @@ export async function getImage(index: number): Promise<AssetData> {
   return processedAsset;
 }
 
-// 添加更新内存缓存的函数
+// 添加更新内存缓���的函数
 function updateMemoryCache(currentIndex: number, asset: AssetData) {
   // 添加当前图片到缓存
   memoryCache.set(currentIndex, { index: currentIndex, asset });
@@ -247,28 +247,6 @@ function updateMemoryCache(currentIndex: number, asset: AssetData) {
     const furthestIndex = indices.reduce((a, b) => (Math.abs(b - currentIndex) > Math.abs(a - currentIndex) ? b : a));
     memoryCache.delete(furthestIndex);
   }
-}
-
-export async function getNextImage(): Promise<AssetData> {
-  const assets = await getAssetList();
-  const currentIndex = (await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex)) || '-1';
-  const nextIndex = (Number(currentIndex) + 1) % assets.length;
-
-  await dbWrite(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex, nextIndex.toString());
-
-  // 异步预加载下一批图片
-  preloadImages(nextIndex).catch(console.error);
-
-  return getImage(nextIndex);
-}
-
-export async function getPreviousImage(): Promise<AssetData> {
-  const assets = await getAssetList();
-  const currentIndex = (await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex)) || '0';
-  const prevIndex = (((Number(currentIndex) - 1) % assets.length) + assets.length) % assets.length;
-
-  await dbWrite(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex, prevIndex.toString());
-  return getImage(prevIndex);
 }
 
 // 修改预加载函数，同时更新内存缓存
@@ -318,7 +296,7 @@ async function preloadImages(currentIndex: number): Promise<void> {
 }
 
 /**
- * 获取当前图片
+ * 获取当前��片
  */
 export async function getCurrentImage(): Promise<AssetData> {
   const currentIndex = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex);
@@ -335,6 +313,21 @@ export async function clearCache(type: CacheType = 'all'): Promise<void> {
   if (type === 'all' || type === 'metadata') {
     await dbClear(DB_CONFIG.stores.metadata);
   }
+}
+
+// 获取图片的 data URL
+export async function getImageDataUrl(imageUrl: string): Promise<string> {
+  return loadImageDataUrl(imageUrl);
+}
+
+// 获取/设置当前索引
+export async function getCurrentIndex(): Promise<number> {
+  const index = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex);
+  return index ? parseInt(index) : 0;
+}
+
+export async function setCurrentIndex(index: number): Promise<void> {
+  await dbWrite(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex, index.toString());
 }
 
 // 导出测试用配置

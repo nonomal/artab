@@ -9,6 +9,8 @@ export const meta = [
     link: 'asset/vQEPldpJAUvS4Q',
     title: 'The camp, Sirius Cove',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1419,
   },
   {
     artist_link: 'https://www.google.com/search?q=Nyapanyapa+Yunupingu',
@@ -20,6 +22,8 @@ export const meta = [
     link: 'asset/xQGhkBUyBXAihw',
     title: 'Wild Apple Orchard',
     source: 'CI_TAB',
+    width: 1920,
+    height: 619,
   },
   {
     artist_link: 'https://www.google.com/search?q=Joseph+Mallord+William+Turner',
@@ -31,17 +35,21 @@ export const meta = [
     link: 'asset/WAHNt3hNg2Fz6A',
     title: 'The Roman Tower, Andernach',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1207,
   },
   {
     artist_link: 'https://www.google.com/search?q=Paul+C%C3%A9zanne',
     attribution: 'Indianapolis Museum of Art at Newfields',
     attribution_link: 'partner/indianapolis-museum-of-art',
-    creator: 'Paul C\u00e9zanne',
+    creator: 'Paul Cézanne',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_SOomPViKjtyRqmNkz6q0TlNV9mlUZh4POOgN9RIONtdkdELdlPnetGiYLk4Ccepi7xuIeqqQ.webp',
     link: 'asset/HAEcLEiIhDAl-Q',
     title: 'House in Provence',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1554,
   },
   {
     artist_link: 'https://www.google.com/search?q=Thomas+Moran',
@@ -53,10 +61,12 @@ export const meta = [
     link: 'asset/NwFEpOlPwvx9Yw',
     title: 'The Old Bridge Over Hook Pond, East Hampton, Long Island',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1189,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g122q4xx5',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Pedro Alexandrino',
     image:
@@ -64,28 +74,34 @@ export const meta = [
     link: 'asset/swGuV_w9Zk_6HQ',
     title: 'Ostras e Cobres',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1410,
   },
   {
     artist_link: 'https://www.google.com/search?q=Agust%C3%ADn+Salinas+y+Teruel',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
-    creator: 'Agust\u00edn Salinas y Teruel',
+    creator: 'Agustín Salinas y Teruel',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QkFVubtO1StjQs0UraPdv9IHUqz0siamss6dIKIT33lIV1Z049hhEnxj-i5gPcDcqqFdCAVtck.webp',
     link: 'asset/JQEtl5x5-Dgi7Q',
     title: 'Festa Escolar no Ipiranga',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1269,
   },
   {
     artist_link: 'https://www.google.com/search?q=Eug%C3%A8ne+Delacroix',
     attribution: 'The Museum of Fine Arts, Houston',
     attribution_link: 'partner/the-museum-of-fine-arts-houston',
-    creator: 'Eug\u00e8ne Delacroix',
+    creator: 'Eugène Delacroix',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TWkuAxt9NfBn72yp0lV0KDohNTmPHygxR3350xomyTLAcPib8mxM9JApR24y2aElrOoTriC7U.webp',
     link: 'asset/7QEvX2VgBvI66Q',
     title: 'Shipwreck on the Coast',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1585,
   },
   {
     artist_link: 'https://www.google.com/search?q=Robert+William+Vonnoh',
@@ -97,6 +113,8 @@ export const meta = [
     link: 'asset/-wH1uoTAMs2EsQ',
     title: 'Poppies',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1392,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+William+Hill',
@@ -108,6 +126,8 @@ export const meta = [
     link: 'asset/MQG1jz2aEOLV7Q',
     title: 'Woodland Pool with Men Fishing',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1528,
   },
   {
     artist_link: 'https://www.google.com/search?q=Artist:+Utagawa+Toyoharu',
@@ -119,6 +139,8 @@ export const meta = [
     link: 'asset/7gFaoXT5gME8tA',
     title: 'A Winter Party',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1085,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+Peter+Russell',
@@ -130,17 +152,21 @@ export const meta = [
     link: 'asset/PgG_PV34xukxGg',
     title: "Mon ami 'Polite",
     source: 'CI_TAB',
+    width: 1920,
+    height: 1591,
   },
   {
     artist_link: '',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
-    creator: 'Ludmila Hynkov\u00e1',
+    creator: 'Ludmila Hynková',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_ShJaKhXKGQ_f4vxPjDWegfTCeQwfM0pT21wcNtp7B46NekUJGfIlSVuIh2ZqKilpaLZLWvdx8.webp',
     link: 'asset/qQH-kp9eAfFE3Q',
-    title: 'Kriv\u00e1\u0148 in haze',
+    title: 'Kriváň in haze',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1357,
   },
   {
     artist_link: 'https://www.google.com/search?q=David+Diao',
@@ -152,6 +178,8 @@ export const meta = [
     link: 'asset/awFuZkyJGv9Vtg',
     title: 'Glissement',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1357,
   },
   {
     artist_link: 'https://www.google.com/search?q=Girolamo+Nerli',
@@ -163,6 +191,8 @@ export const meta = [
     link: 'asset/PQFSyqGdVUV9Ug',
     title: 'The voyagers',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1140,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+Henry+Dolph+(American,+1835-1903)',
@@ -174,6 +204,8 @@ export const meta = [
     link: 'asset/UAFc8cYkrJCVrA',
     title: 'Good Friends (Puppy and Kitten)',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1434,
   },
   {
     artist_link: 'https://www.google.com/search?q=Frederick+Judd+Waugh',
@@ -185,6 +217,8 @@ export const meta = [
     link: 'asset/xAGxWxlWQCscsg',
     title: 'Mid Ocean',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1538,
   },
   {
     artist_link: 'https://www.google.com/search?q=Nicholas+Chevalier',
@@ -196,17 +230,21 @@ export const meta = [
     link: 'asset/YgEvgSwuRtnO2Q',
     title: 'Tunnel Rock, Cape Schanck, Victoria',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1213,
   },
   {
     artist_link: 'https://www.google.com/search?q=Estev%C3%A3o+Silva',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
-    creator: 'Estev\u00e3o Silva',
+    creator: 'Estevão Silva',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_Qm52UvgDP0641PzrmVFN3Pm6ICNJ4csZNhcRDUDTDXLBhtYcAiYg_S0s0LGAOUlGix7usSOg.webp',
     link: 'asset/IQEWJqFpz9bJng',
     title: 'Natureza Morta',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1494,
   },
   {
     artist_link: 'https://www.google.com/search?q=Joseph+Stella',
@@ -218,6 +256,8 @@ export const meta = [
     link: 'asset/ZwEvbqVkLDHdUQ',
     title: 'Untitled',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1642,
   },
   {
     artist_link: 'https://www.google.com/search?q=Philips+Koninck',
@@ -229,6 +269,8 @@ export const meta = [
     link: 'asset/NAHczeA15yEolw',
     title: 'Panorama with travellers and herdsmen in the foreground',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1598,
   },
   {
     artist_link: 'https://www.google.com/search?q=Lilly+Martin+Spencer',
@@ -240,6 +282,8 @@ export const meta = [
     link: 'asset/UwGCKRzpeguPFQ',
     title: 'Still Life with Watermelon, Pears, Grapes',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1472,
   },
   {
     artist_link: 'https://www.google.com/search?q=Winslow+Homer',
@@ -249,8 +293,10 @@ export const meta = [
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QC8jty4HeXp1wCY1xLpo7qgBAce_QkS6nJB-PHdEhrMlBXuigljfTbxe8laEDAn6IWLDRgyeE.webp',
     link: 'asset/-AGY3ZcprKO05A',
-    title: 'Seesaw\u2014Gloucester, Massachusetts.',
+    title: 'Seesaw—Gloucester, Massachusetts.',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1278,
   },
   {
     artist_link: 'https://www.google.com/search?q=Ivan+Pokhitonov',
@@ -262,6 +308,8 @@ export const meta = [
     link: 'asset/pwHFfJk5Tb-RKw',
     title: 'Route to Torre del Greco',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1322,
   },
   {
     artist_link: 'https://www.google.com/search?q=E+Phillips+Fox',
@@ -273,6 +321,8 @@ export const meta = [
     link: 'asset/0gGZvkxTRCvFtQ',
     title: 'The ferry',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1432,
   },
   {
     artist_link: 'https://www.google.com/search?q=Kandinsky,+Wassily',
@@ -284,6 +334,8 @@ export const meta = [
     link: 'asset/pAGlNKDwB5vutw',
     title: 'Sketch 160A',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1730,
   },
   {
     artist_link: 'https://www.google.com/search?q=Horatio+Walker+(American,+1858-1938)',
@@ -295,6 +347,8 @@ export const meta = [
     link: 'asset/xAFGL8fk6hl37A',
     title: 'A Watering Place',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1413,
   },
   {
     artist_link: 'https://www.google.com/search?q=Charles+M.+Russell',
@@ -306,6 +360,8 @@ export const meta = [
     link: 'asset/sgHhDe8-Z6ADaA',
     title: 'Lost in a Snowstorm -- We Are Friends',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1053,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g12bfg6hvy',
@@ -317,6 +373,8 @@ export const meta = [
     link: 'asset/hwGchi2YHVAypw',
     title: 'The Men Behind the Village',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1617,
   },
   {
     artist_link: 'https://www.google.com/search?q=Henri+Edmond+Cross',
@@ -328,6 +386,8 @@ export const meta = [
     link: 'asset/2gHng12gXlT0xw',
     title: 'The Flowered Terrace',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1415,
   },
   {
     artist_link: 'https://www.google.com/search?q=Albert+Goodwin',
@@ -339,17 +399,21 @@ export const meta = [
     link: 'asset/8AHrT9HbGV7zaA',
     title: 'The Sultan and his camp by the enchanted lake',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1314,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g121bw8jk',
-    attribution: 'Dion\u00edsio Pinheiro And Alice Cardoso Pinheiro Foundation ',
+    attribution: 'Dionísio Pinheiro And Alice Cardoso Pinheiro Foundation ',
     attribution_link: 'partner/funda%C3%A7%C3%A3o-dionisio-pinheiro',
-    creator: 'Ac\u00e1cio Lino',
+    creator: 'Acácio Lino',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QkR42CdhBVzrrnRpcKyMnKRFq7_4qsVg9VJfFlBgwSBEpwm828ZEBPkQsarqCj4FM51JK4uL4.webp',
     link: 'asset/jgHPoRwZ69Iy7g',
     title: 'Shoo off Birds',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1373,
   },
   {
     artist_link: 'https://www.google.com/search?q=Alberto+Savinio+(Andrea+de+Chirico)',
@@ -361,6 +425,8 @@ export const meta = [
     link: 'asset/AQExw1i8erphbw',
     title: 'Portable island',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1532,
   },
   {
     artist_link: 'https://www.google.com/search?q=Edward+Henry+Potthast',
@@ -372,21 +438,25 @@ export const meta = [
     link: 'asset/0wG6_6rguZB3TA',
     title: 'Boating in Central Park',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1455,
   },
   {
     artist_link: 'https://www.google.com/search?q=Eugene+von+Gu%C3%A9rard',
     attribution: 'Art Gallery of New South Wales',
     attribution_link: 'partner/art-gallery-of-new-south-wales',
-    creator: 'Eugene von Gu\u00e9rard',
+    creator: 'Eugene von Guérard',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_SE9GslBeY5AX_uv9WB_LOeuLXP--st39v1Z0xUaVMnFhJNt2bLa3HyhyYJedkHUTjrurNlXw.webp',
     link: 'asset/7wFNjNw91lfbOQ',
     title: 'Jebel Cherib',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1210,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g122pwdkd',
-    attribution: 'Dion\u00edsio Pinheiro And Alice Cardoso Pinheiro Foundation ',
+    attribution: 'Dionísio Pinheiro And Alice Cardoso Pinheiro Foundation ',
     attribution_link: 'partner/funda%C3%A7%C3%A3o-dionisio-pinheiro',
     creator: 'Arlindo Vicente',
     image:
@@ -394,6 +464,8 @@ export const meta = [
     link: 'asset/UwEaqCoMeq9YOg',
     title: 'Gypsies',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1415,
   },
   {
     artist_link: 'https://www.google.com/search?q=Onderdonk,+Julian',
@@ -405,6 +477,8 @@ export const meta = [
     link: 'asset/HwFl1CWAXDV_QQ',
     title: 'A Road through the Bluebonnets',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1409,
   },
   {
     artist_link: 'https://www.google.com/search?q=George+Bellows',
@@ -416,6 +490,8 @@ export const meta = [
     link: 'asset/-gH9DKZZEV01KQ',
     title: 'The Grove - Monhegan',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1476,
   },
   {
     artist_link: 'https://www.google.com/search?q=Vincent+van+Gogh',
@@ -427,6 +503,8 @@ export const meta = [
     link: 'asset/UwFU5PhONOa0Gg',
     title: 'Bleaching Ground at Scheveningen',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1137,
   },
   {
     artist_link: 'https://www.google.com/search?q=Gino+Severini',
@@ -438,6 +516,8 @@ export const meta = [
     link: 'asset/-gFYREVJdLHcSw',
     title: 'North-South',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1408,
   },
   {
     artist_link: '',
@@ -449,17 +529,21 @@ export const meta = [
     link: 'asset/YQGbyEeXk2_ijw',
     title: 'Untitled',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1197,
   },
   {
     artist_link: 'https://www.google.com/search?q=Jean-L%C3%A9on+G%C3%A9r%C3%B4me',
     attribution: 'The Walters Art Museum',
     attribution_link: 'partner/the-walters-art-museum',
-    creator: 'Jean-L\u00e9on G\u00e9r\u00f4me',
+    creator: 'Jean-Léon Gérôme',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TuFd2Km-7gSN-Cj7vsjCFeR_eqYfrcMHkcptc8D1F_7zkw5UBMBh2G5dEjhzelBR_MNXweKg.webp',
     link: 'asset/9AHvxICOIkYocg',
     title: 'The Tulip Folly',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1250,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+Russell',
@@ -471,10 +555,12 @@ export const meta = [
     link: 'asset/9QE0y-fREJUU2w',
     title: 'Madame Sisley on the banks of the Loing at Moret',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1440,
   },
   {
     artist_link: '',
-    attribution: 'Dion\u00edsio Pinheiro And Alice Cardoso Pinheiro Foundation ',
+    attribution: 'Dionísio Pinheiro And Alice Cardoso Pinheiro Foundation ',
     attribution_link: 'partner/funda%C3%A7%C3%A3o-dionisio-pinheiro',
     creator: 'Xavier',
     image:
@@ -482,6 +568,8 @@ export const meta = [
     link: 'asset/6gGVjQS5WTtZrw',
     title: 'The Dance',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1553,
   },
   {
     artist_link: '',
@@ -493,6 +581,8 @@ export const meta = [
     link: 'asset/YgEAsTQNawrCIQ',
     title: 'Composition T, 50-5',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1274,
   },
   {
     artist_link: 'https://www.google.com/search?q=Jean-Baptiste-Camille+Corot',
@@ -504,6 +594,8 @@ export const meta = [
     link: 'asset/CwH_vASwInhfQw',
     title: 'Villeneuve-les-Avignon',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1185,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11c2mzmgv0',
@@ -515,17 +607,21 @@ export const meta = [
     link: 'asset/8wFnBlRpoLHADQ',
     title: 'Dreamers [diptych]',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1456,
   },
   {
     artist_link: 'https://www.google.com/search?q=Fr%C3%A9d%C3%A9ric+Bazille',
     attribution: 'The Museum of Fine Arts, Houston',
     attribution_link: 'partner/the-museum-of-fine-arts-houston',
-    creator: 'Fr\u00e9d\u00e9ric Bazille',
+    creator: 'Frédéric Bazille',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_Qd1Mw2A7IpztJF-0U7XzDaIoUEz3AXii7tiszle9BHMCht1OcuJS7nCDHi4xsAJl7rc8Fqkg.webp',
     link: 'asset/DQGWt5bbvW9FEQ',
     title: 'The Little Gardener',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1459,
   },
   {
     artist_link: 'https://www.google.com/search?q=Gustave+Caillebotte',
@@ -535,8 +631,10 @@ export const meta = [
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TdTfWwqvel5tOiShWBYpqNmF5zOoIhIxn3Fk7Zq705D_OU8o4aCAXB7HyqROXvWqs5XtIAvqg.webp',
     link: 'asset/4AHq9Hh_r7FPrQ',
-    title: 'Mademoiselle Boissi\u00e8re Knitting',
+    title: 'Mademoiselle Boissière Knitting',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1558,
   },
   {
     artist_link: 'https://www.google.com/search?q=Artist:+James+McNeill+Whistler',
@@ -548,6 +646,8 @@ export const meta = [
     link: 'asset/1gHTB4ywMrdr-g',
     title: 'Two Doorways',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1356,
   },
   {
     artist_link: 'https://www.google.com/search?q=Maurits+Frederik+Hendrik+de+Haas+(Dutch-American,+1832-1895)',
@@ -559,17 +659,21 @@ export const meta = [
     link: 'asset/EgHrQ3Zwo7dlOw',
     title: 'Coastal Scene',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1064,
   },
   {
     artist_link: 'https://www.google.com/search?q=Joseph+L%C3%A9on+Righini',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
-    creator: 'Joseph L\u00e9on Righini',
+    creator: 'Joseph Léon Righini',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TRVxST4f1znD3Y862HhURkEE6B1obsHfVtgUodRu-Y4hOPpAQHQrLyhccXS4rNnIbZqCMRpA.webp',
     link: 'asset/sQH2hM_sHF30aw',
-    title: 'Resid\u00eancia \u00e0s Margens do Rio Anil',
+    title: 'Residência às Margens do Rio Anil',
     source: 'CI_TAB',
+    width: 1920,
+    height: 947,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+Peter+Russell',
@@ -581,6 +685,8 @@ export const meta = [
     link: 'asset/-wFUzO09qPhA1g',
     title: 'Rough sea, Morestil',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1550,
   },
   {
     artist_link: 'https://www.google.com/search?q=Filippo+Juvarra',
@@ -592,10 +698,12 @@ export const meta = [
     link: 'asset/gQFnlysRuLQywg',
     title: 'Architectural capriccio',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1452,
   },
   {
     artist_link: 'https://www.google.com/search?q=Dario+Villares+Barbosa',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Dario Villares Barbosa',
     image:
@@ -603,6 +711,8 @@ export const meta = [
     link: 'asset/BAFI3mEYdHf5Kw',
     title: 'Santos',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1429,
   },
   {
     artist_link: 'https://www.google.com/search?q=Frank+Hinder',
@@ -614,6 +724,8 @@ export const meta = [
     link: 'asset/5wGqIALRJbz_Ug',
     title: 'Abstract painting',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1401,
   },
   {
     artist_link: '',
@@ -625,6 +737,8 @@ export const meta = [
     link: 'asset/AAF1lCxIsHLyDA',
     title: 'Flight Pattern',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1301,
   },
   {
     artist_link: 'https://www.google.com/search?q=Arthur+Streeton',
@@ -636,17 +750,21 @@ export const meta = [
     link: 'asset/-QHfizPdLA5gYA',
     title: 'The national game',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1025,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g120ry1k1',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
     creator: 'Jozef Majkut',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QU1hsCQT9bvgrD0qZUqU4s0Ewf1swIKNFV1f6nlvADpJovIY-ERgxrSzKHKkeC6oEvFOJ7sw.webp',
     link: 'asset/FAGg7pYFcUhmbQ',
-    title: 'High Tatras from \u0160v\u00e1bovce',
+    title: 'High Tatras from Švábovce',
     source: 'CI_TAB',
+    width: 1920,
+    height: 945,
   },
   {
     artist_link: 'https://www.google.com/search?q=Dennis+Miller+Bunker',
@@ -658,6 +776,8 @@ export const meta = [
     link: 'asset/kQEQ5L0VVbV4qg',
     title: 'In the Greenhouse',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1452,
   },
   {
     artist_link: 'https://www.google.com/search?q=O.M.+Sir+Alma-Tadema+Lawrence+R.A.',
@@ -669,6 +789,8 @@ export const meta = [
     link: 'asset/cgGJhGb6MjVeAw',
     title: 'Sappho and Alcaeus',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1050,
   },
   {
     artist_link: 'https://www.google.com/search?q=Adrien+Mayers',
@@ -680,6 +802,8 @@ export const meta = [
     link: 'asset/_gFUNduOqJW8mQ',
     title: "View of Cincinnati from Mr. Pendleton's House",
     source: 'CI_TAB',
+    width: 1920,
+    height: 1190,
   },
   {
     artist_link: 'https://www.google.com/search?q=Thomas+Moran',
@@ -689,8 +813,10 @@ export const meta = [
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QtM0OPkS9yb1RjGsQZ2V8WKizj2LuvNyr-zCYp7e3arAp_XV89epc5ZPi4ZK89c9jg45ZD.webp',
     link: 'asset/mQHHFqVi5xwxog',
-    title: 'Fingal\u2019s Cave, Island of Staffa, Scotland',
+    title: 'Fingal’s Cave, Island of Staffa, Scotland',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1588,
   },
   {
     artist_link: 'https://www.google.com/search?q=Childe+Hassam',
@@ -702,6 +828,8 @@ export const meta = [
     link: 'asset/9QHlYolQSop2sg',
     title: 'Landscape at Newfields, New Hampshire',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1297,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/t219d95hf9v',
@@ -713,6 +841,8 @@ export const meta = [
     link: 'asset/cQHSJxBDnOBWAQ',
     title: 'Untitled - (Eagle and Wave)',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1123,
   },
   {
     artist_link: 'https://www.google.com/search?q=Charles+Conder',
@@ -724,17 +854,21 @@ export const meta = [
     link: 'asset/OAFNfCfU5soa8g',
     title: 'On the River Yarra, near Heidelberg, Victoria',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1422,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g1231rr1g',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
-    creator: 'J\u00e1n H\u00e1la',
+    creator: 'Ján Hála',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_SHh0kzJNUSt21KnJzfxISHrUosvW6_EsDfigVWAYmJ_VqaSEYPf9oZOpo1eY5JUuNohFnL6Q.webp',
     link: 'asset/7gGBg4R8aQVahw',
     title: 'With hay',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1366,
   },
   {
     artist_link: 'https://www.google.com/search?q=James+Gilchrist+Benton',
@@ -746,6 +880,8 @@ export const meta = [
     link: 'asset/iAHBydfVbjRYyQ',
     title: 'Fort Gaines, Sanding, Massachusetts',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1352,
   },
   {
     artist_link: 'https://www.google.com/search?q=Winslow+Homer',
@@ -757,6 +893,8 @@ export const meta = [
     link: 'asset/cQF3sa2P0NytWA',
     title: 'The Guide',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1337,
   },
   {
     artist_link: 'https://www.google.com/search?q=Do+Ho+Suh',
@@ -768,17 +906,21 @@ export const meta = [
     link: 'asset/xAHogrFjjUgj3Q',
     title: 'Karma Juggler',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1411,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11hd53c1km',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
-    creator: 'Andrej Dobo\u0161',
+    creator: 'Andrej Doboš',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TCnklgWPYM8B77MPvohAuOTjCr4EcloT96GkdgCLMbFsRE3qJRVG3qxHKs3DfgRVCwwhUtWA.webp',
     link: 'asset/WgErRnOeuFVdyQ',
     title: 'Under Tatras',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1141,
   },
   {
     artist_link: 'https://www.google.com/search?q=Hieronymus+II+Francken',
@@ -790,6 +932,8 @@ export const meta = [
     link: 'asset/ogH_NJF61Jjjmg',
     title: "The Archdukes Albert and Isabella Visiting a Collector's Cabinet",
     source: 'CI_TAB',
+    width: 1920,
+    height: 1460,
   },
   {
     artist_link: 'https://www.google.com/search?q=Conrad+Martens',
@@ -801,6 +945,8 @@ export const meta = [
     link: 'asset/rAEfXezS0mghxw',
     title: 'View of the Heads, Port Jackson',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1353,
   },
   {
     artist_link: 'https://www.google.com/search?q=Alberto+Pasini',
@@ -812,6 +958,8 @@ export const meta = [
     link: 'asset/CQFR3TMmYlwMkQ',
     title: 'Horse market, Syria',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1409,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/t219d95hn81',
@@ -823,6 +971,8 @@ export const meta = [
     link: 'asset/-gHWTKxE7VAtbA',
     title: 'untitled',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1487,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+James+Audubon',
@@ -834,6 +984,8 @@ export const meta = [
     link: 'asset/ugFkd9EaT2px1w',
     title: 'Long-billed Curlew, Numenius longirostris.',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1287,
   },
   {
     artist_link: 'https://www.google.com/search?q=Fortunato+Depero',
@@ -845,6 +997,8 @@ export const meta = [
     link: 'asset/UgG-1Xh9X556LA',
     title: 'Ploughing',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1162,
   },
   {
     artist_link: 'https://www.google.com/search?q=Claude-Joseph+Vernet',
@@ -856,10 +1010,12 @@ export const meta = [
     link: 'asset/7QH_cWFZVdrqGg',
     title: 'A Calm at a Mediterranean Port',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1491,
   },
   {
     artist_link: '',
-    attribution: 'Dion\u00edsio Pinheiro And Alice Cardoso Pinheiro Foundation ',
+    attribution: 'Dionísio Pinheiro And Alice Cardoso Pinheiro Foundation ',
     attribution_link: 'partner/funda%C3%A7%C3%A3o-dionisio-pinheiro',
     creator: 'Aurora Pinho',
     image:
@@ -867,28 +1023,34 @@ export const meta = [
     link: 'asset/xAGPixUL53u2GA',
     title: 'Symmetries - Fernando Pessoa',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1543,
   },
   {
     artist_link: 'https://www.google.com/search?q=Charles-Fran%C3%A7ois+Daubigny',
     attribution: 'The Museum of Fine Arts, Houston',
     attribution_link: 'partner/the-museum-of-fine-arts-houston',
-    creator: 'Charles-Fran\u00e7ois Daubigny',
+    creator: 'Charles-François Daubigny',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_SZ3rbmil9-FbqhtA5VD4H2oHnfpcvVcR87DMh5NHqzeoj-V_c_e_YQ11Ye4rThUbPofJhSWYM.webp',
     link: 'asset/kQFW2y31CUXpSA',
     title: 'Sluice in the Optevoz Valley',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1065,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g120hnf2t',
     attribution: 'Turiec Gallery',
     attribution_link: 'partner/turiec-gallery',
-    creator: 'Vincent Hlo\u017en\u00edk',
+    creator: 'Vincent Hložník',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_SapMNzhRwbUUsQfkwbCx59rUdvieVYYgNIUbipXnz6MxeeNzaqYRg3MIgoCe6NlUVaxCiuagw.webp',
     link: 'asset/LQGPRD0X2rE-jw',
-    title: 'By the V\u00e1h River. May',
+    title: 'By the Váh River. May',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1305,
   },
   {
     artist_link: 'https://www.google.com/search?q=Thomas+Ender',
@@ -900,6 +1062,8 @@ export const meta = [
     link: 'asset/qAGM0lr9mSteIA',
     title: 'Wooded River Landscape in the Alps',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1235,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+Linnell',
@@ -911,6 +1075,8 @@ export const meta = [
     link: 'asset/kwFXCTxvJBKaSw',
     title: 'A Landscape in Snowdonia with a Tree in the Foreground',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1245,
   },
   {
     artist_link: 'https://www.google.com/search?q=Giuseppe+Capogrossi',
@@ -922,6 +1088,8 @@ export const meta = [
     link: 'asset/ZAGsI-dMwYfeyQ',
     title: 'Surface 213',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1408,
   },
   {
     artist_link: 'https://www.google.com/search?q=Roy+de+Maistre',
@@ -933,6 +1101,8 @@ export const meta = [
     link: 'asset/AgHCHQoPS_3VhQ',
     title: 'On the deck',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1614,
   },
   {
     artist_link: 'https://www.google.com/search?q=Adriaen+van+de+Venne',
@@ -944,6 +1114,8 @@ export const meta = [
     link: 'asset/SQHUYoTEU9hy5A',
     title: 'A Merry Company in an Arbor',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1344,
   },
   {
     artist_link: 'https://www.google.com/search?q=Bernardo+Bellotto',
@@ -955,6 +1127,8 @@ export const meta = [
     link: 'asset/DQEafe-pDCcpiw',
     title: 'View of the Grand Canal and the Dogana',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1115,
   },
   {
     artist_link: 'https://www.google.com/search?q=Vincent+van+Gogh',
@@ -964,19 +1138,23 @@ export const meta = [
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QQwSFeLsjU3wd2tFcvyfIVPotRZVnGIlojqpeI9tw-2Ydcn766yGGwUmOrifmi5Peu5Vz1sH8.webp',
     link: 'asset/dwHRblMadk4YEA',
-    title: 'Landscape at Saint-R\u00e9my (Enclosed Field with Peasant)',
+    title: 'Landscape at Saint-Rémy (Enclosed Field with Peasant)',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1516,
   },
   {
     artist_link: 'https://www.google.com/search?q=%C3%89douard+Manet',
     attribution: 'The J. Paul Getty Museum',
     attribution_link: 'partner/the-j-paul-getty-museum',
-    creator: '\u00c9douard Manet',
+    creator: 'Édouard Manet',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_Q5r94Cfx2WxDbUdPOmqGm3oTTH8Ogc3WX_d5NfnosVqiYHqx9K4fgi5SyyIi1hh1iQdaMZf0w.webp',
     link: 'asset/fQGvGtXegL9B-Q',
     title: 'The Rue Mosnier with Flags',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1551,
   },
   {
     artist_link: 'https://www.google.com/search?q=Ambrosius+Bosschaert+the+Elder',
@@ -988,28 +1166,34 @@ export const meta = [
     link: 'asset/NwEGD5RkEhihQQ',
     title: 'Flower Still Life',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1494,
   },
   {
     artist_link: 'https://www.google.com/search?q=Mart%C3%ADn+Rico+y+Ortega+(Spanish,+1833-1908)',
     attribution: 'The Walters Art Museum',
     attribution_link: 'partner/the-walters-art-museum',
-    creator: 'Mart\u00edn Rico y Ortega (Spanish, 1833-1908)',
+    creator: 'Martín Rico y Ortega (Spanish, 1833-1908)',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QI-MX4cOi1Ujalm4m3vIUcVP-6ffDx-R-S1IWxNMixVAO-Dzv3lW6bNDtLy9RZKJnopHdZ.webp',
     link: 'asset/KQHZan2WPVVn_g',
     title: 'La Huerta, Seville',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1237,
   },
   {
     artist_link: 'https://www.google.com/search?q=Almeida+J%C3%BAnior',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
-    creator: 'Almeida J\u00fanior',
+    creator: 'Almeida Júnior',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QN_JmAEaoEJo-ofN8zPZ5jAJcpAGQzIUUU-nFiB3MYeRrK2ZUCymLcxgLBEZL5WNpht5QiZw.webp',
     link: 'asset/6AEpGpxsSyrAaw',
-    title: 'Estudo para "Parti\u00e7\u00e3o da Mon\u00e7\u00e3o"',
+    title: 'Estudo para "Partição da Monção"',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1175,
   },
   {
     artist_link: 'https://www.google.com/search?q=Hector+Giacomelli+(French,+1822-1904)',
@@ -1021,6 +1205,8 @@ export const meta = [
     link: 'asset/pgFS7qp0rkh4Zw',
     title: 'A Perch of Birds',
     source: 'CI_TAB',
+    width: 1920,
+    height: 623,
   },
   {
     artist_link: 'https://www.google.com/search?q=Frederic+Remington',
@@ -1032,6 +1218,8 @@ export const meta = [
     link: 'asset/zQGCndYM6rlcgA',
     title: 'The Mule Pack',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1317,
   },
   {
     artist_link: 'https://www.google.com/search?q=Clea+Badaro',
@@ -1043,10 +1231,12 @@ export const meta = [
     link: 'asset/9wH5HfEWBo5Rbw',
     title: 'Untitled Paysage',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1577,
   },
   {
     artist_link: 'https://www.google.com/search?q=Dario+Villares+Barbosa',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Dario Villares Barbosa',
     image:
@@ -1054,6 +1244,8 @@ export const meta = [
     link: 'asset/uQEbCR1BqvzfVg',
     title: 'Mulheres (Tanger)',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1564,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+Singer+Sargent',
@@ -1065,6 +1257,8 @@ export const meta = [
     link: 'asset/qQFzQa2cFLtMEQ',
     title: 'Madame Gautreau Drinking a Toast',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1522,
   },
   {
     artist_link: 'https://www.google.com/search?q=Francis+W.+Edmonds',
@@ -1076,6 +1270,8 @@ export const meta = [
     link: 'asset/_AH3fYSc8ZrBtw',
     title: 'Interior Study',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1431,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/t218tpdhznz',
@@ -1087,6 +1283,8 @@ export const meta = [
     link: 'asset/UAGQsxgG0690fw',
     title: 'Untitled',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1080,
   },
   {
     artist_link: 'https://www.google.com/search?q=Arthur+Boyd',
@@ -1098,6 +1296,8 @@ export const meta = [
     link: 'asset/FgFGNAKtgeAN9g',
     title: 'Nebuchadnezzar on fire falling over a waterfall',
     source: 'CI_TAB',
+    width: 1842,
+    height: 1920,
   },
   {
     artist_link: 'https://www.google.com/search?q=Tom+Roberts',
@@ -1109,6 +1309,8 @@ export const meta = [
     link: 'asset/sQFVnGJTo1Y6gw',
     title: 'Bailed up',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1389,
   },
   {
     artist_link: '',
@@ -1120,6 +1322,8 @@ export const meta = [
     link: 'asset/jgGkAl5vOab9jQ',
     title: 'Woman with parasol at Palm Beach',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1564,
   },
   {
     artist_link: 'https://www.google.com/search?q=Adrien+Mayers',
@@ -1131,6 +1335,8 @@ export const meta = [
     link: 'asset/egF-RGBTXfU8uw',
     title: "Mr. Pendleton's House near Deer Creek",
     source: 'CI_TAB',
+    width: 1920,
+    height: 1197,
   },
   {
     artist_link: '',
@@ -1142,6 +1348,8 @@ export const meta = [
     link: 'asset/tgG_JVnbFOxx3A',
     title: 'A token of friendship',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1213,
   },
   {
     artist_link: '',
@@ -1153,17 +1361,21 @@ export const meta = [
     link: 'asset/IgHHOjIcL5EnUg',
     title: 'Caterina Isnarda marchesa di Caluso e Delibera Eleonora S.Martino di Parella marchesa di Rodi',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1756,
   },
   {
     artist_link: 'https://www.google.com/search?q=Paul+S%C3%A9rusier',
     attribution: 'Indianapolis Museum of Art at Newfields',
     attribution_link: 'partner/indianapolis-museum-of-art',
-    creator: 'Paul S\u00e9rusier',
+    creator: 'Paul Sérusier',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_Q7ZJ8vA79zZKwy8uP40Ktg6mvzGegrVg-wrGNSk5jAgAx1qZguuCvTy2b9FVpzEDWvCY54Gho.webp',
     link: 'asset/GAGrUrj9UChTXA',
     title: 'Seaweed Gatherer',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1584,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+MacWhirter',
@@ -1175,6 +1387,8 @@ export const meta = [
     link: 'asset/bwEVC2cxukdCrQ',
     title: 'Mount Etna from the Greek Theatre, Taormina, Sicily',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1214,
   },
   {
     artist_link: '',
@@ -1186,17 +1400,21 @@ export const meta = [
     link: 'asset/lQFT-sfJSoRb7Q',
     title: 'Open Gate',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1417,
   },
   {
     artist_link: 'https://www.google.com/search?q=Chardin,+Jean-Sim%C3%A9on',
     attribution: 'The Museum of Fine Arts, Houston',
     attribution_link: 'partner/the-museum-of-fine-arts-houston',
-    creator: 'Chardin, Jean-Sim\u00e9on',
+    creator: 'Chardin, Jean-Siméon',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_RrFFG6fm-2liKudomkp7G4qj3mqJoRCZXllJnREctnwcHR2-aCkzP7v4i9VGnCJPlbiF3-lKQ.webp',
     link: 'asset/EAFipaZkdZ5bAQ',
     title: 'The Good Education',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1689,
   },
   {
     artist_link: 'https://www.google.com/search?q=Aelbert+Cuyp',
@@ -1208,6 +1426,8 @@ export const meta = [
     link: 'asset/BwElRoWBQK-zLQ',
     title: 'Cattle on a bank',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1500,
   },
   {
     artist_link: 'https://www.google.com/search?q=Pablo+Picasso',
@@ -1219,6 +1439,8 @@ export const meta = [
     link: 'asset/-wFNGvORwNdwkw',
     title: 'Still life with melon',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1147,
   },
   {
     artist_link: 'https://www.google.com/search?q=Spencer+Gore',
@@ -1230,6 +1452,8 @@ export const meta = [
     link: 'asset/kQHFwhKPeDfa0g',
     title: 'The Icknield Way',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1605,
   },
   {
     artist_link: 'https://www.google.com/search?q=Morgan+Russell',
@@ -1241,6 +1465,8 @@ export const meta = [
     link: 'asset/AQEhvm6aRrkMAA',
     title: 'Synchromy',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1824,
   },
   {
     artist_link: 'https://www.google.com/search?q=Donald+Friend',
@@ -1252,6 +1478,8 @@ export const meta = [
     link: 'asset/NwG-44yomc9kJQ',
     title: 'Sofala',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1601,
   },
   {
     artist_link: 'https://www.google.com/search?q=Georges+Seurat',
@@ -1263,6 +1491,8 @@ export const meta = [
     link: 'asset/HQHb5_YVlXnXcA',
     title: 'The Channel of Gravelines, Petit Fort Philippe',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1510,
   },
   {
     artist_link: 'https://www.google.com/search?q=William+James+Glackens',
@@ -1274,6 +1504,8 @@ export const meta = [
     link: 'asset/XQELEtZaK3IOCA',
     title: 'Washington Square',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1598,
   },
   {
     artist_link: 'https://www.google.com/search?q=Henri+Rousseau',
@@ -1285,17 +1517,21 @@ export const meta = [
     link: 'asset/WAFKMD3ymhrp_g',
     title: 'A Centennial of Independence',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1350,
   },
   {
     artist_link: 'https://www.google.com/search?q=Eugene+von+Gu%C3%A9rard',
     attribution: 'Art Gallery of New South Wales',
     attribution_link: 'partner/art-gallery-of-new-south-wales',
-    creator: 'Eugene von Gu\u00e9rard',
+    creator: 'Eugene von Guérard',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_RdNKMTSfCS94bZTfu7lqcOwvvw9IJAPebYV8IUWvJpl-vMswowg-9Yie9Wp4ZPpRyk9NRvHDF-.webp',
     link: 'asset/8wFAP2hmAMwAPQ',
     title: 'Milford Sound, New Zealand',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1081,
   },
   {
     artist_link: 'https://www.google.com/search?q=Janko+Alexy',
@@ -1307,6 +1543,8 @@ export const meta = [
     link: 'asset/kQFqj6oN9rG2yQ',
     title: 'By the Lake',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1510,
   },
   {
     artist_link: 'https://www.google.com/search?q=Attributed+to+Alfred+Stevens',
@@ -1318,6 +1556,8 @@ export const meta = [
     link: 'asset/rwH5Hm0STedBdA',
     title: 'Elegant Figures in a Salon',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1398,
   },
   {
     artist_link: 'https://www.google.com/search?q=Angelo+Trezzini',
@@ -1329,6 +1569,8 @@ export const meta = [
     link: 'asset/VgEBjU50fG_CwA',
     title: 'Reading a Letter from the Camp',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1427,
   },
   {
     artist_link: 'https://www.google.com/search?q=Richard+H.+Kern',
@@ -1340,10 +1582,12 @@ export const meta = [
     link: 'asset/HgHFakq3WgziTw',
     title: 'New Mexican Aqueduct. Santa Fe Creek, New Mexico',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1430,
   },
   {
     artist_link: 'https://www.google.com/search?q=Henri+Nicolas+Vinet',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Henri Nicolas Vinet',
     image:
@@ -1351,6 +1595,8 @@ export const meta = [
     link: 'asset/JQGBk2Z54ITMqA',
     title: 'Vista do Convento de Santa Teresa Tomada do Alto de Paula Matos',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1300,
   },
   {
     artist_link: 'https://www.google.com/search?q=Henri+Edmond+Cross',
@@ -1362,17 +1608,21 @@ export const meta = [
     link: 'asset/LQFBHynDuDtE6Q',
     title: 'Regatta in Venice',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1524,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g1231rr1g',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
-    creator: 'J\u00e1n H\u00e1la',
+    creator: 'Ján Hála',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TyTbWMwzIAiLQljp07dxTTwmebs6WAhp4EjxD_5MByA1EdoX_YfMCOWki1VEcIZi5u5ZDY3w.webp',
     link: 'asset/TgGxH5YoyqqPaw',
     title: 'Winter with geese',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1920,
   },
   {
     artist_link: 'https://www.google.com/search?q=Alfred+Thompson+Bricher+(American,+1837-1908)',
@@ -1384,6 +1634,8 @@ export const meta = [
     link: 'asset/-AEV13HNKwuw-g',
     title: 'Coastal Scene',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1361,
   },
   {
     artist_link: 'https://www.google.com/search?q=Julian+Onderdonk',
@@ -1395,17 +1647,21 @@ export const meta = [
     link: 'asset/8QH3EBQrgPqotA',
     title: 'A Cloudy Day, Bluebonnets near San Antonio, Texas',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1591,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11c61lnn85',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
-    creator: 'Jozef Fab\u00edni',
+    creator: 'Jozef Fabíni',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_ThuM0FZO8ihTOAQQvRYjVgb2yUX6BQ8zqHQXR6X4sqC160lJQOlHnxZAJVyRf9sek061i_SXY.webp',
     link: 'asset/OwH5xPV4ikuhlA',
     title: 'Autumn under the Tatras',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1478,
   },
   {
     artist_link: 'https://www.google.com/search?q=Willy+Tjungurrayi',
@@ -1417,6 +1673,8 @@ export const meta = [
     link: 'asset/aQFkL2bfj5a-hg',
     title: 'Tingari Story',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1293,
   },
   {
     artist_link: 'https://www.google.com/search?q=Ralph+Balson',
@@ -1428,17 +1686,21 @@ export const meta = [
     link: 'asset/VAHM26lU3iM0QA',
     title: 'Abstraction',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1282,
   },
   {
     artist_link: 'https://www.google.com/search?q=Almeida+J%C3%BAnior',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
-    creator: 'Almeida J\u00fanior',
+    creator: 'Almeida Júnior',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_Q8Vw-lTRJJCUvALhLy11aC6t9rzpeG7QPIMVhYqLDP1aIfxjD51jdh1Fp_jxLMWXyc1XwmpQ.webp',
     link: 'asset/OwGQi9iigj2YRA',
     title: 'Family Scene',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1477,
   },
   {
     artist_link: 'https://www.google.com/search?q=Joseph+Stella',
@@ -1450,6 +1712,8 @@ export const meta = [
     link: 'asset/yQFvCHCvznNjbQ',
     title: 'Futurist Composition',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1441,
   },
   {
     artist_link: 'https://www.google.com/search?q=Artist:+Traditionally+attributed+to+Qiu+Ying',
@@ -1461,17 +1725,21 @@ export const meta = [
     link: 'asset/3QGeNe61IJCd1Q',
     title: 'Spring Festival on the River',
     source: 'CI_TAB',
+    width: 1920,
+    height: 929,
   },
   {
     artist_link: 'https://www.google.com/search?q=Mart%C3%ADn+Rico+y+Ortega+(Spanish,+1833-1908)',
     attribution: 'The Walters Art Museum',
     attribution_link: 'partner/the-walters-art-museum',
-    creator: 'Mart\u00edn Rico y Ortega (Spanish, 1833-1908)',
+    creator: 'Martín Rico y Ortega (Spanish, 1833-1908)',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_R5gSdVzuT3ooXtstKrtNDdjGocnu1L1cBEBcpAcVrIZxjVwjz2N_KedUobgV48mPSSzEDkpcU.webp',
     link: 'asset/XAForQ8DvtrBhQ',
     title: 'Fisherman, Seville',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1315,
   },
   {
     artist_link: 'https://www.google.com/search?q=Francesco+Guardi',
@@ -1483,6 +1751,8 @@ export const meta = [
     link: 'asset/gQFxbgVwEckl_g',
     title: 'The Grand Canal, Venice, with the Palazzo Bembo',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1161,
   },
   {
     artist_link: 'https://www.google.com/search?q=Jasper+Francis+Cropsey',
@@ -1494,6 +1764,8 @@ export const meta = [
     link: 'asset/QgFSc_UgNw9xrw',
     title: 'Summer, Lake Ontario',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1196,
   },
   {
     artist_link: 'https://www.google.com/search?q=E+Phillips+Fox',
@@ -1505,6 +1777,8 @@ export const meta = [
     link: 'asset/GQFrqfSnNleVog',
     title: 'The milking shed',
     source: 'CI_TAB',
+    width: 1920,
+    height: 730,
   },
   {
     artist_link: 'https://www.google.com/search?q=William+Bradford',
@@ -1516,17 +1790,21 @@ export const meta = [
     link: 'asset/GAEu2KtJLJ4fcQ',
     title: 'Whaler and Fishing Vessels near the Coast of Labrador',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1118,
   },
   {
     artist_link: 'https://www.google.com/search?q=Antonio+Parreiras',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Antonio Parreiras',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_Tnct98zUsbLb_yHzkvVmtzYslZiTFAmWXf7KFw10uukWUIRkJ96315QtaBbN4ADR0CxX0GOfo.webp',
     link: 'asset/VwFkXEFms1Luzg',
-    title: 'Dia de Morma\u00e7o',
+    title: 'Dia de Mormaço',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1253,
   },
   {
     artist_link: 'https://www.google.com/search?q=Seif+Wanly',
@@ -1538,29 +1816,35 @@ export const meta = [
     link: 'asset/bwHPoHNKqiruRg',
     title: 'Nocturne',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1597,
   },
   {
     artist_link:
       'https://www.google.com/search?q=Fran%C3%A7ois+R%C3%A9gis+Gignoux+(French,+active+in+the+United+States,+1816-1882)',
     attribution: 'The Walters Art Museum',
     attribution_link: 'partner/the-walters-art-museum',
-    creator: 'Fran\u00e7ois R\u00e9gis Gignoux (French, active in the United States, 1816-1882)',
+    creator: 'François Régis Gignoux (French, active in the United States, 1816-1882)',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_RfA-SIeBuefpeSKChUwVhqGoI1oTafAEmqK1Of-Xsh9f2DqRM8ITKSyo11f5B4jfsD_Ildfw.webp',
     link: 'asset/hQE5NSAwW-KSUg',
     title: 'Winter landscape',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1066,
   },
   {
     artist_link: 'https://www.google.com/search?q=Paul+S%C3%A9rusier',
     attribution: 'The Museum of Fine Arts, Houston',
     attribution_link: 'partner/the-museum-of-fine-arts-houston',
-    creator: 'Paul S\u00e9rusier',
+    creator: 'Paul Sérusier',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_Qdt8V8yJ56mnjZOKCvuwHEx0AdnafDzH9sU5QgoJNO8Pi28tFWRUNllckTymZEBGlzpPLewg.webp',
     link: 'asset/GAHXL4Oald6OAg',
     title: 'Landscape at Le Pouldu',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1542,
   },
   {
     artist_link: 'https://www.google.com/search?q=George+Inness',
@@ -1572,6 +1856,8 @@ export const meta = [
     link: 'asset/bAE2IJw4xtutFg',
     title: 'The Rainbow',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1274,
   },
   {
     artist_link: 'https://www.google.com/search?q=William+Holman+Hunt',
@@ -1583,6 +1869,8 @@ export const meta = [
     link: 'asset/cwEkhBfphYXMRg',
     title: 'Study of a bloodhound',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1733,
   },
   {
     artist_link: 'https://www.google.com/search?q=Artist:+Charles+Adams+Platt',
@@ -1594,6 +1882,8 @@ export const meta = [
     link: 'asset/8AH8xjm7kSBX7w',
     title: 'The Mountain',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1517,
   },
   {
     artist_link: 'https://www.google.com/search?q=Oscar+Bluemner',
@@ -1605,6 +1895,8 @@ export const meta = [
     link: 'asset/TgEei_Vcg418DQ',
     title: 'Blue Day',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1412,
   },
   {
     artist_link: 'https://www.google.com/search?q=Edward+W.+Redfield',
@@ -1616,6 +1908,8 @@ export const meta = [
     link: 'asset/qAGwCbIvqM5ixw',
     title: 'Trout Brook',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1719,
   },
   {
     artist_link: 'https://www.google.com/search?q=Jan+Baptist+Weenix',
@@ -1627,17 +1921,21 @@ export const meta = [
     link: 'asset/PAFKppT4vA4OJQ',
     title: 'Figures among ruins',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1469,
   },
   {
     artist_link: 'https://www.google.com/search?q=Modesto+Brocos+y+Gomes',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Modesto Brocos y Gomes',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QwtKba4NsCyiq1oUpkoovPAYra_jl90gQosd1FGe4IEKisEK29KHYkPbjAsQ7-CrHGYJp39A.webp',
     link: 'asset/0gHzVK_oYmf54A',
-    title: 'Olevano Romano, It\u00e1lia',
+    title: 'Olevano Romano, Itália',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1283,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11b60rqlms',
@@ -1649,6 +1947,8 @@ export const meta = [
     link: 'asset/-QHbwq4yEIw-Mg',
     title: '"Abschied der Auswanderer"',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1200,
   },
   {
     artist_link: 'https://www.google.com/search?q=Daniel+Ridgway+Knight',
@@ -1660,6 +1960,8 @@ export const meta = [
     link: 'asset/CAFdoW3mRiKjYg',
     title: 'An Idle Moment',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1492,
   },
   {
     artist_link: 'https://www.google.com/search?q=William+Merritt+Chase',
@@ -1671,17 +1973,21 @@ export const meta = [
     link: 'asset/tQH-8zyK-5r6nw',
     title: 'Idle Hours',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1387,
   },
   {
     artist_link: 'https://www.google.com/search?q=Armand+S%C3%A9guin',
     attribution: 'Indianapolis Museum of Art at Newfields',
     attribution_link: 'partner/indianapolis-museum-of-art',
-    creator: 'Armand S\u00e9guin',
+    creator: 'Armand Séguin',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TKqBEHn3w4303P8-d7PQZqdUbI6lEdFIexnflAnCNIuPMUCjiDC8-iI8wauTmIWbHr3sBU9Q.webp',
     link: 'asset/KAFk9qq39ymYEg',
-    title: 'Two Thatched Cottages (Les deux chaumi\u00e8res)',
+    title: 'Two Thatched Cottages (Les deux chaumières)',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1263,
   },
   {
     artist_link: 'https://www.google.com/search?q=Claude+Raguet+Hirst',
@@ -1691,8 +1997,10 @@ export const meta = [
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_Rn31CFfIP60ZF0H5I74goENY_2_NdXzj0Gb51U_qzq1-ChBu_erSz2rySoi0NBAFxs_Cdphw.webp',
     link: 'asset/zgFcXak6LykzVA',
-    title: 'A Gentleman\u2019s Table',
+    title: 'A Gentleman’s Table',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1074,
   },
   {
     artist_link: 'https://www.google.com/search?q=Mahmoud+Hammad',
@@ -1704,6 +2012,8 @@ export const meta = [
     link: 'asset/MQE-8wSMD-WTIQ',
     title: 'Arab Scientists',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1275,
   },
   {
     artist_link: 'https://www.google.com/search?q=Giovanni+Paolo+Pannini',
@@ -1715,6 +2025,8 @@ export const meta = [
     link: 'asset/-AE3ILgtOID7ww',
     title: 'View of Castello di Rivoli',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1481,
   },
   {
     artist_link: 'https://www.google.com/search?q=Camille+Pissarro',
@@ -1726,6 +2038,8 @@ export const meta = [
     link: 'asset/QgGHxgs5iZgNnA',
     title: "Peasants' houses, Eragny",
     source: 'CI_TAB',
+    width: 1920,
+    height: 1544,
   },
   {
     artist_link: 'https://www.google.com/search?q=Giuseppe+Canella',
@@ -1737,6 +2051,8 @@ export const meta = [
     link: 'asset/TAF_5PkmTBIgwg',
     title: 'View of the Naviglio Canal from the San Marco Bridge in Milan',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1521,
   },
   {
     artist_link: 'https://www.google.com/search?q=Frederic+Edwin+Church',
@@ -1748,6 +2064,8 @@ export const meta = [
     link: 'asset/vwHbZkdW5VzLwg',
     title: 'New England Landscape',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1294,
   },
   {
     artist_link: '',
@@ -1759,6 +2077,8 @@ export const meta = [
     link: 'asset/BAFfFz-HJIek0A',
     title: '[River Scene with House]',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1379,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11fz6d0134',
@@ -1770,10 +2090,12 @@ export const meta = [
     link: 'asset/2AE9g1l869mQmw',
     title: 'City of Monterey, California. November First, 1875.',
     source: 'CI_TAB',
+    width: 1920,
+    height: 834,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g120s1sr0',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Pablo Salinas',
     image:
@@ -1781,6 +2103,8 @@ export const meta = [
     link: 'asset/mwGtfCvjxSUSEA',
     title: 'As Festas Romanas do Coliseu',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1140,
   },
   {
     artist_link: 'https://www.google.com/search?q=Jean+Victor+Bertin',
@@ -1792,17 +2116,21 @@ export const meta = [
     link: 'asset/EwEwugnnj1k4VQ',
     title: 'Landscape',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1410,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g122_s2dh',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
-    creator: 'Jo\u00e3o Baptista da Costa',
+    creator: 'João Baptista da Costa',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TRh8V6lALaVufRq493DgCqviKEJEYMMlK1k3rr4TRNXoE5rchXZ1jjgayTCWK6heimQQX-ug.webp',
     link: 'asset/6AH_PbHM_eyuMQ',
     title: 'Paisagem',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1254,
   },
   {
     artist_link: 'https://www.google.com/search?q=WC+Piguenit',
@@ -1814,6 +2142,8 @@ export const meta = [
     link: 'asset/0gHwLtcVNegmwQ',
     title: 'Mount Olympus, Lake St Clair, Tasmania, the source of the Derwent',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1239,
   },
   {
     artist_link: 'https://www.google.com/search?q=Suleiman+Mansour',
@@ -1825,6 +2155,8 @@ export const meta = [
     link: 'asset/yQEmVBFyLi1_tA',
     title: 'Quiet Morning',
     source: 'CI_TAB',
+    width: 1879,
+    height: 1920,
   },
   {
     artist_link: 'https://www.google.com/search?q=Katsushika+Hokusai',
@@ -1834,19 +2166,23 @@ export const meta = [
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_REddLDzs6DiHZdBC_RUlJaYvU6R2ekDX-pefiStFKjHUofYR6umE2qTtseNkEhAz77NsY7hg.webp',
     link: 'asset/iwHKYC1Qfk9NCg',
-    title: 'Fine Wind, Clear Morning (Gaif\u016b kaisei)',
+    title: 'Fine Wind, Clear Morning (Gaifū kaisei)',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1296,
   },
   {
     artist_link: '',
     attribution: 'Turiec Gallery',
     attribution_link: 'partner/turiec-gallery',
-    creator: 'O\u013ega Kr\u00fdslov\u00e1',
+    creator: 'Oľga Krýslová',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TXZHaOHV0LTdaVRUBX9yH-FPGUQPzohxNCmnLWwAL5pJed9IYCAddTV3_-wZMLkBObZxKkAqGe.webp',
     link: 'asset/RAEVMM8MUQzJvw',
     title: "Under the Pohan's Mountain",
     source: 'CI_TAB',
+    width: 1920,
+    height: 1695,
   },
   {
     artist_link: 'https://www.google.com/search?q=Walter+Ufer',
@@ -1858,6 +2194,8 @@ export const meta = [
     link: 'asset/PAESLSOVpsGC3g',
     title: 'Crossing the Rio Grande',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1599,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g1218d7p_',
@@ -1869,6 +2207,8 @@ export const meta = [
     link: 'asset/wQHexRBamjTbEw',
     title: 'Marine',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1290,
   },
   {
     artist_link: 'https://www.google.com/search?q=E+Phillips+Fox',
@@ -1880,10 +2220,12 @@ export const meta = [
     link: 'asset/1QGzTMEobreRmw',
     title: 'Heidelberg',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1219,
   },
   {
     artist_link: 'https://www.google.com/search?q=Michael+Barrett+(1926-2004)',
-    attribution: 'Dion\u00edsio Pinheiro And Alice Cardoso Pinheiro Foundation ',
+    attribution: 'Dionísio Pinheiro And Alice Cardoso Pinheiro Foundation ',
     attribution_link: 'partner/funda%C3%A7%C3%A3o-dionisio-pinheiro',
     creator: 'Michael Barrett (1926-2004)',
     image:
@@ -1891,21 +2233,25 @@ export const meta = [
     link: 'asset/egFbfYFSeyR3NQ',
     title: 'Aveiro',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1344,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g121s45jw',
-    attribution: 'Dion\u00edsio Pinheiro And Alice Cardoso Pinheiro Foundation ',
+    attribution: 'Dionísio Pinheiro And Alice Cardoso Pinheiro Foundation ',
     attribution_link: 'partner/funda%C3%A7%C3%A3o-dionisio-pinheiro',
-    creator: 'Jos\u00e9 Maria Sousa de Moura Gir\u00e3o',
+    creator: 'José Maria Sousa de Moura Girão',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_SjasLW2zefBuFURFdiVY-zg0WZz2J9gMnUbsnmzdiUw0DGwuO8lPsTazqwvkNmt-vXjWk1cgI.webp',
     link: 'asset/ZgG4URNqU4Cdhg',
     title: 'My First Egg',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1349,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g122q4xx5',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Pedro Alexandrino',
     image:
@@ -1913,6 +2259,8 @@ export const meta = [
     link: 'asset/aAF3y8H-ZaJwug',
     title: 'Grapes and Peaches',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1564,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11f129wpln',
@@ -1924,6 +2272,8 @@ export const meta = [
     link: 'asset/_wGmChuba6MlCg',
     title: 'Wang Xingwei, Untitled (Old Lady No. 2)',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1905,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/t219d95ls1j',
@@ -1935,6 +2285,8 @@ export const meta = [
     link: 'asset/LwGMYsmBHDT9Yg',
     title: 'From Edgewood to the Edge of the World',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1275,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/t218tpdl9yn',
@@ -1946,6 +2298,8 @@ export const meta = [
     link: 'asset/XQEtbAyajYPP5g',
     title: 'Scorpion',
     source: 'CI_TAB',
+    width: 1920,
+    height: 932,
   },
   {
     artist_link: 'https://www.google.com/search?q=Vincent+van+Gogh',
@@ -1957,28 +2311,34 @@ export const meta = [
     link: 'asset/FQGCv3VmbCcxow',
     title: 'The Rocks',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1605,
   },
   {
     artist_link: 'https://www.google.com/search?q=Bernard,+%C3%89mile',
     attribution: 'The Museum of Fine Arts, Houston',
     attribution_link: 'partner/the-museum-of-fine-arts-houston',
-    creator: 'Bernard, \u00c9mile',
+    creator: 'Bernard, Émile',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_RzN44weamqBJ0wLP-79SGvCIA2IxhdNQ1BE-pnQ0g75OIcChDsrCTI7XqMAykn0RSEa_mY3Wo.webp',
     link: 'asset/-wFg5OxrxmIpeA',
     title: 'Woman Walking on the Banks of the Aven',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1498,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g120sq2cf',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
-    creator: 'Karol Tib\u00e9ly',
+    creator: 'Karol Tibély',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QC1SvjQG0J8W2M2spQdQkfrB9MggV54VtN_gTfUzxVEKdzMBr9go4yvGvLKqsgsQ7XrHZI.webp',
     link: 'asset/RgG4-7dAphZsdw',
-    title: 'Star\u00fd Smokovec',
+    title: 'Starý Smokovec',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1359,
   },
   {
     artist_link: 'https://www.google.com/search?q=Elling+William+Gollings',
@@ -1990,6 +2350,8 @@ export const meta = [
     link: 'asset/QAEQXTVTWvI1rw',
     title: 'Going to the Wagon',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1384,
   },
   {
     artist_link: 'https://www.google.com/search?q=Edward+Hopper',
@@ -2001,6 +2363,8 @@ export const meta = [
     link: 'asset/OwFXUQC1loAkew',
     title: 'New York, New Haven and Hartford',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1228,
   },
   {
     artist_link: 'https://www.google.com/search?q=Ralph+Balson',
@@ -2012,6 +2376,8 @@ export const meta = [
     link: 'asset/HwFlT1kK7DM14g',
     title: 'Painting no. 9',
     source: 'CI_TAB',
+    width: 1914,
+    height: 1920,
   },
   {
     artist_link: '',
@@ -2023,6 +2389,8 @@ export const meta = [
     link: 'asset/SQHKFre39IPHDQ',
     title: 'Diana a cavallo',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1791,
   },
   {
     artist_link: 'https://www.google.com/search?q=Beppe+Ciardi',
@@ -2034,6 +2402,8 @@ export const meta = [
     link: 'asset/uQET-k6DMC4nvA',
     title: 'Preparations for the Feast of the Redeemer in Venice',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1398,
   },
   {
     artist_link: 'https://www.google.com/search?q=George+Luks',
@@ -2045,6 +2415,8 @@ export const meta = [
     link: 'asset/AQEYYmapINCiJw',
     title: 'Girl under Arched Bridge',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1606,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/t219hrtq89m',
@@ -2056,17 +2428,21 @@ export const meta = [
     link: 'asset/MAGWXekj3tsx0g',
     title: 'Di-Rotta',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1270,
   },
   {
     artist_link: 'https://www.google.com/search?q=Alfredo+Janu%C3%A1rio+de+Moraes',
-    attribution: 'Dion\u00edsio Pinheiro And Alice Cardoso Pinheiro Foundation ',
+    attribution: 'Dionísio Pinheiro And Alice Cardoso Pinheiro Foundation ',
     attribution_link: 'partner/funda%C3%A7%C3%A3o-dionisio-pinheiro',
-    creator: 'Alfredo Janu\u00e1rio de Moraes',
+    creator: 'Alfredo Januário de Moraes',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QIOxRYmE4bW0IKl-X8FDYH4LpmslNMwjDzaZ8VHBJ591NI9rp3wIg4ND2zqLf6GPUe9LHouOA.webp',
     link: 'asset/cAE8z76WUz-dZw',
     title: 'Pilgrimage of Our Lady of Agonia (Viana do Castelo)',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1357,
   },
   {
     artist_link: 'https://www.google.com/search?q=Albert+Bierstadt',
@@ -2078,17 +2454,21 @@ export const meta = [
     link: 'asset/CAGWrVJOZABrcA',
     title: 'Sunrise, Yosemite Valley',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1329,
   },
   {
     artist_link: '',
     attribution: 'Turiec Gallery',
     attribution_link: 'partner/turiec-gallery',
-    creator: 'O\u013ega Kr\u00fdslov\u00e1',
+    creator: 'Oľga Krýslová',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TGzXfY9Sw6HpkBR9q_CJ9yjKwF6wbmGIEV2LPkfenNaKkEPgNNTogBgm7dy1Y8VZQsN8KWRvI.webp',
     link: 'asset/JQHZ_o6s84QXCg',
     title: 'Clean River',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1587,
   },
   {
     artist_link: 'https://www.google.com/search?q=Alfred+Thompson+Bricher+(American,+1837-1908)',
@@ -2100,17 +2480,21 @@ export const meta = [
     link: 'asset/EAFFBL7O0DITPg',
     title: 'Lake View',
     source: 'CI_TAB',
+    width: 1920,
+    height: 972,
   },
   {
     artist_link: 'https://www.google.com/search?q=Antonio+Parreiras',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Antonio Parreiras',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_RhePGudFEQIjizyX4dc0Gij7Xjjz1wsx3LaDopAhE4mJKyvin5KJwnhsZILzfLaBrfipgB9ok.webp',
     link: 'asset/rQFUFgWSlvgLQA',
-    title: 'Paisagem (\u00c1gua Parada)',
+    title: 'Paisagem (Água Parada)',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1409,
   },
   {
     artist_link: 'https://www.google.com/search?q=Alexander+Hay+Ritchie+after+Daniel+Huntington',
@@ -2122,17 +2506,21 @@ export const meta = [
     link: 'asset/-AEDixbmjIYGoA',
     title: "Lady Washington's Reception",
     source: 'CI_TAB',
+    width: 1920,
+    height: 1373,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11bcckg_ss',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
-    creator: 'Jozef Koll\u00e1r',
+    creator: 'Jozef Kollár',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QyBi12ibGihpw7UecxQJ-oIMnwsMkuoJnLx5UvpYo6Bkpyq_B7NGVv1Pq_xqydF7gKUYj5ir4.webp',
     link: 'asset/fAGi00Sdy_FJ6w',
     title: 'Autumn in the Tatras',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1628,
   },
   {
     artist_link: 'https://www.google.com/search?q=Artist:+Winslow+Homer',
@@ -2144,6 +2532,8 @@ export const meta = [
     link: 'asset/8gGeqnLXps73Dw',
     title: 'Waterfall in the Adirondacks',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1349,
   },
   {
     artist_link: '',
@@ -2155,6 +2545,8 @@ export const meta = [
     link: 'asset/zgEyYobxEScG3Q',
     title: 'Trace of Existence',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1279,
   },
   {
     artist_link: 'https://www.google.com/search?q=Nicholas+Chevalier',
@@ -2166,10 +2558,12 @@ export const meta = [
     link: 'asset/NgFsNGw9ASmOrg',
     title: 'Pulpit Rock, Cape Schanck, Victoria',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1266,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g121bwb3j',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
     creator: 'Gejza Kieselbach',
     image:
@@ -2177,6 +2571,8 @@ export const meta = [
     link: 'asset/mwHWrttrxgn5PA',
     title: 'On pasture',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1488,
   },
   {
     artist_link: 'https://www.google.com/search?q=Artist:+James+McNeill+Whistler',
@@ -2188,6 +2584,8 @@ export const meta = [
     link: 'asset/-AGQoh-OMC_KLw',
     title: 'A Little Red Note: Dordrecht',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1147,
   },
   {
     artist_link: 'https://www.google.com/search?q=Charles+Lanman+(American,+1819-1895)',
@@ -2199,6 +2597,8 @@ export const meta = [
     link: 'asset/WgFGsxVYzrfjuw',
     title: 'On the Atlantic',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1394,
   },
   {
     artist_link: 'https://www.google.com/search?q=Ralph+Balson',
@@ -2210,6 +2610,8 @@ export const meta = [
     link: 'asset/QQEtGI6cbB0-Nw',
     title: 'Construction in green',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1466,
   },
   {
     artist_link: 'https://www.google.com/search?q=Adrien+Mayers',
@@ -2221,6 +2623,8 @@ export const meta = [
     link: 'asset/XAHR3z42EPGhRQ',
     title: 'View of Cincinnati from Near Deer Creek',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1204,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11bbxnb22g',
@@ -2232,28 +2636,34 @@ export const meta = [
     link: 'asset/XAGpgnDjtXeobA',
     title: 'Untitled',
     source: 'CI_TAB',
+    width: 1920,
+    height: 973,
   },
   {
     artist_link: 'https://www.google.com/search?q=Almeida+J%C3%BAnior',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
-    creator: 'Almeida J\u00fanior',
+    creator: 'Almeida Júnior',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_S7JHo_a5kdRkEQ5WIYjnzZT1NFvOCXz9vpjETW_d5a2bdxBDtRDwkt6ZvNcnL5l_qSahSX2g.webp',
     link: 'asset/4wHhm-1_kTN27g',
     title: 'Ponte da Tabatinguera',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1466,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g122_96yy',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
-    creator: 'Ferdinand Engelm\u0171ller',
+    creator: 'Ferdinand Engelműller',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_T_LOqJPliSPWxnS_cIwJIf5SinZvIxOTx7Ykq_SBUnX8p083sfaAgI04b053ZRHHrADRYlbZU.webp',
     link: 'asset/0wFv-mfXkdRzKw',
     title: 'The mountain landscape',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1572,
   },
   {
     artist_link: 'https://www.google.com/search?q=Albert+Ruger',
@@ -2265,6 +2675,8 @@ export const meta = [
     link: 'asset/3QHhCz2Fzi5yTA',
     title: "Bird's Eye View of the City of Omaha Nebraska, 1868.",
     source: 'CI_TAB',
+    width: 1920,
+    height: 1521,
   },
   {
     artist_link: 'https://www.google.com/search?q=Theodoor+Rombouts',
@@ -2276,6 +2688,8 @@ export const meta = [
     link: 'asset/7gFrJfluym_XEQ',
     title: 'Musical company with Bacchus',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1244,
   },
   {
     artist_link: 'https://www.google.com/search?q=Klit+and+Vhils',
@@ -2287,6 +2701,8 @@ export const meta = [
     link: 'asset/CgEAIbK3_Ygjuw',
     title: 'untitled',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1109,
   },
   {
     artist_link: 'https://www.google.com/search?q=Walter+Ufer',
@@ -2298,6 +2714,8 @@ export const meta = [
     link: 'asset/fgGoB8AaCPVTIw',
     title: 'In an Arroyo',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1713,
   },
   {
     artist_link: 'https://www.google.com/search?q=Herbert+Badham',
@@ -2309,6 +2727,8 @@ export const meta = [
     link: 'asset/CAEJGudB0BW5Lw',
     title: 'Breakfast piece',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1556,
   },
   {
     artist_link: 'https://www.google.com/search?q=Marwan+Kassab+Bachi',
@@ -2320,6 +2740,8 @@ export const meta = [
     link: 'asset/DgGoyqMYygQgAQ',
     title: 'July 2006',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1268,
   },
   {
     artist_link: 'https://www.google.com/search?q=Albert+Bierstadt+(American,+1830-1902)',
@@ -2331,6 +2753,8 @@ export const meta = [
     link: 'asset/TQET1hbvtsO9Lg',
     title: 'The Blue Grotto, Capri',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1486,
   },
   {
     artist_link: 'https://www.google.com/search?q=WC+Piguenit',
@@ -2342,10 +2766,12 @@ export const meta = [
     link: 'asset/vwG9TVHnwSlfgA',
     title: 'The Upper Nepean',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1349,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11b6b52x9w',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
     creator: 'Jozef Theodor Mousson',
     image:
@@ -2353,6 +2779,8 @@ export const meta = [
     link: 'asset/qQFH7IyOWa7NQQ',
     title: 'Ms. reeve',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1512,
   },
   {
     artist_link: 'https://www.google.com/search?q=Rembrandt+Harmensz+van+Rijn+(anonymous+pupil+of)',
@@ -2364,6 +2792,8 @@ export const meta = [
     link: 'asset/EgHZTTqrQIxWHw',
     title: 'A painter in his studio',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1614,
   },
   {
     artist_link: 'https://www.google.com/search?q=Thomas+Ender',
@@ -2375,6 +2805,8 @@ export const meta = [
     link: 'asset/YAFfEa-XYsDI6g',
     title: 'View of the Residence of Archduke Johann in Gastein Hot Springs',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1265,
   },
   {
     artist_link: 'https://www.google.com/search?q=Julian+Onderdonk',
@@ -2386,6 +2818,8 @@ export const meta = [
     link: 'asset/iwFG1e3QAODeiQ',
     title: 'Untitled (Field of Bluebonnets)',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1155,
   },
   {
     artist_link: 'https://www.google.com/search?q=Martin+Johnson+Heade',
@@ -2397,6 +2831,8 @@ export const meta = [
     link: 'asset/8wH6_L-LRlRc7A',
     title: 'Marsh Sunset, Newburyport, Massachusetts',
     source: 'CI_TAB',
+    width: 1920,
+    height: 959,
   },
   {
     artist_link: '',
@@ -2408,6 +2844,8 @@ export const meta = [
     link: 'asset/KgFKuMP-hu3zsQ',
     title: 'Rhythmic composition in yellow green minor',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1413,
   },
   {
     artist_link: 'https://www.google.com/search?q=Tom+Roberts',
@@ -2419,6 +2857,8 @@ export const meta = [
     link: 'asset/DAGCv9WXj1aQxw',
     title: "An autumn morning, Milson's Point, Sydney",
     source: 'CI_TAB',
+    width: 1920,
+    height: 1127,
   },
   {
     artist_link: 'https://www.google.com/search?q=Denis+Miller+Bunker',
@@ -2430,6 +2870,8 @@ export const meta = [
     link: 'asset/fAHkrt_r6AeU3Q',
     title: 'Chrysanthemums',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1442,
   },
   {
     artist_link: 'https://www.google.com/search?q=Giovanni+Battista+Tiepolo',
@@ -2441,6 +2883,8 @@ export const meta = [
     link: 'asset/4gEkPywk8RdKxQ',
     title: 'Scipio Africanus Freeing Massiva',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1087,
   },
   {
     artist_link: 'https://www.google.com/search?q=George+Inness',
@@ -2452,6 +2896,8 @@ export const meta = [
     link: 'asset/jwFx7LL5CJzKFQ',
     title: 'Landscape',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1270,
   },
   {
     artist_link: 'https://www.google.com/search?q=Fitz+Henry+Lane',
@@ -2463,6 +2909,8 @@ export const meta = [
     link: 'asset/qQHRHH9pj16XWg',
     title: 'Boston Harbor',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1138,
   },
   {
     artist_link: 'https://www.google.com/search?q=David+Diao',
@@ -2474,17 +2922,21 @@ export const meta = [
     link: 'asset/_gEfZtR9a1RfSg',
     title: 'Morocco',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1039,
   },
   {
     artist_link: 'https://www.google.com/search?q=Adolpho+Fonzari',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Adolpho Fonzari',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_RfYYT07WwuCMhFCgOYmeU-AmDda_5Qf7_C86h9Qwg64mXVN9teNig7LmqtvxWAQ7vhNqtXlVQ.webp',
     link: 'asset/CwHkOWLFDXf1Vw',
-    title: 'Pra\u00e7a Ramos de Azevedo',
+    title: 'Praça Ramos de Azevedo',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1260,
   },
   {
     artist_link: '',
@@ -2496,6 +2948,8 @@ export const meta = [
     link: 'asset/DAE9dibxPkkKLQ',
     title: 'Earthquake',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1411,
   },
   {
     artist_link: 'https://www.google.com/search?q=Lord+Frederic+Leighton',
@@ -2507,6 +2961,8 @@ export const meta = [
     link: 'asset/vAHs5MC2OXyC_w',
     title: 'Winding the skein',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1177,
   },
   {
     artist_link: 'https://www.google.com/search?q=Edward+Sheriff+Curtis',
@@ -2518,6 +2974,8 @@ export const meta = [
     link: 'asset/UgGZlmfY4uq5nQ',
     title: 'The Kutenai Duck Hunter',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1222,
   },
   {
     artist_link: 'https://www.google.com/search?q=George+Bellows',
@@ -2529,6 +2987,8 @@ export const meta = [
     link: 'asset/hQEd_zSSM6QDGw',
     title: 'Rock Reef, Maine',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1468,
   },
   {
     artist_link: 'https://www.google.com/search?q=William+Bradford',
@@ -2540,6 +3000,8 @@ export const meta = [
     link: 'asset/rQFoF27ZFg4B6w',
     title: 'Coastal Rocks, Nahant: A Sketch',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1326,
   },
   {
     artist_link: 'https://www.google.com/search?q=Stik',
@@ -2551,17 +3013,21 @@ export const meta = [
     link: 'asset/VgEaQsPcGaXh0w',
     title: 'The Guardian Angel',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1278,
   },
   {
     artist_link: 'https://www.google.com/search?q=Maria+Guia+Pimp%C3%A3o',
-    attribution: 'Dion\u00edsio Pinheiro And Alice Cardoso Pinheiro Foundation ',
+    attribution: 'Dionísio Pinheiro And Alice Cardoso Pinheiro Foundation ',
     attribution_link: 'partner/funda%C3%A7%C3%A3o-dionisio-pinheiro',
-    creator: 'Maria Guia Pimp\u00e3o',
+    creator: 'Maria Guia Pimpão',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_Rq50WcQcqP3NMe-ERMdXRZ2a-hsfzk0xCn1YOVl7VpKXVPM3o0iV7QhZTFkfduUx7fsHCvSkQ.webp',
     link: 'asset/6wHfpydp8d1b1w',
     title: 'And sometimes the nights last for months...',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1440,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11b5m3vrk2',
@@ -2573,6 +3039,8 @@ export const meta = [
     link: 'asset/-wHgkMxpFRON1w',
     title: 'Campagna Landscape on the Via Flaminia',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1011,
   },
   {
     artist_link: 'https://www.google.com/search?q=William+Turner+of+Oxford',
@@ -2584,6 +3052,8 @@ export const meta = [
     link: 'asset/HAGIEYnTIG59gw',
     title: 'Stonehenge - Twilight',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1307,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11g6wc06rf',
@@ -2595,6 +3065,8 @@ export const meta = [
     link: 'asset/xQHK5MQ90cLFvw',
     title: 'Dibirdibi country',
     source: 'CI_TAB',
+    width: 1920,
+    height: 625,
   },
   {
     artist_link: 'https://www.google.com/search?q=Arturo+Ferrari',
@@ -2606,6 +3078,8 @@ export const meta = [
     link: 'asset/OAGEANFGts8luQ',
     title: 'In the Old Street (Vicolo San Bernardino alle Ossa a Milano)',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1305,
   },
   {
     artist_link: '',
@@ -2617,6 +3091,8 @@ export const meta = [
     link: 'asset/4gEw6FPYeQumjw',
     title: 'Yujo reclining and reading a musical score',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1060,
   },
   {
     artist_link: '',
@@ -2626,12 +3102,14 @@ export const meta = [
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_REBMn2KIw4eIi2FwJ0KlGBgYXL9932Dgk32iLC_kIpTA07PogAStqwmVMkgMsEs5ncMcgP7A.webp',
     link: 'asset/BwFQDiMmqN3vOA',
-    title: 'The Tiber at Castel Sant\u2019Angelo, Seen from the South',
+    title: 'The Tiber at Castel Sant’Angelo, Seen from the South',
     source: 'CI_TAB',
+    width: 1920,
+    height: 762,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/t218ryp5g4t',
-    attribution: 'WOOL | Covilh\u00e3 Urban Art Festival',
+    attribution: 'WOOL | Covilhã Urban Art Festival',
     attribution_link: 'partner/wool-festival',
     creator: 'ARM COLLECTIVE',
     image:
@@ -2639,6 +3117,8 @@ export const meta = [
     link: 'asset/FwGvz-xsGogXuQ',
     title: 'Untitled',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1280,
   },
   {
     artist_link: 'https://www.google.com/search?q=Edward+Moran',
@@ -2650,6 +3130,8 @@ export const meta = [
     link: 'asset/-QH8xrVpyCQpcA',
     title: "Off Norman's Woe",
     source: 'CI_TAB',
+    width: 1920,
+    height: 934,
   },
   {
     artist_link: 'https://www.google.com/search?q=Mary+Cassatt',
@@ -2661,17 +3143,21 @@ export const meta = [
     link: 'asset/BgHYVIMpIkIAvg',
     title: 'Children in a Garden (The Nurse)',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1536,
   },
   {
     artist_link: 'https://www.google.com/search?q=Nicola+Fabricatore',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Nicola Fabricatore',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_Soq-FPjqkND6K3XTfPfzIbFCfY5zwL5bxUy9DX0zUTpway3bnFLK8zZFyZAuQ004RhScwV1g.webp',
     link: 'asset/QwGNmNiushIRKg',
-    title: '\u00daltimas Compras',
+    title: 'Últimas Compras',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1417,
   },
   {
     artist_link: 'https://www.google.com/search?q=Frederic+Remington',
@@ -2683,17 +3169,21 @@ export const meta = [
     link: 'asset/aAFuRdDXhQp_mg',
     title: 'The Herd Boy',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1147,
   },
   {
     artist_link: '',
     attribution: 'Turiec Gallery',
     attribution_link: 'partner/turiec-gallery',
-    creator: 'O\u013ega Kr\u00fdslov\u00e1',
+    creator: 'Oľga Krýslová',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_SFeeAeaeiL_rLLDmDpq5G5YGQP2HXoGDsnPlPjZVtMiPgvV4er2ua3XRhcxVI-lUNxsPMytA.webp',
     link: 'asset/CgGBv6TpmAW3KQ',
     title: 'In the Winter',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1586,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+Fulton+Folinsbee',
@@ -2705,6 +3195,8 @@ export const meta = [
     link: 'asset/UAECIjA9d2zKEg',
     title: 'Ellingston Rock',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1226,
   },
   {
     artist_link: 'https://www.google.com/search?q=Artist:+James+McNeill+Whistler',
@@ -2716,17 +3208,21 @@ export const meta = [
     link: 'asset/9AEYQ0lcI-oFuA',
     title: 'Newspaper-Stall, Rue de Seine',
     source: 'CI_TAB',
+    width: 1920,
+    height: 873,
   },
   {
     artist_link: 'https://www.google.com/search?q=Arthur+Tim%C3%B3theo+da+Costa',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
-    creator: 'Arthur Tim\u00f3theo da Costa',
+    creator: 'Arthur Timótheo da Costa',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_T9Hb6UuStBWduTnWtxq7RlwXF3yfs5f25THy0uaJ5tVNklXH9TOidW2FndM9RrWmq21cj29g.webp',
     link: 'asset/uwHoYPiZYNoBug',
-    title: 'No Ateli\u00ea',
+    title: 'No Ateliê',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1538,
   },
   {
     artist_link: 'https://www.google.com/search?q=Arthur+Streeton',
@@ -2738,6 +3234,8 @@ export const meta = [
     link: 'asset/YQF1aovzpt1YMQ',
     title: 'The creek',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1269,
   },
   {
     artist_link: 'https://www.google.com/search?q=Filippo+Carcano',
@@ -2749,6 +3247,8 @@ export const meta = [
     link: 'asset/jgE716VTCbn9oQ',
     title: 'In Midwinter',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1368,
   },
   {
     artist_link: 'https://www.google.com/search?q=Thomas+Moran',
@@ -2760,6 +3260,8 @@ export const meta = [
     link: 'asset/lAHGKM7k1ihIqQ',
     title: 'Cliffs of Green River',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1049,
   },
   {
     artist_link: 'https://www.google.com/search?q=Winslow+Homer',
@@ -2771,17 +3273,21 @@ export const meta = [
     link: 'asset/zwG0Ib0V-EZa5g',
     title: 'The Boat Builders',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1118,
   },
   {
     artist_link: '',
-    attribution: 'Dion\u00edsio Pinheiro And Alice Cardoso Pinheiro Foundation ',
+    attribution: 'Dionísio Pinheiro And Alice Cardoso Pinheiro Foundation ',
     attribution_link: 'partner/funda%C3%A7%C3%A3o-dionisio-pinheiro',
     creator: 'Maria dos Santos',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_SU059ray5VEUM6rsk1S0Vb8m8QW2viE6nq_YjPOJ10JVvk56F7yFg5vpebanV5nLXxM0bhxg.webp',
     link: 'asset/AAE8CXlZNnZtaQ',
-    title: '\u00c1gueda River',
+    title: 'Águeda River',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1645,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+Singer+Sargent',
@@ -2793,10 +3299,12 @@ export const meta = [
     link: 'asset/jQE_xiWg2QdRIA',
     title: 'Rio dei Mendicanti, Venice',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1352,
   },
   {
     artist_link: 'https://www.google.com/search?q=Alessandro+Ciccarelli',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Alessandro Ciccarelli',
     image:
@@ -2804,17 +3312,21 @@ export const meta = [
     link: 'asset/yAFXEJRgq1PYLg',
     title: 'Rio de Janeiro',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1299,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g121thw72',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
-    creator: 'Jos\u00e9 Wasth Rodrigues',
+    creator: 'José Wasth Rodrigues',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_Rv40xgwA7zf3XQ2IFvbqs0Bio5H4abvkm1HzfqtWp-y2B7uXj8LkOyf-mJu891jKypk4lG7A.webp',
     link: 'asset/uAEevUGgINC5Ig',
     title: 'Paisagem de Minas Gerais',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1435,
   },
   {
     artist_link: 'https://www.google.com/search?q=Julian+Onderdonk',
@@ -2824,8 +3336,10 @@ export const meta = [
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QvCfGFucK-zVfZSRjflb6qyw3E0ugi6BuLODCTrdf8sdvVJRD_OjtV4YDg_clgVQLT7TlsWxM.webp',
     link: 'asset/2QGDE_e2UgUhCA',
-    title: 'Early Spring\u2014Bluebonnets and Mesquite',
+    title: 'Early Spring—Bluebonnets and Mesquite',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1448,
   },
   {
     artist_link: 'https://www.google.com/search?q=Willard+Leroy+Metcalf',
@@ -2837,10 +3351,12 @@ export const meta = [
     link: 'asset/dAFSj3SHUYHkKg',
     title: 'Sunlight and Shadow',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1494,
   },
   {
     artist_link: '',
-    attribution: 'Dion\u00edsio Pinheiro And Alice Cardoso Pinheiro Foundation ',
+    attribution: 'Dionísio Pinheiro And Alice Cardoso Pinheiro Foundation ',
     attribution_link: 'partner/funda%C3%A7%C3%A3o-dionisio-pinheiro',
     creator: 'Edite Melo',
     image:
@@ -2848,6 +3364,8 @@ export const meta = [
     link: 'asset/KQHAS1Dvivk2uQ',
     title: 'Seaweed',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1277,
   },
   {
     artist_link: 'https://www.google.com/search?q=Frederic+Edwin+Church',
@@ -2859,6 +3377,8 @@ export const meta = [
     link: 'asset/5QGf_h6Dl58qhQ',
     title: 'Cotopaxi',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1236,
   },
   {
     artist_link: 'https://www.google.com/search?q=Hugh+Henry+Breckenridge',
@@ -2870,6 +3390,8 @@ export const meta = [
     link: 'asset/wwEDvrrbX4Fh3w',
     title: 'Italian Fruit Dish',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1856,
   },
   {
     artist_link: 'https://www.google.com/search?q=Ernest+Lawson',
@@ -2881,6 +3403,8 @@ export const meta = [
     link: 'asset/bgHZTPRTin5rkw',
     title: 'Upper Harlem River',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1569,
   },
   {
     artist_link: 'https://www.google.com/search?q=Jean-Antoine+Watteau',
@@ -2892,6 +3416,8 @@ export const meta = [
     link: 'asset/pQH5jKyt5Z-pTw',
     title: 'The Country Dance',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1592,
   },
   {
     artist_link: 'https://www.google.com/search?q=Lowell+Birge+Harrison',
@@ -2903,6 +3429,8 @@ export const meta = [
     link: 'asset/TAH-RI2Gt7gwww',
     title: 'A Puff of Steam',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1609,
   },
   {
     artist_link: '',
@@ -2914,6 +3442,8 @@ export const meta = [
     link: 'asset/SAHumwN6Y412xw',
     title: 'Green City',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1885,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/t219d95m8qy',
@@ -2925,6 +3455,8 @@ export const meta = [
     link: 'asset/pAEWA1B7X2mtPw',
     title: 'confident and fearless',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1280,
   },
   {
     artist_link: '',
@@ -2936,6 +3468,8 @@ export const meta = [
     link: 'asset/3wHlWno3v3ZKpg',
     title: 'The Sleigh Race',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1324,
   },
   {
     artist_link: 'https://www.google.com/search?q=Elioth+Gruner',
@@ -2947,6 +3481,8 @@ export const meta = [
     link: 'asset/0wF_GVvcZwq5WQ',
     title: 'Spring frost',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1389,
   },
   {
     artist_link: 'https://www.google.com/search?q=Adrien+Mayers',
@@ -2958,6 +3494,8 @@ export const meta = [
     link: 'asset/ZAE11AZsatiBRQ',
     title: 'View of Cincinnati, Newport, and Covington',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1202,
   },
   {
     artist_link: 'https://www.google.com/search?q=Manet,+Edouard',
@@ -2969,6 +3507,8 @@ export const meta = [
     link: 'asset/gAH4SR-FUI_RBA',
     title: 'The Toilers of the Sea',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1548,
   },
   {
     artist_link: 'https://www.google.com/search?q=Aelbert+Cuyp',
@@ -2980,6 +3520,8 @@ export const meta = [
     link: 'asset/zgGsqZGTVHsysQ',
     title: 'The Valkhof at Nijmegen',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1270,
   },
   {
     artist_link: 'https://www.google.com/search?q=Guglielmo+Ciardi',
@@ -2991,6 +3533,8 @@ export const meta = [
     link: 'asset/lwFNMrkGTZ2FKQ',
     title: 'Fisherman in the Lagoon',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1116,
   },
   {
     artist_link: 'https://www.google.com/search?q=Jerome+Kaplan',
@@ -3002,6 +3546,8 @@ export const meta = [
     link: 'asset/AgEgrxgMdMkn5w',
     title: 'Malach',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1469,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11g6wcyvs6',
@@ -3013,6 +3559,8 @@ export const meta = [
     link: 'asset/rwFgo91m6yyICQ',
     title: 'Fond Farewell',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1041,
   },
   {
     artist_link: 'https://www.google.com/search?q=Camille+Pissarro',
@@ -3024,6 +3572,8 @@ export const meta = [
     link: 'asset/jAG6nHgL9ERqKg',
     title: 'Louveciennes, Route de Saint-Germain',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1224,
   },
   {
     artist_link: 'https://www.google.com/search?q=Pittore+piemontese',
@@ -3035,6 +3585,8 @@ export const meta = [
     link: 'asset/rQESDeOQkc1rDw',
     title: 'Enrichetta Adelaide di Savoia e Ferdinando di Baviera',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1873,
   },
   {
     artist_link: 'https://www.google.com/search?q=Claude+Monet',
@@ -3046,6 +3598,8 @@ export const meta = [
     link: 'asset/ywFLoALRQJioMw',
     title: 'Autumn on the Seine, Argenteuil (Automne sur la Seine Argenteuil)',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1387,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/t218rckhkgy',
@@ -3057,10 +3611,12 @@ export const meta = [
     link: 'asset/MQH8ZWcZzv484Q',
     title: 'unknown',
     source: 'CI_TAB',
+    width: 1920,
+    height: 914,
   },
   {
     artist_link: 'https://www.google.com/search?q=Giovanni+Battista+Castagneto',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Giovanni Battista Castagneto',
     image:
@@ -3068,6 +3624,8 @@ export const meta = [
     link: 'asset/agHTcT4RwXlghg',
     title: 'Tarde em Toulon',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1130,
   },
   {
     artist_link: '',
@@ -3079,6 +3637,8 @@ export const meta = [
     link: 'asset/SQFjlDgYRoj76w',
     title: 'Three Peaks',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1316,
   },
   {
     artist_link: 'https://www.google.com/search?q=Roger+de+La+Fresnaye',
@@ -3090,6 +3650,8 @@ export const meta = [
     link: 'asset/ggF7tlS8IEcAGA',
     title: 'The Canal, Brittany Landscape',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1326,
   },
   {
     artist_link: 'https://www.google.com/search?q=Charles+Lanman+(American,+1819-1895)',
@@ -3101,6 +3663,8 @@ export const meta = [
     link: 'asset/kAFGRCqxI1MfYg',
     title: 'Block Island, RI',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1382,
   },
   {
     artist_link: 'https://www.google.com/search?q=J.H.+Carse',
@@ -3112,6 +3676,8 @@ export const meta = [
     link: 'asset/oAHt8gGy4Q0pqg',
     title: 'Burragorang Valley near Picton',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1126,
   },
   {
     artist_link: 'https://www.google.com/search?q=Bernardo+Bellotto',
@@ -3123,6 +3689,8 @@ export const meta = [
     link: 'asset/4QGbB3QgMUylWw',
     title: 'The Marketplace at Pirna',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1153,
   },
   {
     artist_link: 'https://www.google.com/search?q=Henri+Rousseau',
@@ -3134,6 +3702,8 @@ export const meta = [
     link: 'asset/GgFjYpFYByy8CQ',
     title: 'The Eiffel Tower',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1300,
   },
   {
     artist_link: 'https://www.google.com/search?q=Winslow+Homer',
@@ -3145,6 +3715,8 @@ export const meta = [
     link: 'asset/qQHFdI_5Qhck3A',
     title: 'Eight Bells',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1509,
   },
   {
     artist_link: 'https://www.google.com/search?q=Giovanna+Garzoni',
@@ -3156,6 +3728,8 @@ export const meta = [
     link: 'asset/HAGymnbvN8kNeA',
     title: 'Still Life with Bowl of Citrons',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1478,
   },
   {
     artist_link: 'https://www.google.com/search?q=Francis+Augusta+Silva',
@@ -3167,6 +3741,8 @@ export const meta = [
     link: 'asset/NwFxh5ZiYfMh-w',
     title: 'An August Morning',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1267,
   },
   {
     artist_link: 'https://www.google.com/search?q=Attributed+to+Vittore+Belliniano',
@@ -3178,6 +3754,8 @@ export const meta = [
     link: 'asset/UAGCX2uY01tP4g',
     title: 'Portrait of Two Young Men',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1375,
   },
   {
     artist_link: 'https://www.google.com/search?q=Charles+Willson+Peale',
@@ -3189,6 +3767,8 @@ export const meta = [
     link: 'asset/bgGA70vWeCmeEA',
     title: 'Landscape Looking Toward Sellers Hall from Mill Bank',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1346,
   },
   {
     artist_link: 'https://www.google.com/search?q=Albertus+van+Beest',
@@ -3200,6 +3780,8 @@ export const meta = [
     link: 'asset/cQHKZk0_npQj5w',
     title: 'Fishermen in a Rough Sea',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1015,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11bwdvm6s2',
@@ -3211,6 +3793,8 @@ export const meta = [
     link: 'asset/OwGfWf2yA8lrFg',
     title: 'The juggler: a village fair',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1236,
   },
   {
     artist_link: 'https://www.google.com/search?q=Pierre-Auguste+Renoir',
@@ -3222,6 +3806,8 @@ export const meta = [
     link: 'asset/ZgEkdK6V-__Dsg',
     title: 'Girl Reading',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1541,
   },
   {
     artist_link: 'https://www.google.com/search?q=Johann+Georg+von+Dillis',
@@ -3233,6 +3819,8 @@ export const meta = [
     link: 'asset/kQGVQdm7VBlqyA',
     title: 'River Landscape',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1267,
   },
   {
     artist_link: 'https://www.google.com/search?q=Edgar+Degas',
@@ -3244,6 +3832,8 @@ export const meta = [
     link: 'asset/hAGdtA1PhgNXYw',
     title: 'Landscape with Rocks',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1431,
   },
   {
     artist_link: 'https://www.google.com/search?q=Jennie+Augusta+Brownscombe',
@@ -3253,8 +3843,10 @@ export const meta = [
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TTX2s3iythPRQ_0cgj0e75DGSxjK4zDy0sJ14OJ7vUrZ9d9I5rKF84cEFBw7PKe2AnGnFDA1g.webp',
     link: 'asset/DQHFSptMt7loEg',
-    title: 'Love\u2019s Young Dream',
+    title: 'Love’s Young Dream',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1259,
   },
   {
     artist_link: 'https://www.google.com/search?q=Childe+Hassam',
@@ -3266,6 +3858,8 @@ export const meta = [
     link: 'asset/vgHMpY1BLPNscA',
     title: 'The Sonata',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1915,
   },
   {
     artist_link: 'https://www.google.com/search?q=Arthur+Garfield+Dove',
@@ -3277,10 +3871,12 @@ export const meta = [
     link: 'asset/oQFrisLX8f25Sw',
     title: 'Thunder Shower',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1189,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g122q4xx5',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Pedro Alexandrino',
     image:
@@ -3288,6 +3884,8 @@ export const meta = [
     link: 'asset/2QFh1QLIQhpgoQ',
     title: 'Bananas e Metal',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1429,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/t219hrtqhb2',
@@ -3299,6 +3897,8 @@ export const meta = [
     link: 'asset/mAGftlQjwTplcQ',
     title: 'Bicicleta Sem Freio_420 Boyd St.',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1260,
   },
   {
     artist_link: 'https://www.google.com/search?q=Rosa+Bonheur',
@@ -3310,6 +3910,8 @@ export const meta = [
     link: 'asset/5gHe7NOwPF5ThQ',
     title: 'Sheep by the Sea',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1353,
   },
   {
     artist_link: 'https://www.google.com/search?q=Hendrik+Meyer',
@@ -3321,6 +3923,8 @@ export const meta = [
     link: 'asset/UgGtDlRp8Sx10A',
     title: 'A Winter Scene',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1456,
   },
   {
     artist_link: 'https://www.google.com/search?q=Max+Liebermann',
@@ -3332,17 +3936,21 @@ export const meta = [
     link: 'asset/CgE47kwxQW5jyA',
     title: 'Terrace in the Garden near the Wannsee towards Northwest',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1242,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11hd57rh6q',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
-    creator: 'Michal Tremb\u00e1\u010d',
+    creator: 'Michal Trembáč',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_T-ISNFb0BuQs7cJ9D8IDr2XhtXJZSGeChM9IhGlE8zxP0CMoU0et_X-TXb_dbQ4TxZUynCFr4.webp',
     link: 'asset/rAFbPY6--c6IYw',
-    title: 'Ve\u013ek\u00fd Slavkov',
+    title: 'Veľký Slavkov',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1471,
   },
   {
     artist_link: 'https://www.google.com/search?q=Henry+Farrer',
@@ -3354,6 +3962,8 @@ export const meta = [
     link: 'asset/pwELPVmggrxvpw',
     title: 'Portland Head Light, Maine',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1217,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11c73hyy93',
@@ -3365,17 +3975,21 @@ export const meta = [
     link: 'asset/6AFGr_ZertnsTg',
     title: 'Upriver From Lumberville Walking Bridge II',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1310,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g122z33pl',
-    attribution: 'Dion\u00edsio Pinheiro And Alice Cardoso Pinheiro Foundation ',
+    attribution: 'Dionísio Pinheiro And Alice Cardoso Pinheiro Foundation ',
     attribution_link: 'partner/funda%C3%A7%C3%A3o-dionisio-pinheiro',
-    creator: 'Falc\u00e3o Trigoso',
+    creator: 'Falcão Trigoso',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_SZJ6zm0ISE-AE_LbY9sQX3kMRFpBch7-2A4WoGWEaIo9QohXhpBeJRWzEBso695uFpe2e-IsU.webp',
     link: 'asset/CAF1Ow4YunwPLQ',
     title: 'Autumn Landscape',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1531,
   },
   {
     artist_link: 'https://www.google.com/search?q=Jessie+E+Scarvell',
@@ -3387,17 +4001,21 @@ export const meta = [
     link: 'asset/oAGDyflaJh9g3Q',
     title: 'The lonely margin of the sea',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1035,
   },
   {
     artist_link: 'https://www.google.com/search?q=Victor+Meirelles',
-    attribution: 'Pinacoteca de S\u00e3o Paulo',
+    attribution: 'Pinacoteca de São Paulo',
     attribution_link: 'partner/pinacoteca-do-estado-de-sao-paulo',
     creator: 'Victor Meirelles',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_Qvj9Wq_z3NSBzNqEICcvVrenTDGUNzuWPFA1tdBNm6dQgmzItR2gkhC4fxRp3mdoK0Wnl3Hecq.webp',
     link: 'asset/OQFEZMiH3O4dZg',
-    title: 'Estudo para "Passagem de Humait\u00e1"',
+    title: 'Estudo para "Passagem de Humaitá"',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1307,
   },
   {
     artist_link: 'https://www.google.com/search?q=Claude+Monet',
@@ -3409,6 +4027,8 @@ export const meta = [
     link: 'asset/pAEsabNHoa1naA',
     title: 'Springtime',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1468,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/t219j505c03',
@@ -3420,6 +4040,8 @@ export const meta = [
     link: 'asset/7gG-k0CP2btzIA',
     title: 'Freedom',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1280,
   },
   {
     artist_link: 'https://www.google.com/search?q=Frank+Duveneck',
@@ -3431,17 +4053,21 @@ export const meta = [
     link: 'asset/lAH2zRUqMO_NEg',
     title: 'Polling Landscape',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1277,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g122kznpc',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
-    creator: 'Peter J\u00falius Kern',
+    creator: 'Peter Július Kern',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TOb8kB5D-GDmaerv-t8ZizibrHluKYirrm35AFMC2M7rFAyP9tBaCn-d1NIq6vioc3VdgwTVAp.webp',
     link: 'asset/9AFsUvBKsxmnNQ',
     title: 'Late autumn in the Tatras',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1325,
   },
   {
     artist_link: 'https://www.google.com/search?q=Richard+Buckner+Gruelle',
@@ -3453,6 +4079,8 @@ export const meta = [
     link: 'asset/xAE6uRB2uvy5Sw',
     title: 'The Canal Morning Effect',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1627,
   },
   {
     artist_link: 'https://www.google.com/search?q=Girolamo+Nerli',
@@ -3464,17 +4092,21 @@ export const meta = [
     link: 'asset/MgGMw6BKj96AxQ',
     title: 'Beach scene, Sandringham',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1437,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g113v5tnf7',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
-    creator: '\u0160tefan Bub\u00e1n',
+    creator: 'Štefan Bubán',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TAnyQoTPTNFrYI6y6IY0iMondKl8lNEjVxW-Tx-fCB_lFcRNH4m62Shfqg3vlhpOzhzWjl0M5q.webp',
     link: 'asset/8gHQQkP3GsqcfA',
-    title: 'Near Spi\u0161sk\u00e1 Nov\u00e1 Ves',
+    title: 'Near Spišská Nová Ves',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1680,
   },
   {
     artist_link: 'https://www.google.com/search?q=William+Constable',
@@ -3486,17 +4118,21 @@ export const meta = [
     link: 'asset/nwH4q5qUFfQwNA',
     title: 'The Great Falls of the Mohawk',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1501,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g1224tj6y',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
     creator: 'Jaroslav Votruba',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_Rn-dKD1smPdvf03_jzmUDP_NQrxgxjPQsMfXLlefhkYXKCXNY99LrmSQua6onVzNvaRmjI1mM.webp',
     link: 'asset/1AFXm4nwardqvg',
-    title: '\u0160rbsk\u00e9 pleso',
+    title: 'Šrbské pleso',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1442,
   },
   {
     artist_link: 'https://www.google.com/search?q=George+W+Lambert',
@@ -3508,6 +4144,8 @@ export const meta = [
     link: 'asset/EwGO50FQYifFcg',
     title: 'Holiday in Essex',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1552,
   },
   {
     artist_link: 'https://www.google.com/search?q=Arthur+Streeton',
@@ -3519,6 +4157,8 @@ export const meta = [
     link: 'asset/1QEb4F8lkCSULA',
     title: 'The railway station, Redfern',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1273,
   },
   {
     artist_link: 'https://www.google.com/search?q=Walter+Ufer',
@@ -3530,6 +4170,8 @@ export const meta = [
     link: 'asset/WwGRORtb8GqSKw',
     title: 'Taos in the Snow',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1563,
   },
   {
     artist_link: 'https://www.google.com/search?q=Marc+Chagall',
@@ -3541,6 +4183,8 @@ export const meta = [
     link: 'asset/pwGQGdh1RVuLfA',
     title: 'Dans mon pays',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1660,
   },
   {
     artist_link: 'https://www.google.com/search?q=Paul+Ranson',
@@ -3552,6 +4196,8 @@ export const meta = [
     link: 'asset/pgE-aWj6UcxwlQ',
     title: 'Apple Tree with Red Fruit',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1358,
   },
   {
     artist_link: 'https://www.google.com/search?q=Gustave+Courbet',
@@ -3563,6 +4209,8 @@ export const meta = [
     link: 'asset/2AFetLbBC97pnw',
     title: 'The Gust of Wind',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1206,
   },
   {
     artist_link: 'https://www.google.com/search?q=Frederick+McCubbin',
@@ -3574,6 +4222,8 @@ export const meta = [
     link: 'asset/xwGJklZFyF2eJg',
     title: 'On the wallaby track',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1037,
   },
   {
     artist_link: 'https://www.google.com/search?q=William+Merritt+Chase',
@@ -3585,6 +4235,8 @@ export const meta = [
     link: 'asset/twFSmkC99OhD0g',
     title: 'First Touch of Autumn',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1522,
   },
   {
     artist_link: 'https://www.google.com/search?q=Ernest+Lawson',
@@ -3596,6 +4248,8 @@ export const meta = [
     link: 'asset/twGO3E-kvVuuGg',
     title: 'Rockport, Maine',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1537,
   },
   {
     artist_link: 'https://www.google.com/search?q=George+Bellows',
@@ -3607,6 +4261,8 @@ export const meta = [
     link: 'asset/FAFRTo3Zg_9h8g',
     title: 'Haystacks and Barn',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1495,
   },
   {
     artist_link: 'https://www.google.com/search?q=Elioth+Gruner',
@@ -3618,6 +4274,8 @@ export const meta = [
     link: 'asset/7wHDYgyERW32jQ',
     title: 'Milking time (Araluen Valley)',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1478,
   },
   {
     artist_link: 'https://www.google.com/search?q=Ali+Al+Abdan',
@@ -3629,17 +4287,21 @@ export const meta = [
     link: 'asset/oQGDy97TDqfbQw',
     title: 'On Al Khan Beach',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1452,
   },
   {
     artist_link: 'https://www.google.com/search?q=Th%C3%A9odore+Rousseau',
     attribution: 'The Museum of Fine Arts, Houston',
     attribution_link: 'partner/the-museum-of-fine-arts-houston',
-    creator: 'Th\u00e9odore Rousseau',
+    creator: 'Théodore Rousseau',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QemvvHJvIBx9LpWijSwyN7w3HcVi5pbN1KOMv-_e4-I6ygjxDnTBnlfi-Z46uPJBEDL1liDQ.webp',
     link: 'asset/2AFbKobcNRilyQ',
-    title: 'The Great Oaks of Old Bas-Br\u00e9au',
+    title: 'The Great Oaks of Old Bas-Bréau',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1494,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+Fulton+Folinsbee',
@@ -3651,6 +4313,8 @@ export const meta = [
     link: 'asset/ZQFaKFSYKfq6vw',
     title: 'Mill by the River, Fall',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1531,
   },
   {
     artist_link: 'https://www.google.com/search?q=Giovanni+Michele+Graneri',
@@ -3662,10 +4326,12 @@ export const meta = [
     link: 'asset/mwFPGusntPdFlQ',
     title: 'Market in Piazza del Municipio',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1085,
   },
   {
     artist_link: '',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
     creator: 'Jozef Olexa',
     image:
@@ -3673,6 +4339,8 @@ export const meta = [
     link: 'asset/5QF_cJuPfJzeWQ',
     title: 'Ice Peak from Javorova valley',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1352,
   },
   {
     artist_link: 'https://www.google.com/search?q=Elioth+Gruner',
@@ -3684,6 +4352,8 @@ export const meta = [
     link: 'asset/GgE8CbhnqhxFVg',
     title: 'Frosty sunrise',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1780,
   },
   {
     artist_link: '',
@@ -3695,6 +4365,8 @@ export const meta = [
     link: 'asset/2wEuthKBDaqgzw',
     title: 'Luxor Port',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1163,
   },
   {
     artist_link: 'https://www.google.com/search?q=Martin+Johnson+Heade',
@@ -3706,6 +4378,8 @@ export const meta = [
     link: 'asset/YwGgMzpmgRd99w',
     title: 'Magnolias on Gold Velvet Cloth',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1193,
   },
   {
     artist_link: 'https://www.google.com/search?q=Eleuterio+Pagliano',
@@ -3717,17 +4391,21 @@ export const meta = [
     link: 'asset/_QHXXciyEJewxA',
     title: 'The Geography Lesson',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1333,
   },
   {
     artist_link: 'https://www.google.com/search?q=Heinrich+Balduin+M%C3%B6llhausen',
     attribution: 'Amon Carter Museum of American Art',
     attribution_link: 'partner/amon-carter-museum-of-american-art',
-    creator: 'Heinrich Balduin M\u00f6llhausen',
+    creator: 'Heinrich Balduin Möllhausen',
     image:
       'https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_Tn9rnkJV1sOgDRVIfwcL8m2jtxy7u6gwg4ww-cTqKWInwsviURbjDb-Qcerh56d-9rgJDm1Q4.webp',
     link: 'asset/4wFPHx_VKZgRwA',
-    title: 'Ca\u00f1on near Upper Cataract Creek',
+    title: 'Cañon near Upper Cataract Creek',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1440,
   },
   {
     artist_link: '',
@@ -3739,6 +4417,8 @@ export const meta = [
     link: 'asset/0wF8G-kuSeGOlQ',
     title: 'Horizon',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1286,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11fp0bcyf1',
@@ -3750,6 +4430,8 @@ export const meta = [
     link: 'asset/EAH15hPeAWOr1g',
     title: 'The Temperate and the Intemperate',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1740,
   },
   {
     artist_link: 'https://www.google.com/search?q=Nicholas+Chevalier',
@@ -3761,6 +4443,8 @@ export const meta = [
     link: 'asset/igGo6Bi2Lxz5Pw',
     title: 'Race to the market, Tahiti',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1152,
   },
   {
     artist_link: 'https://www.google.com/search?q=James+McNeill+Whistler',
@@ -3772,10 +4456,12 @@ export const meta = [
     link: 'asset/2AFRF46-Kqe1jQ',
     title: 'Harmony in Blue and Silver: Trouville',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1275,
   },
   {
     artist_link: '',
-    attribution: 'Tatransk\u00e1 gal\u00e9ria',
+    attribution: 'Tatranská galéria',
     attribution_link: 'partner/tatransk%C3%A1-gal%C3%A9ria',
     creator: 'Jozef Olexa',
     image:
@@ -3783,6 +4469,8 @@ export const meta = [
     link: 'asset/pwFd08lx35T-oA',
     title: 'Czech tarn',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1355,
   },
   {
     artist_link: 'https://artsandculture.google.com/entity/g11_yxwpfx',
@@ -3794,6 +4482,8 @@ export const meta = [
     link: 'asset/UgFIgyDwjIubzw',
     title: 'Galveston Wharf with Sail and Steam Ships',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1378,
   },
   {
     artist_link: 'https://www.google.com/search?q=Elioth+Gruner',
@@ -3805,6 +4495,8 @@ export const meta = [
     link: 'asset/5gFI-XupGYVTEw',
     title: 'Morning light',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1710,
   },
   {
     artist_link: 'https://www.google.com/search?q=William+Frater',
@@ -3816,6 +4508,8 @@ export const meta = [
     link: 'asset/kwEDSmD894mGCw',
     title: 'A creek',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1524,
   },
   {
     artist_link: 'https://www.google.com/search?q=Childe+Hassam',
@@ -3827,6 +4521,8 @@ export const meta = [
     link: 'asset/3QHevxu5yDH0Kg',
     title: 'Fruit Steamers Riding Out a Blow, Off the Coast of Spain',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1483,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+William+Hill',
@@ -3838,6 +4534,8 @@ export const meta = [
     link: 'asset/1AG6TYoH9JHdag',
     title: "Fawn's Leap, Catskill Mountains",
     source: 'CI_TAB',
+    width: 1920,
+    height: 1482,
   },
   {
     artist_link: 'https://www.google.com/search?q=David+Johnson',
@@ -3849,6 +4547,8 @@ export const meta = [
     link: 'asset/wAE4ehLAXtVVgw',
     title: 'Eagle Cliff, Franconia Notch, New Hampshire',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1164,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+Brett',
@@ -3860,6 +4560,8 @@ export const meta = [
     link: 'asset/WwFyD-_5lebxBw',
     title: 'Massa, Bay of Naples',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1131,
   },
   {
     artist_link: 'https://www.google.com/search?q=Alfred+Sisley',
@@ -3871,6 +4573,8 @@ export const meta = [
     link: 'asset/9gGrsfA8sqeakQ',
     title: 'The Terrace at Saint-Germain, Spring',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1333,
   },
   {
     artist_link: 'https://www.google.com/search?q=John+Henry+Hill',
@@ -3882,5 +4586,7 @@ export const meta = [
     link: 'asset/PgF1SWPMcGrJ6g',
     title: 'Gentians',
     source: 'CI_TAB',
+    width: 1920,
+    height: 1626,
   },
 ];

@@ -4,6 +4,8 @@ import { keyframes } from '@emotion/react';
 import { updateFrequencyStorage, lastUpdateTimeStorage } from '@extension/storage';
 import { t } from '@extension/i18n';
 import backgroundImage from '../public/tim-mossholder-Kjy0Q_S_2xg-unsplash.jpg';
+import { meta } from '@extension/shared';
+import type { MetaItem } from '@extension/shared/lib/utils/shared-types';
 
 /**
  * 艺术品数据接口定义
@@ -18,6 +20,8 @@ export interface AssetData {
   source: string;
   title: string;
   data_url?: string;
+  width?: number;
+  height?: number;
 }
 
 // 加载动画
@@ -121,8 +125,7 @@ const ArtworkContainer = styled.div`
 `;
 
 const ArtFrame = styled.div`
-  max-width: 600px;
-  width: 100%;
+  width: 640px;
   background: #fff;
   padding: 24px;
   border: 12px solid #000;
@@ -282,9 +285,9 @@ const LoadingSpinner = styled.div`
   margin: 50px auto;
 `;
 
-const LoadingContainer = styled.div`
-  min-width: 400px;
-  min-height: 300px;
+const LoadingContainer = styled.div<{ height?: number }>`
+  width: 100%;
+  height: ${props => (props.height ? `${props.height}px` : '300px')};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -354,50 +357,113 @@ const SpotLight = styled.div`
 //   }
 // `;
 
+// 创建一个通用的超时Promise
+const createTimeoutPromise = () =>
+  new Promise((_, reject) => {
+    setTimeout(() => {
+      reject(new Error(t('request_timeout')));
+    }, 30000);
+  });
+
+// 处理链接
+const composeLink = (link: string): string => {
+  const baseUrl = 'https://artsandculture.google.com/';
+  return link.startsWith('http') ? link : `${baseUrl}${link}`;
+};
+
 const NewTab: React.FC = () => {
   const [artwork, setArtwork] = useState<AssetData | null>(null);
+  const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  // 发送消息到 background service worker
-  const sendMessage = async (type: string) => {
+  // 加载图片数据
+  const loadArtwork = async (index: number) => {
+    const item = meta[index];
     try {
-      const response = await chrome.runtime.sendMessage({ type });
-      if (!response.success) {
-        throw new Error(response.error);
-      }
-      return response.data;
+      const response = await chrome.runtime.sendMessage({
+        type: 'GET_IMAGE_DATA_URL',
+        imageUrl: item.image,
+      });
+
+      if (!response.success) throw new Error(response.error);
+
+      setArtwork({
+        ...item,
+        data_url: response.data,
+        artist_link: composeLink(item.artist_link),
+        attribution_link: composeLink(item.attribution_link),
+        link: composeLink(item.link),
+      });
+
+      // 更新后端存储的索引
+      await chrome.runtime.sendMessage({
+        type: 'SET_CURRENT_INDEX',
+        index,
+      });
     } catch (error) {
-      console.error('Failed to send message:', error);
-      throw error;
+      console.error('Failed to load artwork:', error);
+      setError(error instanceof Error ? error.message : '加载失败');
     }
   };
-
-  // 创建一个通用的超时Promise
-  const createTimeoutPromise = () =>
-    new Promise((_, reject) => {
-      setTimeout(() => {
-        reject(new Error(t('request_timeout')));
-      }, 30000);
-    });
 
   const loadInitialArtwork = async () => {
     try {
       setError(null);
       const loadPromise = (async () => {
+        // 获取当前索引
+        const response = await chrome.runtime.sendMessage({ type: 'GET_CURRENT_INDEX' });
+        if (!response.success) throw new Error(response.error);
+
+        const currentIdx = response.data;
+        setCurrentIndex(currentIdx);
+
         if (await shouldUpdate()) {
-          const image = await sendMessage('GET_NEXT_IMAGE');
-          setArtwork(image);
+          // 如果需要更新，使用下一个索引
+          const nextIdx = (currentIdx + 1) % meta.length;
+          setCurrentIndex(nextIdx);
+          await loadArtwork(nextIdx);
           await lastUpdateTimeStorage.set(Date.now());
         } else {
-          const image = await sendMessage('GET_INITIAL_IMAGE');
-          setArtwork(image);
+          // 不需要��新，使用当前索引
+          await loadArtwork(currentIdx);
         }
       })();
 
       await Promise.race([loadPromise, createTimeoutPromise()]);
     } catch (error) {
-      console.error('Failed to load artwork:', error);
+      console.error('Failed to load initial artwork:', error);
+      setError(error instanceof Error ? error.message : '加载失败');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handlePrevious = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const prevIndex = (((currentIndex - 1) % meta.length) + meta.length) % meta.length;
+      setCurrentIndex(prevIndex);
+      await loadArtwork(prevIndex);
+    } catch (error) {
+      console.error('Failed to load previous artwork:', error);
+      setError(error instanceof Error ? error.message : '加载失败');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleNext = async () => {
+    setLoading(true);
+    setError(null);
+    try {
+      const nextIndex = (currentIndex + 1) % meta.length;
+      setCurrentIndex(nextIndex);
+      await loadArtwork(nextIndex);
+      await lastUpdateTimeStorage.set(Date.now());
+    } catch (error) {
+      console.error('Failed to load next artwork:', error);
       setError(error instanceof Error ? error.message : '加载失败');
     } finally {
       setLoading(false);
@@ -432,50 +498,6 @@ const NewTab: React.FC = () => {
     loadInitialArtwork();
   }, []);
 
-  const handlePrevious = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const loadPromise = sendMessage('GET_PREVIOUS_IMAGE');
-      const prevImage = await Promise.race([loadPromise, createTimeoutPromise()]);
-      setArtwork(prevImage);
-    } catch (error) {
-      console.error('Failed to load previous artwork:', error);
-      setError(error instanceof Error ? error.message : '加载失败');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleNext = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const loadPromise = sendMessage('GET_NEXT_IMAGE');
-      const nextImage = await Promise.race([loadPromise, createTimeoutPromise()]);
-      setArtwork(nextImage);
-      await lastUpdateTimeStorage.set(Date.now());
-    } catch (error) {
-      console.error('Failed to load next artwork:', error);
-      setError(error instanceof Error ? error.message : '加载失败');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    const checkAndUpdate = async () => {
-      if (await shouldUpdate()) {
-        // 更新图片
-        chrome.runtime.sendMessage({ type: 'GET_NEXT_IMAGE' });
-        // 更新最后更新时间
-        lastUpdateTimeStorage.set(Date.now());
-      }
-    };
-
-    checkAndUpdate();
-  }, []);
-
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       const x = (e.clientX / window.innerWidth) * 100;
@@ -486,6 +508,23 @@ const NewTab: React.FC = () => {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  // 获取当前索引的函数
+  const getCurrentIndex = async () => {
+    try {
+      const response = await chrome.runtime.sendMessage({ type: 'GET_CURRENT_INDEX' });
+      if (response.success) {
+        setCurrentIndex(response.data);
+      }
+    } catch (error) {
+      console.error('Failed to get current index:', error);
+    }
+  };
+
+  // 初始化时获取当前索引
+  useEffect(() => {
+    getCurrentIndex();
   }, []);
 
   return (
@@ -500,7 +539,10 @@ const NewTab: React.FC = () => {
       <ArtworkContainer>
         <ArtFrame>
           {loading ? (
-            <LoadingContainer>
+            <LoadingContainer
+              height={
+                meta[currentIndex] ? Math.round((meta[currentIndex].height * 640) / meta[currentIndex].width) : 450
+              }>
               <LoadingSpinner />
             </LoadingContainer>
           ) : error ? (
