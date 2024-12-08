@@ -36,10 +36,10 @@ const PageContainer = styled.div`
   position: relative;
   overflow: hidden;
 
-  /* 使用背景图片 */
+  /* 使用背景图片和基础色调 */
   background: url(${backgroundImage}) center/cover no-repeat;
 
-  /* 添加叠加层来调整亮度和对比度 */
+  /* 创建多层光影效果，让四周更暗 */
   &::before {
     content: '';
     position: absolute;
@@ -47,34 +47,63 @@ const PageContainer = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(245, 245, 243, 0.2);
+    background-image: 
+      /* 中央光晕，突出画作区域 */
+      radial-gradient(
+        circle at center,
+        rgba(255, 255, 255, 0.7) 0%,
+        rgba(255, 255, 255, 0.3) 30%,
+        rgba(255, 255, 255, 0) 60%
+      ),
+      /* 四角暗部 */
+        linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0.3) 0%,
+          rgba(0, 0, 0, 0.1) 20%,
+          rgba(0, 0, 0, 0.1) 80%,
+          rgba(0, 0, 0, 0.3) 100%
+        ),
+      linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.3) 0%,
+        rgba(0, 0, 0, 0.1) 20%,
+        rgba(0, 0, 0, 0.1) 80%,
+        rgba(0, 0, 0, 0.3) 100%
+      );
+    pointer-events: none;
+  }
+
+  /* 添加整体调色滤镜 */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(245, 245, 243, 0.3);
     pointer-events: none;
   }
 `;
 
 const ArtInfo = styled.div`
   position: absolute;
-  right: -320px;
+  right: -240px;
   bottom: 24px;
-  max-width: 300px;
-  background: #fff;
+  width: 220px;
+  background: #f8f8f8;
   color: #333;
-  padding: 16px 20px;
-  font-size: 14px;
+  padding: 20px;
+  font-size: 13px;
   transform: translateY(0);
-  transition: all 0.3s ease;
   text-align: left;
+  letter-spacing: 0.3px;
 
-  /* 卡片阴影效果 */
-  box-shadow: 
-    /* 主阴影 */
-    0 4px 12px rgba(0, 0, 0, 0.1),
-    /* 环境光阴影 */ 0 1px 3px rgba(0, 0, 0, 0.08);
+  /* 卡片阴影效果 - 更柔和的阴影 */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 
-  /* 卡片纸张纹理 */
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.02) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.02) 1px, transparent 1px);
-  background-size: 8px 8px;
+  /* 移除纹理，使用更简洁的设计 */
+  border-left: 1px solid rgba(0, 0, 0, 0.05);
 `;
 
 const ArtworkContainer = styled.div`
@@ -82,7 +111,8 @@ const ArtworkContainer = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-right: 320px;
+  margin-right: 240px;
+  margin-left: 240px;
 `;
 
 const ArtFrame = styled.div`
@@ -90,17 +120,17 @@ const ArtFrame = styled.div`
   width: 100%;
   background: #fff;
   padding: 24px;
-  border: 12px solid #483c32;
+  border: 12px solid #1a1a1a;
   position: relative;
-  margin: 40px 40px 0;
+  margin: 40px 0 0;
 
   /* 画框阴影效果 */
   box-shadow: 
     /* 内部阴影 */
-    inset 0 0 20px rgba(0, 0, 0, 0.1),
-    /* 主阴影 */ 0 10px 30px rgba(0, 0, 0, 0.15),
+    inset 0 0 20px rgba(0, 0, 0, 0.15),
+    /* 主阴影，更深更柔和 */ 0 15px 35px rgba(0, 0, 0, 0.2),
     /* 环境光阴影 */ 0 0 0 1px rgba(0, 0, 0, 0.05),
-    /* 顶部打光 */ 0 -5px 15px rgba(255, 255, 255, 0.1);
+    /* 顶部打光，更微妙 */ 0 -5px 15px rgba(255, 255, 255, 0.05);
 
   /* 画框纹理 */
   &::before {
@@ -110,7 +140,7 @@ const ArtFrame = styled.div`
     left: -12px;
     right: -12px;
     bottom: -12px;
-    border: 12px solid #483c32;
+    border: 12px solid #1a1a1a;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='woodgrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23woodgrain)'/%3E%3C/svg%3E");
     opacity: 0.1;
     pointer-events: none;
@@ -124,7 +154,7 @@ const ArtFrame = styled.div`
     left: -12px;
     right: -12px;
     height: 40px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
     pointer-events: none;
   }
 `;
@@ -171,7 +201,7 @@ const NavigationArea = styled.div<{ direction: 'left' | 'right' }>`
     opacity: 1;
     background: linear-gradient(
       ${props => (props.direction === 'left' ? 'to right' : 'to left')},
-      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0.15),
       transparent
     );
   }
@@ -200,37 +230,37 @@ const NavigationButton = styled.button`
 `;
 
 const InfoTitle = styled.h2`
-  margin: 0 0 8px;
+  margin: 0 0 12px;
   font-size: 15px;
   font-weight: 500;
-  color: #333;
+  color: #222;
+  line-height: 1.4;
 
   a {
-    color: #333;
+    color: inherit;
     text-decoration: none;
-    border-bottom: none;
+    transition: color 0.2s ease;
 
     &:hover {
       color: #000;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     }
   }
 `;
 
 const InfoText = styled.p`
-  margin: 4px 0;
-  line-height: 1.4;
+  margin: 8px 0;
+  line-height: 1.5;
   color: #666;
+  font-size: 12px;
 `;
 
 const Link = styled.a`
-  color: #666;
+  color: inherit;
   text-decoration: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  transition: color 0.2s ease;
 
   &:hover {
-    color: #333;
-    border-bottom-color: rgba(0, 0, 0, 0.3);
+    color: #000;
   }
 `;
 
@@ -289,14 +319,14 @@ const SpotLight = styled.div`
   pointer-events: none;
   background: radial-gradient(
     circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(255, 255, 255, 0.1) 0%,
-    rgba(255, 255, 255, 0) 50%
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 40%
   );
-  opacity: 0.8;
-  mix-blend-mode: overlay;
+  opacity: 0.6;
+  mix-blend-mode: soft-light;
 `;
 
-// // 添加署名组件
+// // 添加署名��件
 // const Attribution = styled.div`
 //   position: fixed;
 //   bottom: 12px;
