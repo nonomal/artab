@@ -296,25 +296,25 @@ const SpotLight = styled.div`
   mix-blend-mode: overlay;
 `;
 
-// 添加署名组件
-const Attribution = styled.div`
-  position: fixed;
-  bottom: 12px;
-  right: 12px;
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.5);
-  z-index: 10;
+// // 添加署名组件
+// const Attribution = styled.div`
+//   position: fixed;
+//   bottom: 12px;
+//   right: 12px;
+//   font-size: 12px;
+//   color: rgba(0, 0, 0, 0.5);
+//   z-index: 10;
 
-  a {
-    color: rgba(0, 0, 0, 0.5);
-    text-decoration: none;
-    transition: color 0.3s ease;
+//   a {
+//     color: rgba(0, 0, 0, 0.5);
+//     text-decoration: none;
+//     transition: color 0.3s ease;
 
-    &:hover {
-      color: rgba(0, 0, 0, 0.8);
-    }
-  }
-`;
+//     &:hover {
+//       color: rgba(0, 0, 0, 0.8);
+//     }
+//   }
+// `;
 
 const NewTab: React.FC = () => {
   const [artwork, setArtwork] = useState<AssetData | null>(null);
