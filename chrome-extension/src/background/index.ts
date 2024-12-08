@@ -1,5 +1,5 @@
 import 'webextension-polyfill';
-import { syncData, getImage, getNextImage, getPreviousImage, getCurrentImage } from '../services/asset';
+import { syncData, getNextImage, getPreviousImage, getCurrentImage } from '../services/asset';
 
 // 每次启动时同步数据
 syncData().catch(error => {

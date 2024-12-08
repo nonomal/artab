@@ -107,15 +107,6 @@ async function dbClear(storeName: string): Promise<void> {
   });
 }
 
-/**
- * 工具函数
- */
-function isMetadataExpired(timestamp: string | null): boolean {
-  if (!timestamp) return true;
-  const cacheTime = Number(timestamp);
-  return isNaN(cacheTime) || Date.now() - cacheTime > API_CONFIG.metadataExpiry;
-}
-
 async function blobToDataUrl(blob: Blob): Promise<string> {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -158,29 +149,6 @@ async function loadImageDataUrl(imageUrl: string): Promise<string> {
 let syncDataPromise: Promise<void> | null = null;
 
 /**
- * 实际执行数据更新的函数
- */
-async function fetchAndUpdateAssets(): Promise<void> {
-  const response = await fetch(API_CONFIG.jsonUrl);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch data: ${response.statusText}`);
-  }
-
-  const assets = await response.json();
-  await dbWrite(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList, assets);
-  await dbWrite(DB_CONFIG.stores.metadata, STORAGE_KEYS.cacheTimestamp, Date.now().toString());
-}
-
-/**
- * 异步更新数据，不阻塞主流程
- */
-function updateAssetsInBackground(): void {
-  fetchAndUpdateAssets().catch(error => {
-    console.error('Background sync failed:', error);
-  });
-}
-
-/**
  * 同步资源数据
  * 如果有缓存，立即返回并在需要时后台更新
  * 如果没有缓存，同步获取新数据
@@ -191,8 +159,6 @@ export async function syncData(): Promise<void> {
     return syncDataPromise;
   }
   syncDataPromise = (async () => {
-    // 检查缓存
-    const timestamp = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.cacheTimestamp);
     const currentAssets = await dbRead<AssetData[]>(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList);
 
     // 如果有缓存
@@ -203,31 +169,6 @@ export async function syncData(): Promise<void> {
     }
   })();
   return syncDataPromise;
-
-  //
-  // // 检查缓存
-  // const timestamp = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.cacheTimestamp);
-  // const currentAssets = await dbRead<AssetData[]>(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList);
-  //
-  // // 如果有缓存
-  // if (currentAssets && currentAssets.length > 0) {
-  //   // 如果缓存过期，在后台更新
-  //   if (isMetadataExpired(timestamp)) {
-  //     updateAssetsInBackground();
-  //   }
-  //   return;
-  // }
-  //
-  // // 没有缓存时，同步获取数据
-  // syncDataPromise = (async () => {
-  //   try {
-  //     await fetchAndUpdateAssets();
-  //   } finally {
-  //     syncDataPromise = null;
-  //   }
-  // })();
-  //
-  // return syncDataPromise;
 }
 
 /**
@@ -311,7 +252,7 @@ async function preloadImages(currentIndex: number): Promise<void> {
 
   preloadPromise = (async () => {
     const assets = await getAssetList();
-    const promises: Promise<void>[] = [];
+    const promises: Promise<string | void>[] = [];
 
     for (let i = 1; i <= API_CONFIG.preloadCount; i++) {
       const index = (currentIndex + i) % assets.length;
