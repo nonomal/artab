@@ -48,20 +48,20 @@ const PageContainer = styled.div`
     right: 0;
     bottom: 0;
     background-image: 
-      /* 中央聚光效果 */
+      /* 中央聚光效果 - 降低暗部强度 */
       radial-gradient(
         ellipse at center,
         transparent 0%,
-        rgba(0, 0, 0, 0) 30%,
-        rgba(0, 0, 0, 0.6) 60%,
-        rgba(0, 0, 0, 0.8) 100%
+        rgba(0, 0, 0, 0) 35%,
+        rgba(0, 0, 0, 0.5) 65%,
+        rgba(0, 0, 0, 0.7) 100%
       ),
-      /* 顶部补光 */ linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
+      /* 顶部补光 - 稍微增加亮度 */ linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, transparent 25%);
     mix-blend-mode: multiply;
     pointer-events: none;
   }
 
-  /* 添加微妙的环境光 */
+  /* 调整环境光 - 略微增加亮度 */
   &::after {
     content: '';
     position: absolute;
@@ -69,7 +69,7 @@ const PageContainer = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 75%);
     mix-blend-mode: overlay;
     pointer-events: none;
   }
