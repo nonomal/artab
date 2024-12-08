@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import { updateFrequencyStorage, lastUpdateTimeStorage } from '@extension/storage';
 import { t } from '@extension/i18n';
+import backgroundImage from '../public/tim-mossholder-Kjy0Q_S_2xg-unsplash.jpg';
 
 /**
  * 艺术品数据接口定义
@@ -34,6 +35,21 @@ const PageContainer = styled.div`
   justify-content: center;
   position: relative;
   overflow: hidden;
+
+  /* 使用背景图片 */
+  background: url(${backgroundImage}) center/cover no-repeat;
+
+  /* 添加叠加层来调整亮度和对比度 */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(245, 245, 243, 0.2);
+    pointer-events: none;
+  }
 `;
 
 const ArtInfo = styled.div`
@@ -68,13 +84,65 @@ const ArtFrame = styled.div`
   border: 12px solid #483c32;
   position: relative;
   margin: 40px 40px 0;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+
+  /* 画框阴影效果 */
+  box-shadow: 
+    /* 内部阴影 */
+    inset 0 0 20px rgba(0, 0, 0, 0.1),
+    /* 主阴影 */ 0 10px 30px rgba(0, 0, 0, 0.15),
+    /* 环境光阴影 */ 0 0 0 1px rgba(0, 0, 0, 0.05),
+    /* 顶部打光 */ 0 -5px 15px rgba(255, 255, 255, 0.1);
+
+  /* 画框纹理 */
+  &::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    border: 12px solid #483c32;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='woodgrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23woodgrain)'/%3E%3C/svg%3E");
+    opacity: 0.1;
+    pointer-events: none;
+  }
+
+  /* 画框顶部打光 */
+  &::after {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    height: 40px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    pointer-events: none;
+  }
 `;
 
 const ArtImage = styled.img`
   max-width: 100%;
   height: auto;
   display: block;
+  position: relative;
+
+  /* 图片阴影效果 */
+  box-shadow: 
+    /* 内部阴影 */
+    inset 0 0 10px rgba(0, 0, 0, 0.1),
+    /* 顶部打光 */ 0 -2px 10px rgba(255, 255, 255, 0.1);
+
+  /* 添加微妙的光泽效果 */
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    pointer-events: none;
+  }
 `;
 
 const NavigationArea = styled.div<{ direction: 'left' | 'right' }>`
@@ -199,6 +267,42 @@ async function shouldUpdate() {
   }
 }
 
+const SpotLight = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  opacity: 0.8;
+  mix-blend-mode: overlay;
+`;
+
+// 添加署名组件
+const Attribution = styled.div`
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+
+  a {
+    color: rgba(0, 0, 0, 0.5);
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: rgba(0, 0, 0, 0.8);
+    }
+  }
+`;
+
 const NewTab: React.FC = () => {
   const [artwork, setArtwork] = useState<AssetData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -321,8 +425,21 @@ const NewTab: React.FC = () => {
     checkAndUpdate();
   }, []);
 
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth) * 100;
+      const y = (e.clientY / window.innerHeight) * 100;
+      document.documentElement.style.setProperty('--mouse-x', `${x}%`);
+      document.documentElement.style.setProperty('--mouse-y', `${y}%`);
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   return (
     <PageContainer>
+      <SpotLight />
       <NavigationArea direction="left" onClick={handlePrevious}>
         <NavigationButton>
           <span>←</span>
@@ -372,6 +489,23 @@ const NewTab: React.FC = () => {
           <span>→</span>
         </NavigationButton>
       </NavigationArea>
+
+      <Attribution>
+        Photo by{' '}
+        <a
+          href="https://unsplash.com/@timmossholder?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+          target="_blank"
+          rel="noopener noreferrer">
+          Tim Mossholder
+        </a>{' '}
+        on{' '}
+        <a
+          href="https://unsplash.com/photos/a-black-and-white-photo-of-a-shadow-of-a-tree-Kjy0Q_S_2xg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
+          target="_blank"
+          rel="noopener noreferrer">
+          Unsplash
+        </a>
+      </Attribution>
     </PageContainer>
   );
 };
