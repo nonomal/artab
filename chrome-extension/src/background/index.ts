@@ -10,9 +10,10 @@ syncData().catch(error => {
 chrome.runtime.onInstalled.addListener(details => {
   if (details.reason === 'install') {
     // 新安装时打开新标签页
-    chrome.tabs.create({
-      url: chrome.runtime.getURL('new-tab/index.html'),
-    });
+    // 来不及下载，所以不要这样做
+    // chrome.tabs.create({
+    //   url: chrome.runtime.getURL('new-tab/index.html'),
+    // });
   }
 });
 

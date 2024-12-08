@@ -1,3 +1,4 @@
+import { meta } from './meta';
 /**
  * 类型定义
  */
@@ -32,7 +33,7 @@ const API_CONFIG = {
   baseUrl: 'https://artsandculture.google.com/',
   imageSize: '=s1920-rw',
   metadataExpiry: 5 * 60 * 1000,
-  preloadCount: 5,
+  preloadCount: 10,
 } as const;
 
 const STORAGE_KEYS = {
@@ -137,7 +138,9 @@ async function loadImageDataUrl(imageUrl: string): Promise<string> {
 
   const response = await fetch(imageUrl, {
     method: 'GET',
-    headers: { Accept: 'image/*' },
+    headers: {
+      Accept: 'image/*',
+    },
   });
 
   if (!response.ok) {
@@ -187,30 +190,44 @@ export async function syncData(): Promise<void> {
   if (syncDataPromise) {
     return syncDataPromise;
   }
-
-  // 检查缓存
-  const timestamp = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.cacheTimestamp);
-  const currentAssets = await dbRead<AssetData[]>(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList);
-
-  // 如果有缓存
-  if (currentAssets && currentAssets.length > 0) {
-    // 如果缓存过期，在后台更新
-    if (isMetadataExpired(timestamp)) {
-      updateAssetsInBackground();
-    }
-    return;
-  }
-
-  // 没有缓存时，同步获取数据
   syncDataPromise = (async () => {
-    try {
-      await fetchAndUpdateAssets();
-    } finally {
-      syncDataPromise = null;
+    // 检查缓存
+    const timestamp = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.cacheTimestamp);
+    const currentAssets = await dbRead<AssetData[]>(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList);
+
+    // 如果有缓存
+    if (currentAssets && currentAssets.length > 0) {
+      // do nothing
+    } else {
+      await dbWrite(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList, meta);
     }
   })();
-
   return syncDataPromise;
+
+  //
+  // // 检查缓存
+  // const timestamp = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.cacheTimestamp);
+  // const currentAssets = await dbRead<AssetData[]>(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList);
+  //
+  // // 如果有缓存
+  // if (currentAssets && currentAssets.length > 0) {
+  //   // 如果缓存过期，在后台更新
+  //   if (isMetadataExpired(timestamp)) {
+  //     updateAssetsInBackground();
+  //   }
+  //   return;
+  // }
+  //
+  // // 没有缓存时，同步获取数据
+  // syncDataPromise = (async () => {
+  //   try {
+  //     await fetchAndUpdateAssets();
+  //   } finally {
+  //     syncDataPromise = null;
+  //   }
+  // })();
+  //
+  // return syncDataPromise;
 }
 
 /**
@@ -242,7 +259,7 @@ export async function getImage(index: number): Promise<AssetData> {
   }
 
   const asset = assets[index];
-  const imageUrl = `${asset.image}${API_CONFIG.imageSize}`;
+  const imageUrl = `${asset.image}`;
   const dataUrl = await loadImageDataUrl(imageUrl);
 
   return {
@@ -285,23 +302,34 @@ export async function clearCache(type: CacheType = 'all'): Promise<void> {
   }
 }
 
+let preloadPromise: Promise<void> | null = null;
+
 async function preloadImages(currentIndex: number): Promise<void> {
-  const assets = await getAssetList();
-  const promises: Promise<void>[] = [];
-
-  for (let i = 1; i <= API_CONFIG.preloadCount; i++) {
-    const index = (currentIndex + i) % assets.length;
-    const asset = assets[index];
-    const imageUrl = `${asset.image}${API_CONFIG.imageSize}`;
-
-    promises.push(
-      loadImageDataUrl(imageUrl).catch(error => {
-        console.error(`Failed to preload image at index ${index}:`, error);
-      }),
-    );
+  if (preloadPromise) {
+    return preloadPromise;
   }
 
-  await Promise.allSettled(promises);
+  preloadPromise = (async () => {
+    const assets = await getAssetList();
+    const promises: Promise<void>[] = [];
+
+    for (let i = 1; i <= API_CONFIG.preloadCount; i++) {
+      const index = (currentIndex + i) % assets.length;
+      const asset = assets[index];
+      const imageUrl = `${asset.image}`;
+
+      promises.push(
+        loadImageDataUrl(imageUrl).catch(error => {
+          console.error(`Failed to preload image at index ${index}:`, error);
+        }),
+      );
+    }
+
+    await Promise.allSettled(promises);
+    preloadPromise = null;
+  })();
+
+  return preloadPromise;
 }
 
 /**

@@ -19,8 +19,8 @@ const manifest = {
   name: 'Artab: New Tab with Art',
   version: packageJson.version,
   description: '__MSG_extensionDescription__',
-  host_permissions: ['https://*.ggpht.com/*', 'https://www.gstatic.com/*'],
   permissions: ['storage', 'tabs'],
+  host_permissions: ['https://artab-files.owenyoung.com/*'],
   options_ui: {
     page: 'options/index.html',
     open_in_tab: false, // 改为false，使其在弹出窗口中打开

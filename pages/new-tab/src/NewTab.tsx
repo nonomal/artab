@@ -223,7 +223,7 @@ const NewTab: React.FC = () => {
     new Promise((_, reject) => {
       setTimeout(() => {
         reject(new Error(t('request_timeout')));
-      }, 20000);
+      }, 30000);
     });
 
   const loadInitialArtwork = async () => {
