@@ -77,13 +77,13 @@ const PageContainer = styled.div`
 
 const ArtInfo = styled.div`
   position: absolute;
-  right: -240px;
+  right: -180px;
   bottom: 24px;
-  width: 220px;
+  width: 160px;
   background: #f8f8f8;
   color: #333;
-  padding: 20px;
-  font-size: 13px;
+  padding: 16px;
+  font-size: 12px;
   transform: translateY(0);
   text-align: left;
   letter-spacing: 0.3px;
@@ -100,8 +100,8 @@ const ArtworkContainer = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-right: 240px;
-  margin-left: 240px;
+  margin-right: 180px;
+  margin-left: 180px;
 `;
 
 const ArtFrame = styled.div`
@@ -220,8 +220,8 @@ const NavigationButton = styled.button`
 `;
 
 const InfoTitle = styled.h2`
-  margin: 0 0 12px;
-  font-size: 15px;
+  margin: 0 0 10px;
+  font-size: 13px;
   font-weight: 500;
   color: #222;
   line-height: 1.4;
@@ -238,10 +238,10 @@ const InfoTitle = styled.h2`
 `;
 
 const InfoText = styled.p`
-  margin: 8px 0;
-  line-height: 1.5;
+  margin: 6px 0;
+  line-height: 1.4;
   color: #666;
-  font-size: 12px;
+  font-size: 11px;
 `;
 
 const Link = styled.a`
