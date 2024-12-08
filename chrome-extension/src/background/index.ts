@@ -1,16 +1,5 @@
 import 'webextension-polyfill';
-import { getImageDataUrl, getCurrentIndex, setCurrentIndex } from '../services/asset';
-
-// 监听安装事件
-chrome.runtime.onInstalled.addListener(details => {
-  if (details.reason === 'install') {
-    // 新安装时打开新标签页
-    // 来不及下载，所以不要这样做
-    // chrome.tabs.create({
-    //   url: chrome.runtime.getURL('new-tab/index.html'),
-    // });
-  }
-});
+import { getImageDataUrl, getCurrentIndex, setCurrentIndex, preloadImages } from '../services/asset';
 
 // 处理消息
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -46,6 +35,17 @@ chrome.action.onClicked.addListener(() => {
   chrome.tabs.create({
     url: chrome.runtime.getURL('new-tab/index.html'),
   });
+});
+
+// 在扩展启动和安装时预加载图片
+chrome.runtime.onStartup.addListener(async () => {
+  const currentIndex = await getCurrentIndex();
+  preloadImages(currentIndex);
+});
+
+chrome.runtime.onInstalled.addListener(async () => {
+  const currentIndex = await getCurrentIndex();
+  preloadImages(currentIndex);
 });
 
 console.log('background loaded');
