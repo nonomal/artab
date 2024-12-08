@@ -100,7 +100,7 @@ const ArtFrame = styled.div`
     /* 主阴影 - 更大更柔和 */ 0 20px 50px rgba(0, 0, 0, 0.5),
     /* 底部投影 - 模拟光线从上方打下的阴影 */ 0 35px 90px -20px rgba(0, 0, 0, 0.7),
     /* 近距离锐利阴影 */ 0 30px 45px -15px rgba(0, 0, 0, 0.4),
-    /* 环境光阴影 */ 0 0 0 1px rgba(0, 0, 0, 0.1),
+    /* 环��阴影 */ 0 0 0 1px rgba(0, 0, 0, 0.1),
     /* 顶部打光 */ 0 -5px 20px rgba(255, 255, 255, 0.15);
 
   /* 画框纹理 */
@@ -307,15 +307,27 @@ const NewTab: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [showFrame, setShowFrame] = useState(false);
 
   // 加载图片数据
   const loadArtwork = async (index: number) => {
     const item = meta[index];
+
     try {
+      setShowFrame(false);
+
+      const timer = setTimeout(() => {
+        setShowFrame(true);
+      }, 100);
+
       const response = await chrome.runtime.sendMessage({
         type: 'GET_IMAGE_DATA_URL',
         imageUrl: item.image,
       });
+
+      const responseTime = Date.now();
+
+      clearTimeout(timer);
 
       if (!response.success) throw new Error(response.error);
 
@@ -327,14 +339,17 @@ const NewTab: React.FC = () => {
         link: composeLink(item.link),
       });
 
-      // 更新后端存储的索引（这会触发预加载）
+      setShowFrame(true);
+
       await chrome.runtime.sendMessage({
         type: 'SET_CURRENT_INDEX',
         index,
       });
     } catch (error) {
+      const errorTime = Date.now();
       console.error('Failed to load artwork:', error);
       setError(error instanceof Error ? error.message : '加载失败');
+      setShowFrame(true);
     }
   };
 
@@ -371,6 +386,7 @@ const NewTab: React.FC = () => {
   };
 
   const handlePrevious = async () => {
+    if (currentIndex === null) return;
     setLoading(true);
     setError(null);
     try {
@@ -386,6 +402,7 @@ const NewTab: React.FC = () => {
   };
 
   const handleNext = async () => {
+    if (currentIndex === null) return;
     setLoading(true);
     setError(null);
     try {
@@ -415,7 +432,7 @@ const NewTab: React.FC = () => {
     }
   };
 
-  // 添加键盘事件监听
+  // 添加键盘事件��听
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
 
@@ -486,26 +503,25 @@ const NewTab: React.FC = () => {
       </NavigationArea>
 
       <ArtworkContainer>
-        {currentIndex !== null &&
-          meta[currentIndex] && ( // 确保有索引和meta数据
-            <ArtFrame>
-              {loading ? (
-                <LoadingContainer {...getImageDimensions(currentIndex)}>
-                  <LoadingSpinner />
-                </LoadingContainer>
-              ) : error ? (
-                <LoadingContainer {...getImageDimensions(currentIndex)}>
-                  <ErrorMessage>{error}</ErrorMessage>
-                </LoadingContainer>
-              ) : (
-                artwork?.data_url && (
-                  <ArtImage src={artwork.data_url} alt={artwork.title} {...getImageDimensions(currentIndex)} />
-                )
-              )}
-            </ArtFrame>
-          )}
+        {currentIndex !== null && meta[currentIndex] && showFrame && (
+          <ArtFrame>
+            {loading ? (
+              <LoadingContainer {...getImageDimensions(currentIndex)}>
+                <LoadingSpinner />
+              </LoadingContainer>
+            ) : error ? (
+              <LoadingContainer {...getImageDimensions(currentIndex)}>
+                <ErrorMessage>{error}</ErrorMessage>
+              </LoadingContainer>
+            ) : (
+              artwork?.data_url && (
+                <ArtImage src={artwork.data_url} alt={artwork.title} {...getImageDimensions(currentIndex)} />
+              )
+            )}
+          </ArtFrame>
+        )}
 
-        {artwork && !error && (
+        {artwork && !error && showFrame && (
           <ArtInfo>
             <InfoTitle>
               <Link href={artwork.link} target="_blank">
@@ -513,13 +529,11 @@ const NewTab: React.FC = () => {
               </Link>
             </InfoTitle>
             <InfoText>
-              {' '}
               <Link href={artwork.artist_link} target="_blank">
                 {artwork.creator}
               </Link>
             </InfoText>
             <InfoText>
-              {' '}
               <Link href={artwork.attribution_link} target="_blank">
                 {artwork.attribution}
               </Link>

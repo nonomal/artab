@@ -36,6 +36,8 @@ const API_CONFIG = {
   preloadCount: 10,
 } as const;
 
+const MEMORY_CACHE_SIZE = 5;
+
 const STORAGE_KEYS = {
   cacheTimestamp: 'json_cache_timestamp',
   currentIndex: 'current_image_index',
@@ -195,7 +197,6 @@ async function getAssetList(): Promise<AssetData[]> {
 
 // 内存缓存相关
 const memoryCache: Map<string, string> = new Map();
-const MEMORY_CACHE_SIZE = 5;
 
 // 添加全局的 preloadPromise
 let preloadPromise: Promise<void> | null = null;
@@ -208,10 +209,9 @@ export async function preloadImages(currentIndex: number): Promise<void> {
   }
 
   preloadPromise = (async () => {
-    const preloadCount = 10;
     const promises: Promise<void>[] = [];
 
-    for (let i = 1; i <= preloadCount; i++) {
+    for (let i = 1; i <= API_CONFIG.preloadCount; i++) {
       const index = (currentIndex + i) % meta.length;
       const imageUrl = meta[index].image;
 

@@ -69,6 +69,10 @@ const Options = () => {
               Made by{' '}
               <a href="https://www.owenyoung.com" target="_blank" rel="noopener noreferrer">
                 Owen
+              </a>{' '}
+              &{' '}
+              <a href="https://mazzzystar.github.io/" target="_blank" rel="noopener noreferrer">
+                Mazzystar
               </a>
             </div>
             <div className="inspired-by">
