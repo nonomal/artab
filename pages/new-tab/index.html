@@ -1,70 +1,68 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>New Tab</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        min-height: 100vh;
-        /* 基础背景色 */
-        background-color: #f5f5f3;
 
-        /* 创建多层渐变效果模拟自然光照 */
-        background-image: 
-          /* 左上角主光源 */
-          radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 50%),
-          /* 中央柔和光晕 */
-            radial-gradient(
-              circle at center,
-              rgba(255, 255, 255, 0.8) 0%,
-              rgba(245, 245, 243, 0.5) 40%,
-              rgba(235, 235, 233, 0.3) 100%
-            ),
-          /* 四角暗部渐变 */
-            linear-gradient(
-              145deg,
-              rgba(220, 220, 218, 0.4) 0%,
-              rgba(245, 245, 243, 0) 30%,
-              rgba(245, 245, 243, 0) 70%,
-              rgba(220, 220, 218, 0.4) 100%
-            );
+<head>
+  <meta charset="UTF-8" />
+  <title>New Tab</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      /* 基础背景色 */
+      background-color: #f5f5f3;
 
-        /* 确保背景固定 */
-        background-attachment: fixed;
+      /* 创建多层渐变效果模拟自然光照 */
+      background-image:
+        /* 左上角主光源 */
+        radial-gradient(circle at 30% 30%,
+          rgba(255, 255, 255, 0.4) 0%,
+          rgba(255, 255, 255, 0) 50%),
+        /* 中央柔和光晕 */
+        radial-gradient(circle at center,
+          rgba(255, 255, 255, 0.8) 0%,
+          rgba(245, 245, 243, 0.5) 40%,
+          rgba(235, 235, 233, 0.3) 100%),
+        /* 四角暗部渐变 */
+        linear-gradient(145deg,
+          rgba(220, 220, 218, 0.4) 0%,
+          rgba(245, 245, 243, 0) 30%,
+          rgba(245, 245, 243, 0) 70%,
+          rgba(220, 220, 218, 0.4) 100%);
 
-        /* 添加微妙的阴影效果 */
-        box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.1);
-      }
+      /* 确保背景固定 */
+      background-attachment: fixed;
 
-      #app-container {
-        min-height: 100vh;
-        /* 添加容器的光影效果 */
-        position: relative;
-      }
+      /* 添加微妙的阴影效果 */
+      box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.1);
+    }
 
-      /* 添加动态光效 */
-      #app-container::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: radial-gradient(
-          circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    #app-container {
+      min-height: 100vh;
+      /* 添加容器的光影效果 */
+      position: relative;
+    }
+
+    /* 添加动态光效 */
+    #app-container::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
           rgba(255, 255, 255, 0.1) 0%,
-          rgba(255, 255, 255, 0) 50%
-        );
-        pointer-events: none;
-        opacity: 0.8;
-      }
-    </style>
-  </head>
+          rgba(255, 255, 255, 0) 50%);
+      pointer-events: none;
+      opacity: 0.8;
+    }
+  </style>
+</head>
 
-  <body>
-    <div id="app-container"></div>
-    <script type="module" src="./src/index.tsx"></script>
-  </body>
+<body>
+  <div id="app-container"></div>
+  <script type="module" src="./src/index.tsx"></script>
+</body>
+
 </html>
