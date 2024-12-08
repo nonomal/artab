@@ -125,7 +125,6 @@ const ArtworkContainer = styled.div`
 `;
 
 const ArtFrame = styled.div`
-  width: 640px;
   background: #fff;
   padding: 24px;
   border: 12px solid #000;
@@ -170,9 +169,9 @@ const ArtFrame = styled.div`
   }
 `;
 
-const ArtImage = styled.img`
-  max-width: 100%;
-  height: auto;
+const ArtImage = styled.img<{ width: number; height: number }>`
+  width: ${props => props.width}px;
+  height: ${props => props.height}px;
   display: block;
   position: relative;
 
@@ -285,9 +284,9 @@ const LoadingSpinner = styled.div`
   margin: 50px auto;
 `;
 
-const LoadingContainer = styled.div<{ height?: number }>`
-  width: 100%;
-  height: ${props => (props.height ? `${props.height}px` : '300px')};
+const LoadingContainer = styled.div<{ width: number; height: number }>`
+  width: ${props => props.width}px;
+  height: ${props => props.height}px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -371,9 +370,16 @@ const composeLink = (link: string): string => {
   return link.startsWith('http') ? link : `${baseUrl}${link}`;
 };
 
+// 定义一些常量
+const FRAME_WIDTH = 640; // 画框宽度
+const FRAME_PADDING = 24; // 内边距
+const FRAME_BORDER = 12; // 边框宽度
+const TOTAL_HORIZONTAL_SPACE = FRAME_PADDING * 2 + FRAME_BORDER * 2; // 总的水平空间
+const ACTUAL_IMAGE_WIDTH = FRAME_WIDTH - TOTAL_HORIZONTAL_SPACE; // 实际图片可用宽度 = 568px
+
 const NewTab: React.FC = () => {
   const [artwork, setArtwork] = useState<AssetData | null>(null);
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
+  const [currentIndex, setCurrentIndex] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -396,7 +402,7 @@ const NewTab: React.FC = () => {
         link: composeLink(item.link),
       });
 
-      // 更新后端存储的索引
+      // 更新后端存储的索引（这会触发预加载）
       await chrome.runtime.sendMessage({
         type: 'SET_CURRENT_INDEX',
         index,
@@ -425,7 +431,7 @@ const NewTab: React.FC = () => {
           await loadArtwork(nextIdx);
           await lastUpdateTimeStorage.set(Date.now());
         } else {
-          // 不需要��新，使用当前索引
+          // 不需要更新，使用当前索引
           await loadArtwork(currentIdx);
         }
       })();
@@ -527,6 +533,25 @@ const NewTab: React.FC = () => {
     getCurrentIndex();
   }, []);
 
+  // 在图片加载完成后打印尺寸
+  const handleImageLoad = (e: React.SyntheticEvent<HTMLImageElement>) => {
+    const img = e.target as HTMLImageElement;
+    console.log('Loaded image dimensions:', {
+      width: img.offsetWidth,
+      height: img.offsetHeight,
+      naturalWidth: img.naturalWidth,
+      naturalHeight: img.naturalHeight,
+    });
+  };
+
+  // 计算图片尺寸
+  const getImageDimensions = (index: number) => {
+    const item = meta[index];
+    const targetWidth = 640;
+    const targetHeight = Math.round((item.height * targetWidth) / item.width);
+    return { width: targetWidth, height: targetHeight };
+  };
+
   return (
     <PageContainer>
       <SpotLight />
@@ -537,22 +562,24 @@ const NewTab: React.FC = () => {
       </NavigationArea>
 
       <ArtworkContainer>
-        <ArtFrame>
-          {loading ? (
-            <LoadingContainer
-              height={
-                meta[currentIndex] ? Math.round((meta[currentIndex].height * 640) / meta[currentIndex].width) : 450
-              }>
-              <LoadingSpinner />
-            </LoadingContainer>
-          ) : error ? (
-            <LoadingContainer>
-              <ErrorMessage>{error}</ErrorMessage>
-            </LoadingContainer>
-          ) : (
-            artwork?.data_url && <ArtImage src={artwork.data_url} alt={artwork.title} />
+        {currentIndex !== null &&
+          meta[currentIndex] && ( // 确保有索引和meta数据
+            <ArtFrame>
+              {loading ? (
+                <LoadingContainer {...getImageDimensions(currentIndex)}>
+                  <LoadingSpinner />
+                </LoadingContainer>
+              ) : error ? (
+                <LoadingContainer {...getImageDimensions(currentIndex)}>
+                  <ErrorMessage>{error}</ErrorMessage>
+                </LoadingContainer>
+              ) : (
+                artwork?.data_url && (
+                  <ArtImage src={artwork.data_url} alt={artwork.title} {...getImageDimensions(currentIndex)} />
+                )
+              )}
+            </ArtFrame>
           )}
-        </ArtFrame>
 
         {artwork && !error && (
           <ArtInfo>

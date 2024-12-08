@@ -193,16 +193,43 @@ async function getAssetList(): Promise<AssetData[]> {
   return updatedAssets;
 }
 
-// 添加内存缓存相关的类型和变量
-interface CachedImage {
-  index: number;
-  asset: AssetData;
-}
-
-// 内存缓存队列，保持5张图片
-const memoryCache: Map<number, CachedImage> = new Map();
+// 内存缓存相关
+const memoryCache: Map<string, string> = new Map();
 const MEMORY_CACHE_SIZE = 5;
-let preloadPromise: Promise<void> | null = null;
+
+// 预加载图片
+async function preloadImages(currentIndex: number): Promise<void> {
+  const preloadCount = 10;
+  const promises: Promise<void>[] = [];
+
+  for (let i = 1; i <= preloadCount; i++) {
+    const index = (currentIndex + i) % meta.length;
+    const imageUrl = meta[index].image;
+
+    // 如果已经在内存缓存中，跳过
+    if (memoryCache.has(imageUrl)) {
+      continue;
+    }
+
+    promises.push(
+      loadImageDataUrl(imageUrl)
+        .then(dataUrl => {
+          // 添加到内存缓存
+          memoryCache.set(imageUrl, dataUrl);
+          // 如果缓存太大，删除最旧的
+          if (memoryCache.size > MEMORY_CACHE_SIZE) {
+            const firstKey = memoryCache.keys().next().value;
+            memoryCache.delete(firstKey);
+          }
+        })
+        .catch(error => {
+          console.error(`Failed to preload image at index ${index}:`, error);
+        }),
+    );
+  }
+
+  await Promise.allSettled(promises);
+}
 
 // 修改 getImage 函数，优先从内存缓存获取
 export async function getImage(index: number): Promise<AssetData> {
@@ -235,7 +262,7 @@ export async function getImage(index: number): Promise<AssetData> {
   return processedAsset;
 }
 
-// 添加更新内存缓���的函数
+// 添加更新内存缓存的函数
 function updateMemoryCache(currentIndex: number, asset: AssetData) {
   // 添加当前图片到缓存
   memoryCache.set(currentIndex, { index: currentIndex, asset });
@@ -249,59 +276,43 @@ function updateMemoryCache(currentIndex: number, asset: AssetData) {
   }
 }
 
-// 修改预加载函数，同时更新内存缓存
-async function preloadImages(currentIndex: number): Promise<void> {
-  if (preloadPromise) {
-    return preloadPromise;
+// 修改 getImageDataUrl 函数，使用缓存
+export async function getImageDataUrl(imageUrl: string): Promise<string> {
+  // 先检查内存缓存
+  const cachedDataUrl = memoryCache.get(imageUrl);
+  if (cachedDataUrl) {
+    return cachedDataUrl;
   }
 
-  preloadPromise = (async () => {
-    const assets = await getAssetList();
-    const promises: Promise<void>[] = [];
+  // 再检查 IndexedDB 缓存
+  const cachedData = await dbRead<string>(DB_CONFIG.stores.images, imageUrl);
+  if (cachedData) {
+    // 添加到内存缓存
+    memoryCache.set(imageUrl, cachedData);
+    return cachedData;
+  }
 
-    for (let i = 1; i <= API_CONFIG.preloadCount; i++) {
-      const index = (currentIndex + i) % assets.length;
+  // 如果都没有，则加载并缓存
+  const dataUrl = await loadImageDataUrl(imageUrl);
 
-      // 如果已经在内存缓存中，跳过
-      if (memoryCache.has(index)) {
-        continue;
-      }
+  // 保存到两种缓存
+  memoryCache.set(imageUrl, dataUrl);
+  await dbWrite(DB_CONFIG.stores.images, imageUrl, dataUrl);
 
-      const asset = assets[index];
-      const imageUrl = `${asset.image}`;
-
-      promises.push(
-        loadImageDataUrl(imageUrl)
-          .then(dataUrl => {
-            const processedAsset = {
-              ...asset,
-              data_url: dataUrl,
-              artist_link: composeLink(asset.artist_link),
-              attribution_link: composeLink(asset.attribution_link),
-              link: composeLink(asset.link),
-            };
-            updateMemoryCache(index, processedAsset);
-          })
-          .catch(error => {
-            console.error(`Failed to preload image at index ${index}:`, error);
-          }),
-      );
-    }
-
-    await Promise.allSettled(promises);
-    preloadPromise = null;
-  })();
-
-  return preloadPromise;
+  return dataUrl;
 }
 
-/**
- * 获取当前��片
- */
-export async function getCurrentImage(): Promise<AssetData> {
-  const currentIndex = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex);
-  const index = currentIndex ? parseInt(currentIndex) : 0;
-  return getImage(index);
+// 获取/设置当前索引
+export async function getCurrentIndex(): Promise<number> {
+  const index = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex);
+  return index ? parseInt(index) : 0;
+}
+
+// 修改 setCurrentIndex 函数，添加预加载
+export async function setCurrentIndex(index: number): Promise<void> {
+  await dbWrite(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex, index.toString());
+  // 触发预加载
+  preloadImages(index).catch(console.error);
 }
 
 // 修改 clearCache 函数，同时清除内存缓存
@@ -315,19 +326,11 @@ export async function clearCache(type: CacheType = 'all'): Promise<void> {
   }
 }
 
-// 获取图片的 data URL
-export async function getImageDataUrl(imageUrl: string): Promise<string> {
-  return loadImageDataUrl(imageUrl);
-}
-
-// 获取/设置当前索引
-export async function getCurrentIndex(): Promise<number> {
-  const index = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex);
-  return index ? parseInt(index) : 0;
-}
-
-export async function setCurrentIndex(index: number): Promise<void> {
-  await dbWrite(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex, index.toString());
+// 获取当前片
+export async function getCurrentImage(): Promise<AssetData> {
+  const currentIndex = await dbRead<string>(DB_CONFIG.stores.metadata, STORAGE_KEYS.currentIndex);
+  const index = currentIndex ? parseInt(currentIndex) : 0;
+  return getImage(index);
 }
 
 // 导出测试用配置
