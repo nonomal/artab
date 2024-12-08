@@ -88,11 +88,27 @@ const ArtInfo = styled.div`
   text-align: left;
   letter-spacing: 0.3px;
 
-  /* 卡片阴影效果 - 更柔和的阴影 */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  /* 增强卡片阴影效果 */
+  box-shadow: 
+    /* 近距离深色阴影 */
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    /* 远距离扩散阴影 */ 0 8px 24px rgba(0, 0, 0, 0.15),
+    /* 边缘细节阴影 */ 0 1px 2px rgba(0, 0, 0, 0.1);
 
-  /* 移除纹理，使用更简洁的设计 */
-  border-left: 1px solid rgba(0, 0, 0, 0.05);
+  /* 左侧边框 */
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+
+  /* 添加微妙的内阴影 */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+  }
 `;
 
 const ArtworkContainer = styled.div`
@@ -502,13 +518,13 @@ const NewTab: React.FC = () => {
               </Link>
             </InfoTitle>
             <InfoText>
-              Artist:{' '}
+              {' '}
               <Link href={artwork.artist_link} target="_blank">
                 {artwork.creator}
               </Link>
             </InfoText>
             <InfoText>
-              Source:{' '}
+              {' '}
               <Link href={artwork.attribution_link} target="_blank">
                 {artwork.attribution}
               </Link>
