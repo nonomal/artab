@@ -36,7 +36,7 @@ const PageContainer = styled.div`
   position: relative;
   overflow: hidden;
 
-  /* 使用背景图片和基础色调 */
+  /* 使用背景图片 */
   background: url(${backgroundImage}) center/cover no-repeat;
 
   /* 创建多层光影效果，让四周更暗 */
@@ -48,32 +48,20 @@ const PageContainer = styled.div`
     right: 0;
     bottom: 0;
     background-image: 
-      /* 中央光晕，突出画作区域 */
+      /* 中央聚光效果 */
       radial-gradient(
-        circle at center,
-        rgba(255, 255, 255, 0.7) 0%,
-        rgba(255, 255, 255, 0.3) 30%,
-        rgba(255, 255, 255, 0) 60%
+        ellipse at center,
+        transparent 0%,
+        rgba(0, 0, 0, 0) 30%,
+        rgba(0, 0, 0, 0.6) 60%,
+        rgba(0, 0, 0, 0.8) 100%
       ),
-      /* 四角暗部 */
-        linear-gradient(
-          to bottom,
-          rgba(0, 0, 0, 0.3) 0%,
-          rgba(0, 0, 0, 0.1) 20%,
-          rgba(0, 0, 0, 0.1) 80%,
-          rgba(0, 0, 0, 0.3) 100%
-        ),
-      linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.3) 0%,
-        rgba(0, 0, 0, 0.1) 20%,
-        rgba(0, 0, 0, 0.1) 80%,
-        rgba(0, 0, 0, 0.3) 100%
-      );
+      /* 顶部补光 */ linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, transparent 20%);
+    mix-blend-mode: multiply;
     pointer-events: none;
   }
 
-  /* 添加整体调色滤镜 */
+  /* 添加微妙的环境光 */
   &::after {
     content: '';
     position: absolute;
@@ -81,7 +69,8 @@ const PageContainer = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(245, 245, 243, 0.3);
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    mix-blend-mode: overlay;
     pointer-events: none;
   }
 `;
@@ -120,17 +109,18 @@ const ArtFrame = styled.div`
   width: 100%;
   background: #fff;
   padding: 24px;
-  border: 12px solid #1a1a1a;
+  border: 12px solid #000; // 纯黑色边框
   position: relative;
   margin: 40px 0 0;
+  z-index: 1; // 确保画框在光影层上方
 
-  /* 画框阴影效果 */
+  /* 加强画框阴影效果 */
   box-shadow: 
     /* 内部阴影 */
-    inset 0 0 20px rgba(0, 0, 0, 0.15),
-    /* 主阴影，更深更柔和 */ 0 15px 35px rgba(0, 0, 0, 0.2),
-    /* 环境光阴影 */ 0 0 0 1px rgba(0, 0, 0, 0.05),
-    /* 顶部打光，更微妙 */ 0 -5px 15px rgba(255, 255, 255, 0.05);
+    inset 0 0 30px rgba(0, 0, 0, 0.2),
+    /* 主阴影，更深更大 */ 0 20px 50px rgba(0, 0, 0, 0.5),
+    /* 环境光阴影 */ 0 0 0 1px rgba(0, 0, 0, 0.1),
+    /* 顶部打光，更强烈 */ 0 -5px 20px rgba(255, 255, 255, 0.15);
 
   /* 画框纹理 */
   &::before {
@@ -140,21 +130,21 @@ const ArtFrame = styled.div`
     left: -12px;
     right: -12px;
     bottom: -12px;
-    border: 12px solid #1a1a1a;
+    border: 12px solid #000;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='woodgrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23woodgrain)'/%3E%3C/svg%3E");
-    opacity: 0.1;
+    opacity: 0.15;
     pointer-events: none;
   }
 
-  /* 画框顶部打光 */
+  /* 加强画框顶部打光 */
   &::after {
     content: '';
     position: absolute;
     top: -12px;
     left: -12px;
     right: -12px;
-    height: 40px;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0));
+    height: 60px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
     pointer-events: none;
   }
 `;
@@ -320,13 +310,13 @@ const SpotLight = styled.div`
   background: radial-gradient(
     circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
     rgba(255, 255, 255, 0.15) 0%,
-    rgba(255, 255, 255, 0) 40%
+    transparent 40%
   );
-  opacity: 0.6;
-  mix-blend-mode: soft-light;
+  opacity: 0.7;
+  mix-blend-mode: overlay;
 `;
 
-// // 添加署名��件
+// // 添加署名件
 // const Attribution = styled.div`
 //   position: fixed;
 //   bottom: 12px;
