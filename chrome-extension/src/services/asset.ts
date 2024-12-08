@@ -41,7 +41,6 @@ const MEMORY_CACHE_SIZE = 5;
 const STORAGE_KEYS = {
   cacheTimestamp: 'json_cache_timestamp',
   currentIndex: 'current_image_index',
-  assetList: 'asset_list',
 } as const;
 
 /**
@@ -147,52 +146,11 @@ async function loadImageDataUrl(imageUrl: string): Promise<string> {
   return dataUrl;
 }
 
-// 添加全局的 syncDataPromise
-let syncDataPromise: Promise<void> | null = null;
-
-/**
- * 同步资源数据
- * 如果有缓存，立即返回并在需要时后台更新
- * 如果没有缓存，同步获取新数据
- */
-export async function syncData(): Promise<void> {
-  // 如果已经在同步中，直接返回已存在的 Promise
-  if (syncDataPromise) {
-    return syncDataPromise;
-  }
-  syncDataPromise = (async () => {
-    const currentAssets = await dbRead<AssetData[]>(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList);
-
-    // 如果有缓存
-    if (currentAssets && currentAssets.length > 0) {
-      // do nothing
-    } else {
-      await dbWrite(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList, meta);
-    }
-  })();
-  return syncDataPromise;
-}
-
 /**
  * 获取资源列表
  */
-async function getAssetList(): Promise<AssetData[]> {
-  // 先尝试从缓存获取
-  const assets = await dbRead<AssetData[]>(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList);
-  if (assets && assets.length > 0) {
-    return assets;
-  }
-
-  // 如果没有缓存数据，执行同步
-  await syncData();
-
-  // 再次尝试获取
-  const updatedAssets = await dbRead<AssetData[]>(DB_CONFIG.stores.metadata, STORAGE_KEYS.assetList);
-  if (!updatedAssets || updatedAssets.length === 0) {
-    throw new Error('Failed to get assets data');
-  }
-
-  return updatedAssets;
+function getAssetList(): AssetData[] {
+  return [...meta];
 }
 
 // 内存缓存相关
@@ -246,20 +204,16 @@ export async function preloadImages(currentIndex: number): Promise<void> {
 
 // 修改 getImage 函数，优先从内存缓存获取
 export async function getImage(index: number): Promise<AssetData> {
-  const assets = await getAssetList();
+  const assets = getAssetList();
   if (index < 0 || index >= assets.length) {
     throw new Error(`Invalid index: ${index}`);
   }
 
-  // 先检查内存缓存
-  const cachedImage = memoryCache.get(index);
-  if (cachedImage) {
-    return cachedImage.asset;
-  }
-
   const asset = assets[index];
   const imageUrl = `${asset.image}`;
-  const dataUrl = await loadImageDataUrl(imageUrl);
+
+  // 获取图片数据
+  const dataUrl = await getImageDataUrl(imageUrl);
 
   const processedAsset = {
     ...asset,
@@ -269,27 +223,10 @@ export async function getImage(index: number): Promise<AssetData> {
     link: composeLink(asset.link),
   };
 
-  // 添加到内存缓存
-  updateMemoryCache(index, processedAsset);
-
   return processedAsset;
 }
 
-// 添加更新内存缓存的函数
-function updateMemoryCache(currentIndex: number, asset: AssetData) {
-  // 添加当前图片到缓存
-  memoryCache.set(currentIndex, { index: currentIndex, asset });
-
-  // 如果缓存超出大小限制，删除最旧的条目
-  if (memoryCache.size > MEMORY_CACHE_SIZE) {
-    // 找到最远的索引
-    const indices = Array.from(memoryCache.keys());
-    const furthestIndex = indices.reduce((a, b) => (Math.abs(b - currentIndex) > Math.abs(a - currentIndex) ? b : a));
-    memoryCache.delete(furthestIndex);
-  }
-}
-
-// 修改 getImageDataUrl 函数，使用缓存
+// 修改 getImageDataUrl 函数，使用简单的字符串缓存
 export async function getImageDataUrl(imageUrl: string): Promise<string> {
   // 先检查内存缓存
   const cachedDataUrl = memoryCache.get(imageUrl);
@@ -302,14 +239,24 @@ export async function getImageDataUrl(imageUrl: string): Promise<string> {
   if (cachedData) {
     // 添加到内存缓存
     memoryCache.set(imageUrl, cachedData);
+    // 如果缓存太大，删除最旧的
+    if (memoryCache.size > MEMORY_CACHE_SIZE) {
+      const firstKey = memoryCache.keys().next().value;
+      memoryCache.delete(firstKey);
+    }
     return cachedData;
   }
 
   // 如果都没有，则加载并缓存
   const dataUrl = await loadImageDataUrl(imageUrl);
 
-  // 保存到内存
+  // 保存到内存缓存
   memoryCache.set(imageUrl, dataUrl);
+  // 如果缓存太大，删除最旧的
+  if (memoryCache.size > MEMORY_CACHE_SIZE) {
+    const firstKey = memoryCache.keys().next().value;
+    memoryCache.delete(firstKey);
+  }
 
   return dataUrl;
 }
