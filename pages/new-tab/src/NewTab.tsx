@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 import { keyframes } from '@emotion/react';
 import { updateFrequencyStorage, lastUpdateTimeStorage } from '@extension/storage';
 import { t } from '@extension/i18n';
-import backgroundImage from '../public/tim-mossholder-Kjy0Q_S_2xg-unsplash.jpg';
 import { meta } from '@extension/shared';
 import type { MetaItem } from '@extension/shared/lib/utils/shared-types';
 
@@ -39,44 +38,6 @@ const PageContainer = styled.div`
   justify-content: center;
   position: relative;
   overflow: hidden;
-
-  /* 使用背景图片 */
-  background: url(${backgroundImage}) center/cover no-repeat;
-
-  /* 创建多层光影效果，让四周更暗 */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-image: 
-      /* 中央聚光效果 - 降低暗部强度 */
-      radial-gradient(
-        ellipse at center,
-        transparent 0%,
-        rgba(0, 0, 0, 0) 35%,
-        rgba(0, 0, 0, 0.5) 65%,
-        rgba(0, 0, 0, 0.7) 100%
-      ),
-      /* 顶部补光 - 稍微增加亮度 */ linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, transparent 25%);
-    mix-blend-mode: multiply;
-    pointer-events: none;
-  }
-
-  /* 调整环境光 - 略微增加亮度 */
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 75%);
-    mix-blend-mode: overlay;
-    pointer-events: none;
-  }
 `;
 
 const ArtInfo = styled.div`
@@ -320,42 +281,6 @@ async function shouldUpdate() {
   }
 }
 
-const SpotLight = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  pointer-events: none;
-  background: radial-gradient(
-    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(255, 255, 255, 0.15) 0%,
-    transparent 40%
-  );
-  opacity: 0.7;
-  mix-blend-mode: overlay;
-`;
-
-// // 添加署名件
-// const Attribution = styled.div`
-//   position: fixed;
-//   bottom: 12px;
-//   right: 12px;
-//   font-size: 12px;
-//   color: rgba(0, 0, 0, 0.5);
-//   z-index: 10;
-
-//   a {
-//     color: rgba(0, 0, 0, 0.5);
-//     text-decoration: none;
-//     transition: color 0.3s ease;
-
-//     &:hover {
-//       color: rgba(0, 0, 0, 0.8);
-//     }
-//   }
-// `;
-
 // 创建一个通用的超时Promise
 const createTimeoutPromise = () =>
   new Promise((_, reject) => {
@@ -554,7 +479,6 @@ const NewTab: React.FC = () => {
 
   return (
     <PageContainer>
-      <SpotLight />
       <NavigationArea direction="left" onClick={handlePrevious}>
         <NavigationButton>
           <span>←</span>
@@ -609,23 +533,6 @@ const NewTab: React.FC = () => {
           <span>→</span>
         </NavigationButton>
       </NavigationArea>
-
-      {/* <Attribution>
-        Photo by{' '}
-        <a
-          href="https://unsplash.com/@timmossholder?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-          target="_blank"
-          rel="noopener noreferrer">
-          Tim Mossholder
-        </a>{' '}
-        on{' '}
-        <a
-          href="https://unsplash.com/photos/a-black-and-white-photo-of-a-shadow-of-a-tree-Kjy0Q_S_2xg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-          target="_blank"
-          rel="noopener noreferrer">
-          Unsplash
-        </a>
-      </Attribution> */}
     </PageContainer>
   );
 };
