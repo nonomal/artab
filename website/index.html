@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Art Tab - 每个标签页都是一幅艺术品</title>
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div x-data="artTab" class="page-container">
+      <!-- 左侧导航区域 -->
+      <div class="navigation-area left" @click="previousArt">
+        <button class="navigation-button">
+          <span>←</span>
+        </button>
+      </div>
+
+      <!-- 主要艺术品展示区域 -->
+      <div class="artwork-container" :class="{ 'visible': containerVisible }">
+        <div class="frame-wrapper">
+          <div class="art-frame">
+            <template x-if="loading">
+              <div class="loading-container" :style="`aspect-ratio: ${getCurrentDimensions().width}/${getCurrentDimensions().height}`">
+                <div class="loading-spinner"></div>
+              </div>
+            </template>
+
+            <template x-if="error">
+              <div class="loading-container" :style="`aspect-ratio: ${getCurrentDimensions().width}/${getCurrentDimensions().height}`">
+                <div class="error-message" x-text="error"></div>
+              </div>
+            </template>
+
+            <template x-if="!loading && !error && currentArt">
+              <img
+                :src="currentArt.image"
+                :alt="currentArt.title"
+                :style="`aspect-ratio: ${getCurrentDimensions().width}/${getCurrentDimensions().height}`"
+                class="art-image"
+                @load="handleImageLoad" />
+            </template>
+          </div>
+        </div>
+
+        <!-- 艺术品信息 -->
+        <template x-if="currentArt && !error && !loading">
+          <div class="art-info">
+            <h2 class="info-title">
+              <a :href="currentArt.link" target="_blank" x-text="currentArt.title"></a>
+            </h2>
+            <p class="info-text">
+              <a :href="currentArt.artist_link" target="_blank" x-text="currentArt.creator"></a>
+            </p>
+            <p class="info-text">
+              <a :href="currentArt.attribution_link" target="_blank" x-text="currentArt.attribution"></a>
+            </p>
+          </div>
+        </template>
+      </div>
+
+      <!-- 右侧导航区域 -->
+      <div class="navigation-area right" @click="nextArt">
+        <button class="navigation-button">
+          <span>→</span>
+        </button>
+      </div>
+    </div>
+    <script src="./index.js"></script>
+  </body>
+</html>

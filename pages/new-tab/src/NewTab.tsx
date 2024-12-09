@@ -4,7 +4,6 @@ import { keyframes } from '@emotion/react';
 import { updateFrequencyStorage, lastUpdateTimeStorage } from '@extension/storage';
 import { t } from '@extension/i18n';
 import { meta } from '@extension/shared';
-import type { MetaItem } from '@extension/shared/lib/utils/shared-types';
 
 /**
  * 艺术品数据接口定义
@@ -142,29 +141,18 @@ const ArtImage = styled.img<{ width: number; height: number }>`
 
 const NavigationArea = styled.div<{ direction: 'left' | 'right' }>`
   position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
+  top: 0;
   ${props => props.direction}: 0;
-  width: 60px;
-  height: 100px;
+  width: 7%;
+  min-width: 55px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
   cursor: pointer;
-  pointer-events: none;
   z-index: 10;
-
-  @media (max-width: 1080px) {
-    width: 40px;
-    height: 80px;
-  }
-
-  /* 让按钮可以响应事件 */
-  > button {
-    pointer-events: all;
-  }
 
   &:hover {
     opacity: 1;
@@ -188,6 +176,7 @@ const NavigationButton = styled.button`
   cursor: pointer;
   font-size: 20px;
   user-select: none;
+  pointer-events: none;
 
   &:hover {
     background: white;
