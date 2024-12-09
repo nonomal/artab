@@ -31,49 +31,16 @@ const spin = keyframes`
 
 const PageContainer = styled.div`
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
-  overflow: hidden;
-`;
-
-const ArtInfo = styled.div`
-  position: absolute;
-  right: -180px;
-  bottom: 24px;
-  width: 160px;
-  background: #f8f8f8;
-  color: #333;
-  padding: 16px;
-  font-size: 12px;
-  transform: translateY(0);
-  text-align: left;
-  letter-spacing: 0.3px;
-
-  /* 增强卡片阴影效果 */
-  box-shadow: 
-    /* 近距离深色阴影 */
-    0 4px 8px rgba(0, 0, 0, 0.2),
-    /* 远距离扩散阴影 */ 0 8px 24px rgba(0, 0, 0, 0.15),
-    /* 边缘细节阴影 */ 0 1px 2px rgba(0, 0, 0, 0.1);
-
-  /* 左侧边框 */
-  border-left: 1px solid rgba(0, 0, 0, 0.08);
-
-  /* 添加微妙的内阴影 */
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
-    pointer-events: none;
-  }
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+  box-sizing: border-box;
 `;
 
 const ArtworkContainer = styled.div`
@@ -81,8 +48,20 @@ const ArtworkContainer = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-right: 180px;
-  margin-left: 180px;
+  width: 100%;
+  max-width: 820px;
+  padding: 20px;
+  box-sizing: border-box;
+
+  @media (max-width: 1080px) {
+    padding: 20px 0;
+  }
+`;
+
+const FrameWrapper = styled.div`
+  position: relative;
+  width: min(640px, calc(100vw - 40px));
+  margin: 0 auto;
 `;
 
 const ArtFrame = styled.div`
@@ -90,8 +69,13 @@ const ArtFrame = styled.div`
   padding: 24px;
   border: 12px solid #000;
   position: relative;
-  margin: 40px 0 0;
-  z-index: 1;
+  width: 100%;
+  box-sizing: border-box;
+
+  @media (max-width: 480px) {
+    padding: 16px;
+    border-width: 8px;
+  }
 
   /* 加强画框阴影效果 */
   box-shadow: 
@@ -100,7 +84,7 @@ const ArtFrame = styled.div`
     /* 主阴影 - 更大更柔和 */ 0 20px 50px rgba(0, 0, 0, 0.5),
     /* 底部投影 - 模拟光线从上方打下的阴影 */ 0 35px 90px -20px rgba(0, 0, 0, 0.7),
     /* 近距离锐利阴影 */ 0 30px 45px -15px rgba(0, 0, 0, 0.4),
-    /* 环��阴影 */ 0 0 0 1px rgba(0, 0, 0, 0.1),
+    /* 环阴影 */ 0 0 0 1px rgba(0, 0, 0, 0.1),
     /* 顶部打光 */ 0 -5px 20px rgba(255, 255, 255, 0.15);
 
   /* 画框纹理 */
@@ -117,7 +101,7 @@ const ArtFrame = styled.div`
     pointer-events: none;
   }
 
-  /* 加强画框顶部打光 */
+  /* 强画框顶打光 */
   &::after {
     content: '';
     position: absolute;
@@ -131,8 +115,9 @@ const ArtFrame = styled.div`
 `;
 
 const ArtImage = styled.img<{ width: number; height: number }>`
-  width: ${props => props.width}px;
-  height: ${props => props.height}px;
+  width: 100%;
+  aspect-ratio: ${props => props.width / props.height};
+  height: auto;
   display: block;
   position: relative;
 
@@ -157,16 +142,29 @@ const ArtImage = styled.img<{ width: number; height: number }>`
 
 const NavigationArea = styled.div<{ direction: 'left' | 'right' }>`
   position: fixed;
-  top: 0;
+  top: 50%;
+  transform: translateY(-50%);
   ${props => props.direction}: 0;
-  width: 8%;
-  height: 100%;
+  width: 60px;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
   cursor: pointer;
+  pointer-events: none;
+  z-index: 10;
+
+  @media (max-width: 1080px) {
+    width: 40px;
+    height: 80px;
+  }
+
+  /* 让按钮可以响应事件 */
+  > button {
+    pointer-events: all;
+  }
 
   &:hover {
     opacity: 1;
@@ -246,8 +244,8 @@ const LoadingSpinner = styled.div`
 `;
 
 const LoadingContainer = styled.div<{ width: number; height: number }>`
-  width: ${props => props.width}px;
-  height: ${props => props.height}px;
+  width: 100%;
+  aspect-ratio: ${props => props.width / props.height};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -259,6 +257,47 @@ const ErrorMessage = styled.div`
   padding: 20px;
   font-size: 14px;
   line-height: 1.5;
+`;
+
+const ArtInfo = styled.div`
+  width: 140px;
+  background: #f8f8f8;
+  color: #333;
+  padding: 16px;
+  font-size: 12px;
+  text-align: left;
+  letter-spacing: 0.3px;
+  position: absolute;
+  right: -100px;
+  bottom: 50px;
+  box-shadow: 
+    /* 近距离深色阴影 */
+    0 4px 8px rgba(0, 0, 0, 0.2),
+    /* 远距离扩散阴影 */ 0 8px 24px rgba(0, 0, 0, 0.15),
+    /* 边缘细节阴影 */ 0 1px 2px rgba(0, 0, 0, 0.1);
+
+  /* 左侧边框 */
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
+
+  /* 添加微妙的内阴影 */
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+  }
+
+  @media (max-width: 1080px) {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 160px;
+    margin: 20px auto 0;
+  }
 `;
 
 // 检查是否需要更新图片
@@ -432,7 +471,7 @@ const NewTab: React.FC = () => {
     }
   };
 
-  // 添加键盘事件��听
+  // 添加键盘事件监听
   useEffect(() => {
     window.addEventListener('keydown', handleKeyDown);
 
@@ -503,23 +542,25 @@ const NewTab: React.FC = () => {
       </NavigationArea>
 
       <ArtworkContainer>
-        {currentIndex !== null && meta[currentIndex] && showFrame && (
-          <ArtFrame>
-            {loading ? (
-              <LoadingContainer {...getImageDimensions(currentIndex)}>
-                <LoadingSpinner />
-              </LoadingContainer>
-            ) : error ? (
-              <LoadingContainer {...getImageDimensions(currentIndex)}>
-                <ErrorMessage>{error}</ErrorMessage>
-              </LoadingContainer>
-            ) : (
-              artwork?.data_url && (
-                <ArtImage src={artwork.data_url} alt={artwork.title} {...getImageDimensions(currentIndex)} />
-              )
-            )}
-          </ArtFrame>
-        )}
+        <FrameWrapper>
+          {currentIndex !== null && meta[currentIndex] && showFrame && (
+            <ArtFrame>
+              {loading ? (
+                <LoadingContainer {...getImageDimensions(currentIndex)}>
+                  <LoadingSpinner />
+                </LoadingContainer>
+              ) : error ? (
+                <LoadingContainer {...getImageDimensions(currentIndex)}>
+                  <ErrorMessage>{error}</ErrorMessage>
+                </LoadingContainer>
+              ) : (
+                artwork?.data_url && (
+                  <ArtImage src={artwork.data_url} alt={artwork.title} {...getImageDimensions(currentIndex)} />
+                )
+              )}
+            </ArtFrame>
+          )}
+        </FrameWrapper>
 
         {artwork && !error && showFrame && (
           <ArtInfo>
