@@ -276,3 +276,68 @@ body::after {
   font-size: 14px;
   line-height: 1.5;
 }
+
+.header {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  margin: 0;
+  letter-spacing: 0.1em;
+}
+
+.header .slogan {
+  font-size: 1rem;
+  margin: 0.5rem 0 0;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.download-links {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.store-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.store-link:hover {
+  background: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.store-link img {
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 640px) {
+  .download-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .store-link {
+    width: 200px;
+    justify-content: center;
+  }
+}

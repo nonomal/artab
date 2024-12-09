@@ -8,6 +8,11 @@
   </head>
   <body>
     <div x-data="artTab" class="page-container">
+      <div class="header">
+        <h1>Art Tab</h1>
+        <p class="slogan">每个标签页都是一幅艺术品</p>
+      </div>
+
       <!-- 左侧导航区域 -->
       <div class="navigation-area left" @click="previousArt">
         <button class="navigation-button">
@@ -63,6 +68,21 @@
         <button class="navigation-button">
           <span>→</span>
         </button>
+      </div>
+
+      <div class="download-links">
+        <a href="https://chrome.google.com/webstore/detail/art-tab/..." class="store-link chrome">
+          <img src="/static/chrome.svg" alt="Chrome" />
+          <span>Chrome 商店</span>
+        </a>
+        <a href="https://microsoftedge.microsoft.com/addons/detail/art-tab/..." class="store-link edge">
+          <img src="/static/edge.svg" alt="Edge" />
+          <span>Edge 商店</span>
+        </a>
+        <a href="https://addons.mozilla.org/firefox/addon/art-tab/..." class="store-link firefox">
+          <img src="/static/firefox.svg" alt="Firefox" />
+          <span>Firefox 商店</span>
+        </a>
       </div>
     </div>
     <script src="./index.js"></script>
