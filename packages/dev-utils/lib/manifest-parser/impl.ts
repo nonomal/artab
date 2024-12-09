@@ -19,7 +19,7 @@ function convertToFirefoxCompatibleManifest(manifest: Manifest) {
     type: 'module',
   };
   manifestCopy.options_ui = {
-    page: manifest.options_page,
+    ...manifest.options_ui,
     browser_style: false,
   };
   manifestCopy.content_security_policy = {
@@ -27,7 +27,7 @@ function convertToFirefoxCompatibleManifest(manifest: Manifest) {
   };
   manifestCopy.browser_specific_settings = {
     gecko: {
-      id: 'example@example.com',
+      id: '{5f994adc-e56c-4864-b28f-8117f73e778e}',
       strict_min_version: '109.0',
     },
   };

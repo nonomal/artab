@@ -1,3 +1,4 @@
+import 'webextension-polyfill';
 import { getImageDataUrl, getCurrentIndex, setCurrentIndex, preloadImages } from '../services/asset';
 
 // 处理消息
