@@ -15,6 +15,7 @@ jobs:
     name: 部署到 Cloudflare Pages
     permissions:
       deployments: write
+      contents: read
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
