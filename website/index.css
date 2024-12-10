@@ -461,12 +461,22 @@ body::after {
   }
 }
 
-/* 添加新的容器样式 */
+/* 修改info-cards容器样式 */
 .info-cards {
   position: absolute;
-  right: -100px;
+  left: calc(100% - 70px);
   bottom: 50px;
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+/* 响应式调整 */
+@media (max-width: 1080px) {
+  .info-cards {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin: 20px auto 0;
+  }
 }
