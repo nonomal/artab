@@ -471,6 +471,13 @@ body::after {
   gap: 12px;
 }
 
+/* 添加内部容器的样式 */
+.info-cards > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;  /* 添加相同的间距 */
+}
+
 /* 响应式调整 */
 @media (max-width: 1080px) {
   .info-cards {

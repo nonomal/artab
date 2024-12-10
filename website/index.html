@@ -44,27 +44,27 @@
 
         <!-- 把两个卡片放在同一个容器内 -->
         <div class="info-cards">
-            <div class="chrome-download">
+          <template x-if="currentArt && !error && !loading">
+            <div>
+              <div class="chrome-download">
                 <a href="#" class="chrome-download-button">
                   <img src="/static/chrome.png" alt="Chrome" class="chrome-icon">
                   <span>Add Artab to Chrome</span>
                 </a>
               </div>
-          <template x-if="currentArt && !error && !loading">
-            <div class="art-info">
-              <h2 class="info-title">
-                <a :href="currentArt.link" target="_blank" x-text="currentArt.title"></a>
-              </h2>
-              <p class="info-text">
-                <a :href="currentArt.artist_link" target="_blank" x-text="currentArt.creator"></a>
-              </p>
-              <p class="info-text">
-                <a :href="currentArt.attribution_link" target="_blank" x-text="currentArt.attribution"></a>
-              </p>
+              <div class="art-info">
+                <h2 class="info-title">
+                  <a :href="currentArt.link" target="_blank" x-text="currentArt.title"></a>
+                </h2>
+                <p class="info-text">
+                  <a :href="currentArt.artist_link" target="_blank" x-text="currentArt.creator"></a>
+                </p>
+                <p class="info-text">
+                  <a :href="currentArt.attribution_link" target="_blank" x-text="currentArt.attribution"></a>
+                </p>
+              </div>
             </div>
           </template>
-
-        
         </div>
       </div>
 
