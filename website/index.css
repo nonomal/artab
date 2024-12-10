@@ -453,7 +453,7 @@ body::after {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -120px;
+    bottom: -80px;
     margin: 0;
     width: auto;
     z-index: 1;
@@ -469,7 +469,7 @@ body::after {
 
   .frame-wrapper {
     width: min(640px, calc(100vw - 80px));
-    margin: 0 auto 160px auto;
+    margin: 0 auto 100px auto;
   }
 
   .art-frame {
@@ -542,13 +542,60 @@ body::after {
   }
 
   .frame-wrapper {
-    margin-bottom: 160px;
+    margin-bottom: 100px;
   }
 }
 
-/* 为了确保在移动版时 art-frame 有足够的下方空间 */
+/* 修改页面容器的内边距 */
+.page-container {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
 @media (max-width: 1080px) {
+  .page-container {
+    padding: 10px;
+    justify-content: flex-start;
+    padding-top: 100px;
+  }
+
   .frame-wrapper {
-    margin-bottom: 140px;
+    width: min(640px, calc(100vw - 80px));
+    margin: 0 auto 100px auto;
+  }
+
+  .info-cards {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -120px;
+    margin: 0;
+    width: auto;
+    z-index: 1;
+  }
+
+  .info-cards > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .art-info,
+  .chrome-download {
+    width: 100%;
+    min-width: 180px;
+    max-width: 240px;
+    margin: 0;
+    box-sizing: border-box;
   }
 }

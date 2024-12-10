@@ -8,8 +8,7 @@
     <link rel="alternate icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/static/icon.svg">
     <script src="/static/js/alpinejs-3-14-7.js" defer></script>
-    <script src="/static/js/cache.js"></script>
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./index.css?v=20241211" />
   </head>
   <body>
     <div x-data="artTab" class="page-container">
@@ -51,12 +50,6 @@
         <div class="info-cards">
           <template x-if="currentArt && !error && !loading">
             <div>
-              <div class="chrome-download">
-                <a :href="getStoreLink()" class="chrome-download-button">
-                  <img :src="getBrowserIcon()" :alt="getBrowserName()" class="chrome-icon">
-                  <span x-text="getButtonText()"></span>
-                </a>
-              </div>
               <div class="art-info">
                 <h2 class="info-title">
                   <a :href="currentArt.link" target="_blank" x-text="currentArt.title"></a>
@@ -67,6 +60,12 @@
                 <p class="info-text">
                   <a :href="currentArt.attribution_link" target="_blank" x-text="currentArt.attribution"></a>
                 </p>
+              </div>
+              <div class="chrome-download">
+                <a :href="getStoreLink()" class="chrome-download-button">
+                  <img :src="getBrowserIcon()" :alt="getBrowserName()" class="chrome-icon">
+                  <span x-text="getButtonText()"></span>
+                </a>
               </div>
             </div>
           </template>
@@ -82,6 +81,6 @@
 
   
     </div>
-    <script src="./index.js"></script>
+    <script src="./index.js?v=20241211"></script>
   </body>
 </html>
