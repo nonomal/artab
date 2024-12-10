@@ -8,10 +8,13 @@ on:
       - 'website/**'
   workflow_dispatch:
 
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     name: 部署到 Cloudflare Pages
+    permissions:
+      deployments: write
     steps:
       - name: 检出代码
         uses: actions/checkout@v4
