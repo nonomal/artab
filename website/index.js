@@ -259,8 +259,16 @@ document.addEventListener('alpine:init', () => {
       try {
         this.error = null;
 
-        // 随机选择一个起始索引
-        this.currentIndex = Math.floor(Math.random() * meta.length);
+        // 从 localStorage 获取上次浏览的索引
+        let savedIndex = localStorage.getItem('artTabIndex');
+        savedIndex = savedIndex ? parseInt(savedIndex) : 0;
+
+        // 检查索引是否有效
+        if (savedIndex >= meta.length || savedIndex < 0) {
+          savedIndex = 0;
+        }
+
+        this.currentIndex = savedIndex;
         const item = meta[this.currentIndex];
         this.currentArt = {
           width: item.width,
@@ -300,6 +308,10 @@ document.addEventListener('alpine:init', () => {
           attribution_link: this.composeLink(item.attribution_link),
           link: this.composeLink(item.link),
         };
+
+        // 保存下一个索引到 localStorage
+        const nextIndex = (index + 1) % meta.length;
+        localStorage.setItem('artTabIndex', nextIndex);
       } catch (error) {
         console.error('Failed to load artwork:', error);
         this.error = '加载失败';
