@@ -47,9 +47,9 @@
           <template x-if="currentArt && !error && !loading">
             <div>
               <div class="chrome-download">
-                <a href="#" class="chrome-download-button">
-                  <img src="/static/chrome.png" alt="Chrome" class="chrome-icon">
-                  <span>Add Artab to Chrome</span>
+                <a :href="getStoreLink()" class="chrome-download-button">
+                  <img :src="getBrowserIcon()" :alt="getBrowserName()" class="chrome-icon">
+                  <span x-text="getButtonText()"></span>
                 </a>
               </div>
               <div class="art-info">

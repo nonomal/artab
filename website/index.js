@@ -167,6 +167,50 @@ document.addEventListener('alpine:init', () => {
       };
     },
 
+    getBrowserType() {
+      const ua = navigator.userAgent;
+      if (ua.includes('Firefox')) {
+        return 'firefox';
+      } else if (ua.includes('Edg/')) {
+        return 'edge';
+      }
+      return 'chrome';
+    },
+
+    getBrowserName() {
+      const browserType = this.getBrowserType();
+      return browserType.charAt(0).toUpperCase() + browserType.slice(1);
+    },
+
+    getBrowserIcon() {
+      const browserType = this.getBrowserType();
+      return `/static/${browserType}.png`;
+    },
+
+    getButtonText() {
+      const browserType = this.getBrowserType();
+      switch (browserType) {
+        case 'firefox':
+          return 'Add Artab to Firefox';
+        case 'edge':
+          return 'Add Artab to Edge';
+        default:
+          return 'Add Artab to Chrome';
+      }
+    },
+
+    getStoreLink() {
+      const browserType = this.getBrowserType();
+      switch (browserType) {
+        case 'firefox':
+          return 'https://addons.mozilla.org/firefox/addon/your-addon-id';
+        case 'edge':
+          return 'https://microsoftedge.microsoft.com/addons/your-addon-id';
+        default:
+          return 'https://chrome.google.com/webstore/detail/your-addon-id';
+      }
+    },
+
     init() {
       this.loadInitialArtwork();
 
