@@ -277,29 +277,49 @@ body::after {
   line-height: 1.5;
 }
 
+.download-section {
+  margin-top: 3rem;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.download-section:hover {
+  opacity: 1;
+}
+
 .header {
-  text-align: center;
-  margin-bottom: 2rem;
+  text-align: right;
   color: white;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  min-width: 200px;
 }
 
 .header h1 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 300;
   margin: 0;
   letter-spacing: 0.1em;
 }
 
 .header .slogan {
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: 0.5rem 0 0;
   opacity: 0.9;
   font-weight: 300;
 }
 
 .download-links {
-  margin-top: 2rem;
   display: flex;
   gap: 1.5rem;
   justify-content: center;
@@ -317,6 +337,7 @@ body::after {
   font-size: 0.9rem;
   transition: all 0.2s ease;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .store-link:hover {
@@ -331,13 +352,22 @@ body::after {
 }
 
 @media (max-width: 640px) {
+  .download-section {
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    margin-top: 3rem;
+    transform: none;
+    left: auto;
+    bottom: auto;
+  }
+
+  .header {
+    text-align: center;
+  }
+
   .download-links {
     flex-direction: column;
     align-items: center;
-  }
-
-  .store-link {
-    width: 200px;
-    justify-content: center;
   }
 }

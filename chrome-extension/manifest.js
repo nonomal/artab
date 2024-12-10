@@ -16,7 +16,7 @@ const manifest = {
   name: 'Artab: New Tab with Art',
   version: packageJson.version,
   description: '__MSG_extensionDescription__',
-  permissions: ['storage', 'tabs'],
+  permissions: ['storage'],
   host_permissions: ['https://artab-files.owenyoung.com/*'],
   options_ui: {
     page: 'options/index.html',
