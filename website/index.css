@@ -184,7 +184,6 @@ body::after {
 }
 
 .art-info {
-  width: 100%;
   background: #f8f8f8;
   color: #333;
   padding: 16px;
@@ -197,6 +196,17 @@ body::after {
     0 1px 2px rgba(0, 0, 0, 0.1);
   border-left: 1px solid rgba(0, 0, 0, 0.08);
   box-sizing: border-box;
+  width: var(--button-width);
+}
+
+.info-title, 
+.info-text {
+  margin: 6px 0;
+  line-height: 1.4;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 @media (max-width: 1080px) {
@@ -215,6 +225,10 @@ body::after {
   font-weight: 500;
   color: #222;
   line-height: 1.4;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .info-title a {
@@ -232,6 +246,10 @@ body::after {
   line-height: 1.4;
   color: #666;
   font-size: 11px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .info-text a {
@@ -375,7 +393,7 @@ body::after {
 
 /* Chrome下载按钮样式 */
 .chrome-download {
-  width: 100%;
+  width: max-content;
 }
 
 .chrome-download-button {
@@ -394,8 +412,6 @@ body::after {
     0 2px 6px rgba(0, 0, 0, 0.1),
     0 4px 12px rgba(0, 0, 0, 0.1);
   white-space: nowrap;
-  width: 100%;
-  box-sizing: border-box;
 }
 
 .chrome-download-button:hover {
@@ -434,6 +450,14 @@ body::after {
     right: auto;
     bottom: auto;
     margin: 20px auto 0;
+  }
+
+  .art-info {
+    width: 100%;
+  }
+
+  .chrome-download {
+    width: 100%;
   }
 }
 

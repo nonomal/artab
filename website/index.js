@@ -188,6 +188,15 @@ document.addEventListener('alpine:init', () => {
         document.documentElement.style.setProperty('--mouse-x', `${x}%`);
         document.documentElement.style.setProperty('--mouse-y', `${y}%`);
       });
+
+      // 添加这段代码来设置art-info的宽度
+      this.$nextTick(() => {
+        const button = document.querySelector('.chrome-download-button');
+        if (button) {
+          const buttonWidth = button.offsetWidth;
+          document.documentElement.style.setProperty('--button-width', buttonWidth + 'px');
+        }
+      });
     },
 
     async loadInitialArtwork() {
