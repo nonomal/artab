@@ -74,7 +74,7 @@ body::after {
 
 .frame-wrapper {
   position: relative;
-  width: min(640px, calc(100vw - 40px));
+  width: min(640px, calc(100vw - 120px));
   margin: 0 auto;
 }
 
@@ -393,7 +393,8 @@ body::after {
 
 /* Chrome下载按钮样式 */
 .chrome-download {
-  width: max-content;
+  width: auto;
+  min-width: 180px;
 }
 
 .chrome-download-button {
@@ -412,6 +413,9 @@ body::after {
     0 2px 6px rgba(0, 0, 0, 0.1),
     0 4px 12px rgba(0, 0, 0, 0.1);
   white-space: nowrap;
+  width: 100%;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .chrome-download-button:hover {
@@ -446,10 +450,13 @@ body::after {
   }
 
   .info-cards {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    margin: 20px auto 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -120px;
+    margin: 0;
+    width: auto;
+    z-index: 1;
   }
 
   .art-info {
@@ -458,6 +465,30 @@ body::after {
 
   .chrome-download {
     width: 100%;
+  }
+
+  .frame-wrapper {
+    width: min(640px, calc(100vw - 80px));
+    margin: 0 auto 160px auto;
+  }
+
+  .art-frame {
+    padding: 16px;
+    border-width: 8px;
+  }
+
+  .art-frame::before {
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border-width: 8px;
+  }
+
+  .art-frame::after {
+    top: -8px;
+    left: -8px;
+    right: -8px;
   }
 }
 
@@ -480,10 +511,44 @@ body::after {
 
 /* 响应式调整 */
 @media (max-width: 1080px) {
-  .info-cards {
+  .artwork-container {
     position: relative;
-    left: auto;
-    bottom: auto;
-    margin: 20px auto 0;
+  }
+
+  .info-cards {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -120px;
+    margin: 0;
+    width: auto;
+    z-index: 1;
+  }
+
+  .info-cards > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .art-info,
+  .chrome-download {
+    width: 100%;
+    min-width: 180px;
+    max-width: 240px;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .frame-wrapper {
+    margin-bottom: 160px;
+  }
+}
+
+/* 为了确保在移动版时 art-frame 有足够的下方空间 */
+@media (max-width: 1080px) {
+  .frame-wrapper {
+    margin-bottom: 140px;
   }
 }
