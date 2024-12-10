@@ -286,6 +286,40 @@ document.addEventListener('alpine:init', () => {
       }
     },
 
+    // 预加载图片
+    async preloadImages(currentIndex) {
+      const total = meta.length;
+
+      for (let i = 1; i <= 5; i++) {
+        const index = (currentIndex + i) % total;
+        const imageUrl = meta[index].image;
+
+        try {
+          // 检查是否已经缓存
+          const cached = await getCachedImage(imageUrl);
+          if (!cached) {
+            // 如果没有缓存,则获取并缓存
+            const response = await fetch(imageUrl);
+            const blob = await response.blob();
+            const reader = new FileReader();
+
+            await new Promise((resolve, reject) => {
+              reader.onloadend = async () => {
+                const dataUrl = reader.result;
+                await cacheImage(imageUrl, dataUrl);
+                console.log(`Preloaded image ${index}: ${imageUrl}`);
+                resolve();
+              };
+              reader.onerror = reject;
+              reader.readAsDataURL(blob);
+            });
+          }
+        } catch (error) {
+          console.error(`Failed to preload image ${index}:`, error);
+        }
+      }
+    },
+
     async loadArtwork(index) {
       const item = meta[index];
       if (!item) return;
@@ -294,7 +328,20 @@ document.addEventListener('alpine:init', () => {
       this.error = null;
 
       try {
-        // 预加载图片
+        // 先尝试从缓存获取
+        const cached = await getCachedImage(item.image);
+        if (cached) {
+          this.currentArt = {
+            ...item,
+            artist_link: this.composeLink(item.artist_link),
+            attribution_link: this.composeLink(item.attribution_link),
+            link: this.composeLink(item.link),
+            data_url: cached,
+          };
+          return;
+        }
+
+        // 如果没有缓存，则加载并缓存
         await new Promise((resolve, reject) => {
           const img = new Image();
           img.onload = resolve;
@@ -302,16 +349,35 @@ document.addEventListener('alpine:init', () => {
           img.src = item.image;
         });
 
+        // 获取图片的 data URL 并缓存
+        const response = await fetch(item.image, {
+          mode: 'cors',
+        });
+        const blob = await response.blob();
+        const reader = new FileReader();
+
+        const dataUrl = await new Promise((resolve, reject) => {
+          reader.onloadend = () => resolve(reader.result);
+          reader.onerror = reject;
+          reader.readAsDataURL(blob);
+        });
+
+        await cacheImage(item.image, dataUrl);
+
         this.currentArt = {
           ...item,
           artist_link: this.composeLink(item.artist_link),
           attribution_link: this.composeLink(item.attribution_link),
           link: this.composeLink(item.link),
+          data_url: dataUrl,
         };
 
         // 保存下一个索引到 localStorage
         const nextIndex = (index + 1) % meta.length;
         localStorage.setItem('artTabIndex', nextIndex);
+
+        // 预加载下一批图片
+        await this.preloadImages(index);
       } catch (error) {
         console.error('Failed to load artwork:', error);
         this.error = '加载失败';
