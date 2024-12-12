@@ -4103,11 +4103,11 @@ document.addEventListener('alpine:init', () => {
       const browserType = this.getBrowserType();
       switch (browserType) {
         case 'firefox':
-          return 'https://addons.mozilla.org/firefox/addon/your-addon-id';
+          return 'https://addons.mozilla.org/en-US/firefox/addon/artab-new-tab-with-art/';
         case 'edge':
           return 'https://microsoftedge.microsoft.com/addons/your-addon-id';
         default:
-          return 'https://chrome.google.com/webstore/detail/your-addon-id';
+          return 'https://chromewebstore.google.com/detail/artab-new-tab-with-art/cphdjiacoelggmgfopmgmljdnhmlhici';
       }
     },
 
