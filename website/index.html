@@ -1,86 +1,64 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artab - New Tab, New Art</title>
-    <link rel="icon" type="image/svg+xml" href="/static/icon.svg">
-    <link rel="alternate icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" href="/static/icon.svg">
-    <script src="/static/js/alpinejs-3-14-7.js" defer></script>
-    <link rel="stylesheet" href="./index.css?v=20241211" />
-  </head>
-  <body>
-    <div x-data="artTab" class="page-container">
-      <!-- 左侧导航区域 -->
-      <div class="navigation-area left" @click="previousArt">
-        <button class="navigation-button">
-          <span>←</span>
-        </button>
-      </div>
-
-      <!-- 主要艺术品展示区域 -->
-      <div class="artwork-container" :class="{ 'visible': containerVisible }">
-        <div class="frame-wrapper">
-          <div class="art-frame">
-            <template x-if="loading">
-              <div class="loading-container" :style="`aspect-ratio: ${getCurrentDimensions().width}/${getCurrentDimensions().height}`">
-                <div class="loading-spinner"></div>
-              </div>
-            </template>
-
-            <template x-if="error">
-              <div class="loading-container" :style="`aspect-ratio: ${getCurrentDimensions().width}/${getCurrentDimensions().height}`">
-                <div class="error-message" x-text="error"></div>
-              </div>
-            </template>
-
-            <template x-if="!loading && !error && currentArt">
-              <img
-                :src="currentArt.image"
-                :alt="currentArt.title"
-                :style="`aspect-ratio: ${getCurrentDimensions().width}/${getCurrentDimensions().height}`"
-                class="art-image"
-                @load="handleImageLoad" />
-            </template>
-          </div>
-        </div>
-
-        <!-- 把两个卡片放在同一个容器内 -->
-        <div class="info-cards">
-          <template x-if="currentArt && !error && !loading">
-            <div>
-              <div class="art-info">
-                <h2 class="info-title">
-                  <a :href="currentArt.link" target="_blank" x-text="currentArt.title"></a>
-                </h2>
-                <p class="info-text">
-                  <a :href="currentArt.artist_link" target="_blank" x-text="currentArt.creator"></a>
-                </p>
-                <p class="info-text">
-                  <a :href="currentArt.attribution_link" target="_blank" x-text="currentArt.attribution"></a>
-                </p>
-              </div>
-              <div class="chrome-download">
-                <a :href="getStoreLink()" class="chrome-download-button">
-                  <img :src="getBrowserIcon()" :alt="getBrowserName()" class="chrome-icon">
-                  <span x-text="getButtonText()"></span>
-                </a>
-              </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浏览器新标签页</title>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body x-data="{ activeTab: 0 }">
+    <div class="browser-window">
+        <div class="browser-header">
+            <!-- Mac 窗口控制按钮 -->
+            <div class="window-controls">
+                <div class="control close"></div>
+                <div class="control minimize"></div>
+                <div class="control maximize"></div>
             </div>
-          </template>
+
+            <!-- 标签栏 -->
+            <div class="tabs">
+                <template x-for="(tab, index) in ['新标签页 1', '新标签页 2', '新标签页 3']">
+                    <div 
+                        class="tab" 
+                        :class="{ 'active': activeTab === index }"
+                        @click="activeTab = index"
+                        x-text="tab"
+                    ></div>
+                </template>
+            </div>
         </div>
-      </div>
 
-      <!-- 右侧导航区域 -->
-      <div class="navigation-area right" @click="nextArt">
-        <button class="navigation-button">
-          <span>→</span>
-        </button>
-      </div>
+        <!-- 内容区域 -->
+        <div class="content">
+            <template x-if="activeTab === 0">
+                <div class="tab-content" x-show="activeTab === 0" x-transition>
+                    <h1>欢迎使用新标签页 1</h1>
+                    <div class="search-box">
+                        <input type="text" placeholder="在 Google 中搜索，或者输入网址">
+                    </div>
+                </div>
+            </template>
 
-  
+            <template x-if="activeTab === 1">
+                <div class="tab-content" x-show="activeTab === 1" x-transition>
+                    <h1>欢迎使用新标签页 2</h1>
+                    <div class="search-box">
+                        <input type="text" placeholder="在 Google 中搜索，或者输入网址">
+                    </div>
+                </div>
+            </template>
+
+            <template x-if="activeTab === 2">
+                <div class="tab-content" x-show="activeTab === 2" x-transition>
+                    <h1>欢迎使用新标签页 3</h1>
+                    <div class="search-box">
+                        <input type="text" placeholder="在 Google 中搜索，或者输入网址">
+                    </div>
+                </div>
+            </template>
+        </div>
     </div>
-    <script src="./index.js?v=20241211"></script>
-  </body>
+</body>
 </html>
