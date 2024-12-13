@@ -7,7 +7,14 @@
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
-<body x-data="{ activeTab: 0 }">
+<body x-data="{ 
+    activeTab: 0,
+    startAutoSwitch() {
+        setInterval(() => {
+            this.activeTab = (this.activeTab + 1) % 3;
+        }, 1000);
+    }
+}" x-init="startAutoSwitch()">
     <div class="browser-window">
         <div class="browser-header">
             <div class="window-controls">
