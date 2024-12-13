@@ -20,19 +20,21 @@
 }" x-init="startAutoSwitch()">
     <div class="container">
         <div class="page-header">
-            <div>
+            <div class="header-content">
                 <div class="header-text">
                     <h1 class="header-title">"让有史以来最好的艺术作品出现在你的新标签页。"</h1>
                     <p class="header-source">—— Artab</p>
                 </div>
-                <button class="chrome-button">
-                    <img src="static/chrome.png" alt="Chrome">
-                    Add to Chrome
-                    <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3.33337 8H12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M8 3.33331L12.6667 7.99998L8 12.6666" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
+                <div x-data="browserInfo()">
+                    <a :href="storeUrl" class="chrome-button">
+                        <img :src="'static/' + browserIcon" :alt="browserName">
+                        <span x-text="buttonText"></span>
+                        <svg class="arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.33337 8H12.6667" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M8 3.33331L12.6667 7.99998L8 12.6666" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
         </div>
         
@@ -167,5 +169,33 @@
             </template>
         </div>
     </div>
+    <script>
+        function browserInfo() {
+            const ua = navigator.userAgent;
+            let browserName = 'Chrome';
+            let browserIcon = 'chrome.png';
+            let buttonText = 'Add to Chrome';
+            let storeUrl = 'https://chromewebstore.google.com/detail/artab-new-tab-with-art/cphdjiacoelggmgfopmgmljdnhmlhici';
+
+            if (ua.includes('Firefox')) {
+                browserName = 'Firefox';
+                browserIcon = 'firefox.png';
+                buttonText = 'Add to Firefox';
+                storeUrl = 'https://addons.mozilla.org/en-US/firefox/addon/artab/';
+            } else if (ua.includes('Edg')) {
+                browserName = 'Edge';
+                browserIcon = 'edge.png';
+                buttonText = 'Add to Edge';
+                storeUrl = 'https://microsoftedge.microsoft.com/addons/detail/artab-new-tab-with-art/cioaigkjcjchlohhapcdnldoggnmpmih';
+            }
+
+            return {
+                browserName,
+                browserIcon,
+                buttonText,
+                storeUrl
+            };
+        }
+    </script>
 </body>
 </html>
