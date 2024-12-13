@@ -265,7 +265,6 @@ h1 {
         position: relative;
         right: auto;
         bottom: auto;
-        width: 280px;
         margin: 15px auto 0;
         background: rgba(248, 248, 248, 0.95);
         padding: 16px;
@@ -426,16 +425,7 @@ h1 {
         position: relative;
         right: auto;
         bottom: auto;
-        width: 160px;
         margin: 20px auto 0;
-    }
-    
-    .artwork-container {
-        padding: 10px;
-    }
-    
-    .frame-wrapper {
-        width: min(100%, calc(100vw - 40px));
     }
 }
 
@@ -454,17 +444,16 @@ h1 {
     }
     
     .art-info {
-        width: 90%;
-        max-width: 280px;
+        width: 140px;
         margin: 15px auto 0;
     }
     
     .info-title {
-        font-size: 12px;
+        font-size: 13px;
     }
     
     .info-text {
-        font-size: 10px;
+        font-size: 11px;
     }
 }
 
@@ -690,8 +679,6 @@ h1 {
         position: relative;
         right: auto;
         bottom: auto;
-        width: 100%;
-        max-width: none;
         margin: 15px 0 0;
         background: rgba(248, 248, 248, 0.95);
     }
