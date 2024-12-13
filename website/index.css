@@ -410,9 +410,6 @@ h1 {
     margin-bottom: 40px;
     position: relative;
     z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
     max-width: 1200px;
     width: 95%;
     padding: 0 20px;
@@ -420,6 +417,7 @@ h1 {
 
 .header-text {
     text-align: left;
+    margin-bottom: 20px;
 }
 
 .header-title {
@@ -451,7 +449,16 @@ h1 {
     cursor: pointer;
     transition: all 0.2s ease;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-left: 20px;
+    margin-left: 0;
+}
+
+.chrome-button .arrow {
+    margin-left: 6px;
+    transition: transform 0.2s ease;
+}
+
+.chrome-button:hover .arrow {
+    transform: translateX(4px);
 }
 
 .chrome-button:hover {
