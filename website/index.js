@@ -4105,7 +4105,7 @@ document.addEventListener('alpine:init', () => {
         case 'firefox':
           return 'https://addons.mozilla.org/en-US/firefox/addon/artab-new-tab-with-art/';
         case 'edge':
-          return 'https://microsoftedge.microsoft.com/addons/your-addon-id';
+          return 'https://microsoftedge.microsoft.com/addons/detail/artab-new-tab-with-art/cioaigkjcjchlohhapcdnldoggnmpmih';
         default:
           return 'https://chromewebstore.google.com/detail/artab-new-tab-with-art/cphdjiacoelggmgfopmgmljdnhmlhici';
       }
