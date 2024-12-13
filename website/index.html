@@ -15,59 +15,72 @@
         }, 1000);
     }
 }" x-init="startAutoSwitch()">
-    <div class="browser-window">
-        <div class="browser-header">
-            <div class="window-controls">
-                <div class="control close"></div>
-                <div class="control minimize"></div>
-                <div class="control maximize"></div>
+    <div class="container">
+        <div class="page-header">
+            <div class="header-text">
+                <h1 class="header-title">“让有史以来最好的艺术作品出现在你的新标签页”</h1>
+                <p class="header-source">—— Artab</p>
             </div>
-
-            <div class="tabs">
-                <template x-for="(tab, index) in ['New Tab 1', 'New Tab 2', 'New Tab 3']">
-                    <div 
-                        class="tab" 
-                        :class="{ 'active': activeTab === index }"
-                        @click="activeTab = index"
-                        x-text="tab"
-                    ></div>
-                </template>
-            </div>
+            <button class="chrome-button">
+                <img src="static/chrome.png" alt="Chrome">
+                Add to Chrome
+            </button>
         </div>
+        
+        <!-- 原有的浏览器窗口内容 -->
+        <div class="browser-window">
+            <div class="browser-header">
+                <div class="window-controls">
+                    <div class="control close"></div>
+                    <div class="control minimize"></div>
+                    <div class="control maximize"></div>
+                </div>
 
-        <div class="content">
-            <!-- Tab 1 -->
-            <template x-if="activeTab === 0">
-                <div class="tab-content" x-show="activeTab === 0" x-transition>
-                
-                        <div class="artwork-container">
-                            <div class="frame-wrapper">
-                                <div class="art-frame">
-                                    <img 
-                                        class="art-image" 
-                                        src="https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QgraSbQjk2t48JQ9f79WSbw7J0R4bWg0jZVvWJzfd1gSah4g_ieRfTaxsFzo-b8aWp9M8Gowg.webp"
-                                        alt="The camp, Sirius Cove"
-                                        style="aspect-ratio: 1920/1419;"
-                                    >
+                <div class="tabs">
+                    <template x-for="(tab, index) in ['New Tab 1', 'New Tab 2', 'New Tab 3']">
+                        <div 
+                            class="tab" 
+                            :class="{ 'active': activeTab === index }"
+                            @click="activeTab = index"
+                            x-text="tab"
+                        ></div>
+                    </template>
+                </div>
+            </div>
+
+            <div class="content">
+                <!-- Tab 1 -->
+                <template x-if="activeTab === 0">
+                    <div class="tab-content" x-show="activeTab === 0" x-transition>
+                    
+                            <div class="artwork-container">
+                                <div class="frame-wrapper">
+                                    <div class="art-frame">
+                                        <img 
+                                            class="art-image" 
+                                            src="https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_QgraSbQjk2t48JQ9f79WSbw7J0R4bWg0jZVvWJzfd1gSah4g_ieRfTaxsFzo-b8aWp9M8Gowg.webp"
+                                            alt="The camp, Sirius Cove"
+                                            style="aspect-ratio: 1920/1419;"
+                                        >
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="art-info">
-                                <h2 class="info-title">
-                                    <a href="asset/vQEPldpJAUvS4Q" target="_blank" class="art-link">
-                                        The camp, Sirius Cove
-                                    </a>
-                                </h2>
-                                <p class="info-text">
-                                    <a href="https://www.google.com/search?q=Tom+Roberts" target="_blank" class="art-link">
-                                        Tom Roberts
-                                    </a>
-                                </p>
-                                <p class="info-text">
-                                    <a href="partner/art-gallery-of-new-south-wales" target="_blank" class="art-link">
-                                        Art Gallery of New South Wales
-                                    </a>
-                                </p>
-                        
+                                <div class="art-info">
+                                    <h2 class="info-title">
+                                        <a href="asset/vQEPldpJAUvS4Q" target="_blank" class="art-link">
+                                            The camp, Sirius Cove
+                                        </a>
+                                    </h2>
+                                    <p class="info-text">
+                                        <a href="https://www.google.com/search?q=Tom+Roberts" target="_blank" class="art-link">
+                                            Tom Roberts
+                                        </a>
+                                    </p>
+                                    <p class="info-text">
+                                        <a href="partner/art-gallery-of-new-south-wales" target="_blank" class="art-link">
+                                            Art Gallery of New South Wales
+                                        </a>
+                                    </p>
+                            
                     </div>
                 </div>
             </template>
@@ -76,33 +89,33 @@
             <template x-if="activeTab === 1">
                 <div class="tab-content" x-show="activeTab === 1" x-transition>
                     
-                        <div class="artwork-container">
-                            <div class="frame-wrapper">
-                                <div class="art-frame">
-                                    <img 
-                                        class="art-image" 
-                                        src="https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TmDAwvYmEAs63-kgNvq-n2llaVhtZdDCT56ubOc7krYbeACdHpHWn94PMfKR9z_G87O9gUQA.webp"
-                                        alt="Wild Apple Orchard"
-                                        style="aspect-ratio: 1920/619;"
-                                    >
+                            <div class="artwork-container">
+                                <div class="frame-wrapper">
+                                    <div class="art-frame">
+                                        <img 
+                                            class="art-image" 
+                                            src="https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_TmDAwvYmEAs63-kgNvq-n2llaVhtZdDCT56ubOc7krYbeACdHpHWn94PMfKR9z_G87O9gUQA.webp"
+                                            alt="Wild Apple Orchard"
+                                            style="aspect-ratio: 1920/619;"
+                                        >
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="art-info">
-                                <h2 class="info-title">
-                                    <a href="asset/xQGhkBUyBXAihw" target="_blank" class="art-link">
-                                        Wild Apple Orchard
-                                    </a>
-                                </h2>
-                                <p class="info-text">
-                                    <a href="https://www.google.com/search?q=Nyapanyapa+Yunupingu" target="_blank" class="art-link">
-                                        Nyapanyapa Yunupingu
-                                    </a>
-                                </p>
-                                <p class="info-text">
-                                    <a href="partner/art-gallery-of-new-south-wales" target="_blank" class="art-link">
-                                        Art Gallery of New South Wales
-                                    </a>
-                                </p>
+                                <div class="art-info">
+                                    <h2 class="info-title">
+                                        <a href="asset/xQGhkBUyBXAihw" target="_blank" class="art-link">
+                                            Wild Apple Orchard
+                                        </a>
+                                    </h2>
+                                    <p class="info-text">
+                                        <a href="https://www.google.com/search?q=Nyapanyapa+Yunupingu" target="_blank" class="art-link">
+                                            Nyapanyapa Yunupingu
+                                        </a>
+                                    </p>
+                                    <p class="info-text">
+                                        <a href="partner/art-gallery-of-new-south-wales" target="_blank" class="art-link">
+                                            Art Gallery of New South Wales
+                                        </a>
+                                    </p>
                        
                     </div>
                 </div>
@@ -112,35 +125,35 @@
             <template x-if="activeTab === 2">
                 <div class="tab-content" x-show="activeTab === 2" x-transition>
                  
-                        <div class="artwork-container">
-                            <div class="frame-wrapper">
-                                <div class="art-frame">
-                                    <img 
-                                        class="art-image" 
-                                        src="https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_SJD1guQN-sALAFjvCMs_p28WlCmbWg8cbckWumxy1VXyBlucHJdXLzcNXKG2Vggd15WLzXezc.webp"
-                                        alt="The Roman Tower, Andernach"
-                                        style="aspect-ratio: 1920/1207;"
-                                    >
+                            <div class="artwork-container">
+                                <div class="frame-wrapper">
+                                    <div class="art-frame">
+                                        <img 
+                                            class="art-image" 
+                                            src="https://artab-files.owenyoung.com/file/artab-files/images/ci/AL18g_SJD1guQN-sALAFjvCMs_p28WlCmbWg8cbckWumxy1VXyBlucHJdXLzcNXKG2Vggd15WLzXezc.webp"
+                                            alt="The Roman Tower, Andernach"
+                                            style="aspect-ratio: 1920/1207;"
+                                        >
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="art-info">
-                                <h2 class="info-title">
-                                    <a href="asset/WAHNt3hNg2Fz6A" target="_blank" class="art-link">
-                                        The Roman Tower, Andernach
-                                    </a>
-                                </h2>
-                                <p class="info-text">
-                                    <a href="https://www.google.com/search?q=Joseph+Mallord+William+Turner" target="_blank" class="art-link">
-                                        Joseph Mallord William Turner
-                                    </a>
-                                </p>
-                                <p class="info-text">
-                                    <a href="partner/isabella-stewart-gardner-museum" target="_blank" class="art-link">
-                                        Isabella Stewart Gardner Museum
-                                    </a>
-                                </p>
-                            </div>
-                       
+                                <div class="art-info">
+                                    <h2 class="info-title">
+                                        <a href="asset/WAHNt3hNg2Fz6A" target="_blank" class="art-link">
+                                            The Roman Tower, Andernach
+                                        </a>
+                                    </h2>
+                                    <p class="info-text">
+                                        <a href="https://www.google.com/search?q=Joseph+Mallord+William+Turner" target="_blank" class="art-link">
+                                            Joseph Mallord William Turner
+                                        </a>
+                                    </p>
+                                    <p class="info-text">
+                                        <a href="partner/isabella-stewart-gardner-museum" target="_blank" class="art-link">
+                                            Isabella Stewart Gardner Museum
+                                        </a>
+                                    </p>
+                                </div>
+                           
                 </div>
             </template>
         </div>
