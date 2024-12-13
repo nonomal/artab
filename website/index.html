@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>浏览器新标签页</title>
+    <title>Browser New Tab</title>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
 <body x-data="{ activeTab: 0 }">
+    <div class="container"></div>
     <div class="browser-window">
         <div class="browser-header">
-            <!-- Mac 窗口控制按钮 -->
+            <!-- Mac window controls -->
             <div class="window-controls">
                 <div class="control close"></div>
                 <div class="control minimize"></div>
                 <div class="control maximize"></div>
             </div>
 
-            <!-- 标签栏 -->
+            <!-- Tab bar -->
             <div class="tabs">
-                <template x-for="(tab, index) in ['新标签页 1', '新标签页 2', '新标签页 3']">
+                <template x-for="(tab, index) in ['New Tab 1', 'New Tab 2', 'New Tab 3']">
                     <div 
                         class="tab" 
                         :class="{ 'active': activeTab === index }"
@@ -30,35 +31,36 @@
             </div>
         </div>
 
-        <!-- 内容区域 -->
+        <!-- Content area -->
         <div class="content">
             <template x-if="activeTab === 0">
                 <div class="tab-content" x-show="activeTab === 0" x-transition>
-                    <h1>欢迎使用新标签页 1</h1>
+                    <h1>Welcome to New Tab 1</h1>
                     <div class="search-box">
-                        <input type="text" placeholder="在 Google 中搜索，或者输入网址">
+                        <input type="text" placeholder="Search Google or type a URL">
                     </div>
                 </div>
             </template>
 
             <template x-if="activeTab === 1">
                 <div class="tab-content" x-show="activeTab === 1" x-transition>
-                    <h1>欢迎使用新标签页 2</h1>
+                    <h1>Welcome to New Tab 2</h1>
                     <div class="search-box">
-                        <input type="text" placeholder="在 Google 中搜索，或者输入网址">
+                        <input type="text" placeholder="Search Google or type a URL">
                     </div>
                 </div>
             </template>
 
             <template x-if="activeTab === 2">
                 <div class="tab-content" x-show="activeTab === 2" x-transition>
-                    <h1>欢迎使用新标签页 3</h1>
+                    <h1>Welcome to New Tab 3</h1>
                     <div class="search-box">
-                        <input type="text" placeholder="在 Google 中搜索，或者输入网址">
+                        <input type="text" placeholder="Search Google or type a URL">
                     </div>
                 </div>
             </template>
         </div>
     </div>
+</div>
 </body>
 </html>
