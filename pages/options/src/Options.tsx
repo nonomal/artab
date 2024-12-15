@@ -119,6 +119,15 @@ const Options = () => {
             </div>
             <span className="version" style={{ display: 'block', marginTop: '10px' }}>
               {t('version', packageJson.version)}
+              {' ('}
+              <a
+                href="https://github.com/get-artab/artab"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'inline-flex', alignItems: 'center' }}>
+                Source Code
+              </a>
+              {')'}
             </span>
           </div>
         </div>
