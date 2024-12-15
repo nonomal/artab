@@ -29,7 +29,7 @@
     <meta name="keywords" content="新标签页, 艺术, 浏览器扩展, Chrome 扩展, Firefox 扩展, Edge 扩展">
     
     <script src="/static/js/alpinejs-3-14-7.js" defer></script>
-    <link rel="stylesheet" href="index.css?v=20241214">
+    <link rel="stylesheet" href="index.css?v=20241215">
 </head>
 <body x-data="{ 
     activeTab: 0,
@@ -44,7 +44,9 @@
             <div class="header-content">
                 <div class="header-text">
                     <h1 class="header-title">"让有史以来最好的艺术作品出现在你的新标签页。"</h1>
-                    <p class="header-source">—— Artab</p>
+                    <p class="header-source">
+                        — <a href="https://github.com/get-artab/artab" target="_blank" style="text-decoration: none; color: inherit;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">Artab</a>
+                    </p>
                 </div>
                 <div x-data="browserInfo()">
                     <a :href="storeUrl" class="chrome-button">
