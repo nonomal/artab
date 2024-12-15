@@ -74,6 +74,8 @@ const Options = () => {
               <a href="https://mazzzystar.github.io/" target="_blank" rel="noopener noreferrer">
                 Mazzystar
               </a>
+              {', with '}
+              <span>🐕 Tokki & Cookie (Chief Happiness Officers)</span>
             </div>
             <div className="inspired-by">
               Inspired by{' '}
