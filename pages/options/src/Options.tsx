@@ -4,6 +4,17 @@ import { updateFrequencyStorage } from '@extension/storage';
 import { t } from '@extension/i18n';
 import packageJson from '../../../package.json';
 
+const ExternalLink = () => (
+  <svg
+    width="10"
+    height="10"
+    viewBox="0 0 12 12"
+    fill="currentColor"
+    style={{ marginLeft: '4px', display: 'inline-block' }}>
+    <path d="M2.5 2.5V1H11v8.5H9.5V3.5L2 11 1 10l7.5-7.5z" />
+  </svg>
+);
+
 const Options = () => {
   const updateFrequency = useStorage(updateFrequencyStorage);
 
@@ -11,7 +22,7 @@ const Options = () => {
     <div className="options-container">
       <div className="options-content">
         <h2 className="options-title">{t('changeArtWork')}</h2>
-        <div className="radio-group">
+        <div className="radio-group" style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
           <label className="radio-item">
             <input
               type="radio"
@@ -44,6 +55,7 @@ const Options = () => {
             />
             <span>{t('everyHour')}</span>
           </label>
+
           <label className="radio-item">
             <input
               type="radio"
@@ -58,10 +70,22 @@ const Options = () => {
 
         <div className="footer">
           <div className="feedback-section">
-            <a href="https://t.me/+KisLFTUscGVkNjNh" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://github.com/get-artab/artab/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ display: 'inline-flex', alignItems: 'center' }}>
               {t('feedback')}
+              <ExternalLink />
             </a>
-            <span className="version">{t('version', packageJson.version)}</span>
+            <a
+              href="https://t.me/+KisLFTUscGVkNjNh"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ marginLeft: '10px', display: 'inline-flex', alignItems: 'center' }}>
+              Telegram Group
+              <ExternalLink />
+            </a>
           </div>
 
           <div className="credits">
@@ -93,6 +117,9 @@ const Options = () => {
                 Google Arts & Culture
               </a>
             </div>
+            <span className="version" style={{ display: 'block', marginTop: '10px' }}>
+              {t('version', packageJson.version)}
+            </span>
           </div>
         </div>
       </div>
