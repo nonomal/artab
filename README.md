@@ -2,6 +2,12 @@
 
 Display the greatest artworks of all time in your new tab
 
+## Download
+
+- [Chrome Web Store](https://chromewebstore.google.com/detail/artab-new-tab-new-art/cphdjiacoelggmgfopmgmljdnhmlhici)
+- [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/artab/)
+- [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/artab-new-tab-with-art/cioaigkjcjchlohhapcdnldoggnmpmih)
+
 ## Development
 
 ```bash
