@@ -8,6 +8,10 @@ Display the greatest artworks of all time in your new tab
 - [Firefox Add-ons](https://addons.mozilla.org/en-US/firefox/addon/artab/)
 - [Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/artab-new-tab-with-art/cioaigkjcjchlohhapcdnldoggnmpmih)
 
+## Community
+
+- [Telegram Group](https://t.me/+UyKUmt0wA2owNGNh)
+
 ## Development
 
 ```bash
