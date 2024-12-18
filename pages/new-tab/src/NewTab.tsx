@@ -56,18 +56,53 @@ const ArtworkContainer = styled.div`
   }
 `;
 
+// 在文件顶部添加配置常量
+const FRAME_CONFIG = {
+  // 默认配置（小屏幕）
+  default: {
+    width: 640,
+    padding: 24,
+    border: 12,
+  },
+  // 大屏幕配置 (>= 1920px)
+  large: {
+    width: 840,
+    padding: 32,
+    border: 16,
+  },
+  // 超大屏幕配置 (>= 2560px)
+  xlarge: {
+    width: 1040,
+    padding: 36,
+    border: 18,
+  },
+};
+
 const FrameWrapper = styled.div`
   position: relative;
-  width: min(640px, calc(100vw - 40px));
+  width: min(${FRAME_CONFIG.default.width}px, calc(100vw - 40px));
+
+  @media (min-width: 1920px) {
+    width: min(${FRAME_CONFIG.large.width}px, calc(100vw - 40px));
+  }
+
+  @media (min-width: 2560px) {
+    width: min(${FRAME_CONFIG.xlarge.width}px, calc(100vw - 40px));
+  }
 `;
 
 const ArtFrame = styled.div`
   background: #fff;
-  padding: 24px;
-  border: 12px solid #000;
+  padding: ${FRAME_CONFIG.default.padding}px;
+  border: ${FRAME_CONFIG.default.border}px solid #000;
   position: relative;
   width: 100%;
   box-sizing: border-box;
+
+  @media (min-width: 1920px) {
+    padding: ${FRAME_CONFIG.large.padding}px;
+    border-width: ${FRAME_CONFIG.large.border}px;
+  }
 
   @media (max-width: 480px) {
     padding: 16px;
@@ -88,11 +123,20 @@ const ArtFrame = styled.div`
   &::before {
     content: '';
     position: absolute;
-    top: -12px;
-    left: -12px;
-    right: -12px;
-    bottom: -12px;
-    border: 12px solid #000;
+    top: -${FRAME_CONFIG.default.border}px;
+    left: -${FRAME_CONFIG.default.border}px;
+    right: -${FRAME_CONFIG.default.border}px;
+    bottom: -${FRAME_CONFIG.default.border}px;
+    border: ${FRAME_CONFIG.default.border}px solid #000;
+
+    @media (min-width: 1920px) {
+      top: -${FRAME_CONFIG.large.border}px;
+      left: -${FRAME_CONFIG.large.border}px;
+      right: -${FRAME_CONFIG.large.border}px;
+      bottom: -${FRAME_CONFIG.large.border}px;
+      border: ${FRAME_CONFIG.large.border}px solid #000;
+    }
+
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='woodgrain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23woodgrain)'/%3E%3C/svg%3E");
     opacity: 0.15;
     pointer-events: none;
@@ -118,7 +162,7 @@ const ArtImage = styled.img<{ width: number; height: number }>`
   display: block;
   position: relative;
 
-  /* 图片阴影效果 */
+  /* 图片阴影效�� */
   box-shadow: 
     /* 内部阴影 */
     inset 0 0 10px rgba(0, 0, 0, 0.1),
@@ -575,7 +619,8 @@ const NewTab: React.FC = () => {
   // 计算图片尺寸
   const getImageDimensions = (index: number) => {
     const item = meta[index];
-    const targetWidth = 640;
+    const isLargeScreen = window.innerWidth >= 1920;
+    const targetWidth = isLargeScreen ? FRAME_CONFIG.large.width : FRAME_CONFIG.default.width;
     const targetHeight = Math.round((item.height * targetWidth) / item.width);
     return { width: targetWidth, height: targetHeight };
   };
