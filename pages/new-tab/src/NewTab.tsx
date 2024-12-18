@@ -48,7 +48,6 @@ const ArtworkContainer = styled.div`
   align-items: center;
   position: relative;
   width: 100%;
-  max-width: 820px;
   padding: 20px;
   box-sizing: border-box;
 
@@ -60,7 +59,6 @@ const ArtworkContainer = styled.div`
 const FrameWrapper = styled.div`
   position: relative;
   width: min(640px, calc(100vw - 40px));
-  margin: 0 auto;
 `;
 
 const ArtFrame = styled.div`
@@ -257,8 +255,8 @@ const ArtInfo = styled.div`
   text-align: left;
   letter-spacing: 0.3px;
   position: absolute;
-  right: -100px;
-  bottom: 50px;
+  right: -190px;
+  bottom: 30px;
   box-shadow: 
     /* 近距离深色阴影 */
     0 4px 8px rgba(0, 0, 0, 0.2),
@@ -329,6 +327,66 @@ const FRAME_PADDING = 24; // 内边距
 const FRAME_BORDER = 12; // 边框宽度
 const TOTAL_HORIZONTAL_SPACE = FRAME_PADDING * 2 + FRAME_BORDER * 2; // 总的水平空间
 const ACTUAL_IMAGE_WIDTH = FRAME_WIDTH - TOTAL_HORIZONTAL_SPACE; // 实际图片可用宽度 = 568px
+
+// 提取 Navigation 组件
+const Navigation: React.FC<{
+  direction: 'left' | 'right';
+  onClick: () => void;
+}> = ({ direction, onClick }) => (
+  <NavigationArea direction={direction} onClick={onClick}>
+    <NavigationButton>
+      <span>{direction === 'left' ? '←' : '→'}</span>
+    </NavigationButton>
+  </NavigationArea>
+);
+
+// 提取 ArtworkInfo 组件
+const ArtworkInfo: React.FC<{ artwork: AssetData }> = ({ artwork }) => (
+  <ArtInfo>
+    <InfoTitle>
+      <Link href={artwork.link} target="_blank">
+        {artwork.title}
+      </Link>
+    </InfoTitle>
+    <InfoText>
+      <Link href={artwork.artist_link} target="_blank">
+        {artwork.creator}
+      </Link>
+    </InfoText>
+    <InfoText>
+      <Link href={artwork.attribution_link} target="_blank">
+        {artwork.attribution}
+      </Link>
+    </InfoText>
+  </ArtInfo>
+);
+
+// 提取 ArtworkDisplay 组件
+const ArtworkDisplay: React.FC<{
+  loading: boolean;
+  error: string | null;
+  artwork: AssetData | null;
+  currentIndex: number;
+  dimensions: { width: number; height: number };
+}> = ({ loading, error, artwork, currentIndex, dimensions }) => {
+  if (loading) {
+    return (
+      <LoadingContainer {...dimensions}>
+        <LoadingSpinner />
+      </LoadingContainer>
+    );
+  }
+
+  if (error) {
+    return (
+      <LoadingContainer {...dimensions}>
+        <ErrorMessage>{error}</ErrorMessage>
+      </LoadingContainer>
+    );
+  }
+
+  return artwork?.data_url ? <ArtImage src={artwork.data_url} alt={artwork.title} {...dimensions} /> : null;
+};
 
 const NewTab: React.FC = () => {
   const [artwork, setArtwork] = useState<AssetData | null>(null);
@@ -524,59 +582,26 @@ const NewTab: React.FC = () => {
 
   return (
     <PageContainer>
-      <NavigationArea direction="left" onClick={handlePrevious}>
-        <NavigationButton>
-          <span>←</span>
-        </NavigationButton>
-      </NavigationArea>
+      <Navigation direction="left" onClick={handlePrevious} />
 
       <ArtworkContainer>
         <FrameWrapper>
           {currentIndex !== null && meta[currentIndex] && showFrame && (
             <ArtFrame>
-              {loading ? (
-                <LoadingContainer {...getImageDimensions(currentIndex)}>
-                  <LoadingSpinner />
-                </LoadingContainer>
-              ) : error ? (
-                <LoadingContainer {...getImageDimensions(currentIndex)}>
-                  <ErrorMessage>{error}</ErrorMessage>
-                </LoadingContainer>
-              ) : (
-                artwork?.data_url && (
-                  <ArtImage src={artwork.data_url} alt={artwork.title} {...getImageDimensions(currentIndex)} />
-                )
-              )}
+              <ArtworkDisplay
+                loading={loading}
+                error={error}
+                artwork={artwork}
+                currentIndex={currentIndex}
+                dimensions={getImageDimensions(currentIndex)}
+              />
             </ArtFrame>
           )}
+          {artwork && !error && showFrame && <ArtworkInfo artwork={artwork} />}
         </FrameWrapper>
-
-        {artwork && !error && showFrame && (
-          <ArtInfo>
-            <InfoTitle>
-              <Link href={artwork.link} target="_blank">
-                {artwork.title}
-              </Link>
-            </InfoTitle>
-            <InfoText>
-              <Link href={artwork.artist_link} target="_blank">
-                {artwork.creator}
-              </Link>
-            </InfoText>
-            <InfoText>
-              <Link href={artwork.attribution_link} target="_blank">
-                {artwork.attribution}
-              </Link>
-            </InfoText>
-          </ArtInfo>
-        )}
       </ArtworkContainer>
 
-      <NavigationArea direction="right" onClick={handleNext}>
-        <NavigationButton>
-          <span>→</span>
-        </NavigationButton>
-      </NavigationArea>
+      <Navigation direction="right" onClick={handleNext} />
     </PageContainer>
   );
 };
