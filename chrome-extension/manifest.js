@@ -32,9 +32,6 @@ const manifest = {
   chrome_url_overrides: {
     newtab: 'new-tab/index.html',
   },
-  chrome_settings_overrides: {
-    homepage: 'new-tab/index.html',
-  },
   icons: {
     128: 'icon128.png',
     48: 'icon48.png',

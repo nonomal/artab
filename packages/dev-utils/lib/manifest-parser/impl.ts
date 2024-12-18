@@ -32,5 +32,8 @@ function convertToFirefoxCompatibleManifest(manifest: Manifest) {
     },
   };
   delete manifestCopy.options_page;
+  manifestCopy.chrome_settings_overrides = {
+    homepage: 'new-tab/index.html',
+  };
   return manifestCopy as Manifest;
 }
