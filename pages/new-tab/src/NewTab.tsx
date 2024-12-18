@@ -82,12 +82,13 @@ const FrameWrapper = styled.div`
   position: relative;
   width: min(${FRAME_CONFIG.default.width}px, calc(100vw - 40px));
 
-  @media (min-width: 1920px) {
-    width: min(${FRAME_CONFIG.large.width}px, calc(100vw - 40px));
-  }
-
+  // 先处理更大的屏幕尺寸
   @media (min-width: 2560px) {
     width: min(${FRAME_CONFIG.xlarge.width}px, calc(100vw - 40px));
+  }
+
+  @media (min-width: 1920px) and (max-width: 2559px) {
+    width: min(${FRAME_CONFIG.large.width}px, calc(100vw - 40px));
   }
 `;
 
@@ -365,7 +366,7 @@ const composeLink = (link: string): string => {
   return link.startsWith('http') ? link : `${baseUrl}${link}`;
 };
 
-// 定义一些常量
+// 定义一��常量
 const FRAME_WIDTH = 640; // 画框宽度
 const FRAME_PADDING = 24; // 内边距
 const FRAME_BORDER = 12; // 边框宽度
