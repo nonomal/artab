@@ -66,13 +66,13 @@ const FRAME_CONFIG = {
   },
   // 大屏幕配置 (>= 1920px)
   large: {
-    width: 840,
+    width: 720,
     padding: 32,
     border: 16,
   },
   // 超大屏幕配置 (>= 2560px)
   xlarge: {
-    width: 1040,
+    width: 900,
     padding: 36,
     border: 18,
   },
@@ -87,7 +87,7 @@ const FrameWrapper = styled.div`
     width: min(${FRAME_CONFIG.xlarge.width}px, calc(100vw - 40px));
   }
 
-  @media (min-width: 1920px) and (max-width: 2559px) {
+  @media (min-width: 2160px) and (max-width: 2559px) {
     width: min(${FRAME_CONFIG.large.width}px, calc(100vw - 40px));
   }
 `;
@@ -100,7 +100,7 @@ const ArtFrame = styled.div`
   width: 100%;
   box-sizing: border-box;
 
-  @media (min-width: 1920px) {
+  @media (min-width: 2160px) {
     padding: ${FRAME_CONFIG.large.padding}px;
     border-width: ${FRAME_CONFIG.large.border}px;
   }
@@ -130,7 +130,7 @@ const ArtFrame = styled.div`
     bottom: -${FRAME_CONFIG.default.border}px;
     border: ${FRAME_CONFIG.default.border}px solid #000;
 
-    @media (min-width: 1920px) {
+    @media (min-width: 2160px) {
       top: -${FRAME_CONFIG.large.border}px;
       left: -${FRAME_CONFIG.large.border}px;
       right: -${FRAME_CONFIG.large.border}px;
@@ -620,7 +620,7 @@ const NewTab: React.FC = () => {
   // 计算图片尺寸
   const getImageDimensions = (index: number) => {
     const item = meta[index];
-    const isLargeScreen = window.innerWidth >= 1920;
+    const isLargeScreen = window.innerWidth >= 2160;
     const targetWidth = isLargeScreen ? FRAME_CONFIG.large.width : FRAME_CONFIG.default.width;
     const targetHeight = Math.round((item.height * targetWidth) / item.width);
     return { width: targetWidth, height: targetHeight };
