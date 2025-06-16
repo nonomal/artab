@@ -88,6 +88,7 @@ export type DevLocale = ${locales.map(locale => `'${locale}'`).join(' | ')};
 }
 
 function makeGetMessageFromLocaleFile(locales) {
+  console.log('locales', locales);
   const defaultLocaleCode = `(() => {
   const locales = ${JSON.stringify(locales).replace(/"/g, "'").replace(/,/g, ', ')};
   const firstLocale = locales[0];
